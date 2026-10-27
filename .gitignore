@@ -1,0 +1,55 @@
+# Environment configuration: only the empty example belongs in Git.
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+.envrc
+
+# Provider state and local credentials.
+.vercel/
+.supabase/
+supabase/.temp/
+supabase/.branches/
+.aws/
+.ssh/
+credentials.json
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies and generated output (framework still undecided).
+node_modules/
+.next/
+.nuxt/
+.output/
+.turbo/
+.cache/
+dist/
+build/
+out/
+coverage/
+
+# Private exports, logs, reports, and local context.
+private/
+backups/
+dumps/
+*.dump
+*.backup
+*.sqlite
+*.sqlite3
+*.db
+*.log
+gitleaks-report.*
+.private-context/
+
+# Editor and operating-system state.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
