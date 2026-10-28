@@ -31,7 +31,7 @@
 
 ## Study Flash Cards y practice tests
 
-**Estado general:** FC01–FC10 revisados y verificados localmente; publicación y comprobación HTTPS pública en curso — 2026-10-28 00:21 MDT.
+**Estado general:** FC01–FC10 verificados y publicados; flujo HTTPS público completo aprobado — 2026-10-28 00:23 MDT.
 **Codificado por:** GPT-6 Luna (`/root/luna_branding_refresh`, frontend).
 **Revisado por:** Codex (/root), 2026-10-28 00:21 MDT; ver [FLASHCARDS_REVIEW.md](FLASHCARDS_REVIEW.md).
 **Contrato frontend/backend:** [Flashcard implementation brief](FLASHCARDS_IMPLEMENTATION_BRIEF.md).
@@ -172,3 +172,5 @@ Una tarea implementada requiere revisión para pasar a Verificado.
   y límites de privacidad de infraestructura. Ya no hay tareas de publicación pendientes.
 
 - 2026-10-27 20:07 MDT — Codex (/root): BR05 revisado y publicado. Commit fuente `cff4a5215c7b3f0bb9c2afbe93473132099b5988`; Vercel READY, URL NPA HTTP 200 anónimo, cabeceras y rutas privadas comprobadas. Chrome desde HTTPS público aprobó ambos cohorts, cuatro tamaños, recuperación, puntuación y aviso. Las dos sesiones sintéticas de esta ejecución se eliminaron por hashes exactos. Security CI 40618924116 aprobada.
+
+- 2026-10-28 00:23 MDT — Codex (/root): publicación Study Flash Cards verificada en https://naturalization-preparation-app.vercel.app/. Fuente `6307dd1d18d001d4c1fd7db433874d7d9e18738f`; Vercel READY y Security CI40643360541 aprobada. Flujo público real pasó ambas ediciones, touch, conteos/rangos/rolling, resultados conocidos, timeout15s, recuperación y cuatro tamaños. Dos sesiones sintéticas eliminadas por hashes exactos; sesiones reales conservadas.

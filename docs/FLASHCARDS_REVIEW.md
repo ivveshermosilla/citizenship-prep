@@ -1,8 +1,7 @@
 # Study Flash Cards review
 
 Implementation is by GPT-6 Luna: frontend and backend agents, with coordinator
-review and publication. Local verification is complete. Publication and public HTTPS checks are
-performed separately and recorded below when completed.
+review and publication. Local and public HTTPS verification are complete. The release is published.
 
 ## Backend verification
 
@@ -52,8 +51,27 @@ Local review completed on 2026-10-28 00:21 MDT.
   unchanged. No new dependencies, tracking, microphone permissions or service
   credentials were introduced.
 
-Git publication and public HTTPS verification follow the reviewed local build.
+Git publication and public HTTPS verification completed as recorded below.
 
 Speech recording, prerecorded narration, realistic curated distractors and an
 official-exam simulation remain future work. Practice-test outcomes are client
 evaluated learning data and are separate from the legacy self-assessed quiz.
+
+## Public release — 2026-10-28 00:23 MDT
+
+Source commit `6307dd1d18d001d4c1fd7db433874d7d9e18738f` was published to
+GitHub main and deployed READY by the existing Vercel project.
+[Study Flash Cards is live in NPA](https://naturalization-preparation-app.vercel.app/).
+GitHub Security CI run 40643360541 succeeded.
+
+The coordinator ran smoke and the full real-browser flow against the canonical
+public HTTPS URL. It passed both editions, four viewport widths, touch-driven
+study/test actions, synchronized topic/range/rolling controls, known correct and
+incorrect outcomes, a real 15-second timeout persisted as Skipped, manual code
+recovery and restored scores. Safe public screenshots were inspected, including
+the balanced mobile hub. Only the two synthetic sessions from this run were
+removed by their exact verifier hashes.
+
+Anonymous HTTP 200, English language, security headers, private/source paths returning 404
+and byte-identical reviewed JS/CSS/SVG were verified. No deployment protection,
+secret scans, seven-day session policy or official answer dates were weakened.

@@ -8,6 +8,10 @@ The previous test URL redirects to this canonical address. The approved NPA
 refresh is published and verified; see the [branding release review](docs/BRANDING_REFRESH_REVIEW.md).
 The [first publication record](docs/FIRST_PUBLICATION.md) remains historical.
 
+**Study Flash Cards is published:** configurable question selections, cumulative
+rolling review and timed practice tests. See the [feature review](docs/FLASHCARDS_REVIEW.md)
+for verification and the boundaries of provisional distractors.
+
 ## Project status
 
 The React/TypeScript/Vite app supports anonymous recovery-code sessions,
