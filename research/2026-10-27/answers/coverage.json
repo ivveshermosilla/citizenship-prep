@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-10-27",
+  "editions": {
+    "2025": {
+      "questions": 128,
+      "national_answered": 124,
+      "jurisdiction_questions_resolved": 4,
+      "resolved_answer_sets": 733
+    },
+    "2008": {
+      "questions": 100,
+      "national_answered": 96,
+      "jurisdiction_questions_resolved": 4,
+      "resolved_answer_sets": 705
+    }
+  },
+  "jurisdictions": 56,
+  "states": 50,
+  "inhabited_us_territories": 5,
+  "federal_districts": 1,
+  "senators": 100,
+  "governors": 55,
+  "house_district_records": 441,
+  "voting_house_seats": 435,
+  "occupied_voting_house_seats": 433,
+  "vacant_house_seats": [
+    "FL20",
+    "TX23"
+  ],
+  "nonvoting_house_records": 6,
+  "resolved_answer_sets_total": 1438,
+  "review_schedule_rows": 1438,
+  "national_current_answers_verified_against_uscis_updates": true,
+  "all_questions_resolved": true,
+  "publication_status": "supabase_imported_git_unpublished",
+  "reminders_created": false,
+  "maintenance_policy": "monthly_calendar",
+  "next_update_on": "2026-11-27",
+  "supabase_imported": true
+}

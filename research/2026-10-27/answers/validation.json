@@ -1,0 +1,30 @@
+{
+  "as_of": "2026-10-27",
+  "result": "passed",
+  "checks": [
+    "56 jurisdictions / 50 states / 5 inhabited territories / D.C.",
+    "100 senators, two per state, classes 33/33/34",
+    "55 governors",
+    "441 House records, 435 voting seats, 6 nonvoting seats, 2 actual vacancies",
+    "D.C. and territorial exceptions, AS00/AQ00 normalization, PR four-year term",
+    "All 228 original prompt texts and identities preserved; active cadence metadata superseded by monthly owner policy",
+    "Every question resolves to actual options for every supported jurisdiction/district",
+    "1438 unique resolved response sets, no placeholders used as answers",
+    "1438 monthly review rows, all future suggestions and never claimed as expiration",
+    "Static source-option comparison with explicit transformations for source notes/extra accepted locations",
+    "Current national values verified in sanitized USCIS updates text",
+    "Official PDF hashes match source manifest",
+    "JSON/CSV consistency, file/field/source references, whitespace, local Markdown links",
+    "No raw source PDFs in research",
+    "No staged changes or new commit",
+    "All current response/catalog dates use one calendar month; no shorter cadence remains active",
+    "Vacant canonical response with separately stored predecessor and parenthetical display",
+    "Private Supabase import verified; see supabase/import-verification.json"
+  ],
+  "not_tested": [
+    "Website, UI notices, and automatic updater are not implemented.",
+    "The game vacancy rule does not certify official interview grading."
+  ],
+  "maintenance_policy": "monthly_calendar",
+  "next_update_on": "2026-11-27"
+}

@@ -47,8 +47,10 @@ put server secrets in variables that a framework exposes to browsers.
 
 ## Content and license
 
-The question bank has not been added. Before adding it, document the official
-source, test version, verification date, and how changing answers are maintained.
+Question and answer research is stored under `research/`. Preserve original
+question-only snapshots. Record source, version, verification date and
+maintenance policy for every content update. Keep review suggestions separate
+from factual validity and regular office-term boundaries.
 Do not import personal immigration records or unrelated project data.
 
 The project license is pending selection by the owner.

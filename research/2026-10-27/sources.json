@@ -1,0 +1,138 @@
+{
+  "as_of": "2026-10-27",
+  "sources": [
+    {
+      "source_id": "uscis_2025_pdf",
+      "url": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "retrieved_at": "2026-10-27T18:25:37+00:00",
+      "retrieval_method": "Direct HTTPS from USCIS, parsed locally with installed Poppler pdftotext; browser research tool returned HTTP 403 but direct HTTPS returned HTTP 200.",
+      "http_status": 200,
+      "sha256": "f280608c0fb6dc1eba344b4746a7ba52d02fe411fba30cedd4371819f0abe11c",
+      "bytes": 224823,
+      "pdf_pages": 19,
+      "printed_revision": "09/25",
+      "pdf_creation_time": "2025-09-26T13:51:13-04",
+      "pdf_modification_time": "2025-10-14T11:00:41-04",
+      "http_last_modified": "2025-10-14T15:01:32Z",
+      "publication_date_inferred_from_file_metadata": false,
+      "raw_file_retained": false,
+      "extraction_normalization": [
+        "joined wrapped lines",
+        "collapsed layout whitespace",
+        "removed star markers into dedicated boolean",
+        "removed PDF extraction control characters",
+        "separated bracketed USCIS officer note where present"
+      ]
+    },
+    {
+      "source_id": "uscis_2008_pdf",
+      "url": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/OoC_100_Questions_2008_Civics_Test_V1.pdf",
+      "retrieved_at": "2026-10-27T18:27:34+00:00",
+      "retrieval_method": "Direct HTTPS from USCIS, parsed locally with installed Poppler pdftotext; browser research tool returned HTTP 403 but direct HTTPS returned HTTP 200.",
+      "http_status": 200,
+      "sha256": "1f47f0e2237fd34ac9e82513bd7cae5d5f380ac5bf1e6ec58f7c956b5f41562d",
+      "bytes": 386276,
+      "pdf_pages": 11,
+      "printed_revision": "08/21",
+      "pdf_creation_time": "2021-08-12T08:29:43-04",
+      "pdf_modification_time": "2025-08-26T09:54:46-04",
+      "http_last_modified": "2025-08-26T13:55:24Z",
+      "publication_date_inferred_from_file_metadata": false,
+      "raw_file_retained": false,
+      "extraction_normalization": [
+        "joined wrapped lines",
+        "collapsed layout whitespace",
+        "removed star markers into dedicated boolean",
+        "removed PDF extraction control characters",
+        "separated bracketed USCIS officer note where present"
+      ]
+    },
+    {
+      "source_id": "uscis_2025_page",
+      "url": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test",
+      "checked_as_of": "2026-10-27",
+      "raw_content_retained": false
+    },
+    {
+      "source_id": "uscis_study",
+      "url": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "checked_as_of": "2026-10-27",
+      "raw_content_retained": false
+    },
+    {
+      "source_id": "uscis_updates",
+      "url": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/check-for-test-updates",
+      "checked_as_of": "2026-10-27",
+      "raw_content_retained": false
+    },
+    {
+      "source_id": "uscis_policy",
+      "url": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
+      "checked_as_of": "2026-10-27",
+      "raw_content_retained": false
+    },
+    {
+      "source_id": "uscis_announcement",
+      "url": "https://www.uscis.gov/newsroom/news-releases/uscis-unveils-first-changes-to-naturalization-test-in-multi-step-overhaul-of-american-citizenship",
+      "checked_as_of": "2026-10-27",
+      "raw_content_retained": false
+    },
+    {
+      "source_id": "federal_register_notice",
+      "url": "https://www.federalregister.gov/documents/2025/09/18/2025-18050/notice-of-implementation-of-2025-naturalization-civics-test",
+      "checked_as_of": "2026-10-27",
+      "raw_content_retained": false
+    },
+    {
+      "source_id": "govinfo_notice",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2025-09-18/html/2025-18050.htm",
+      "checked_as_of": "2026-10-27",
+      "raw_content_retained": false
+    },
+    {
+      "source_id": "constitution",
+      "url": "https://www.archives.gov/founding-docs/constitution-transcript",
+      "checked_as_of": "2026-10-27",
+      "raw_content_retained": false
+    },
+    {
+      "source_id": "constitutional_amendments",
+      "url": "https://www.archives.gov/founding-docs/amendments-11-27",
+      "checked_as_of": "2026-10-27",
+      "raw_content_retained": false
+    },
+    {
+      "source_id": "supreme_court_tenure",
+      "url": "https://www.supremecourt.gov/about/faq_general.aspx",
+      "checked_as_of": "2026-10-27",
+      "raw_content_retained": false
+    },
+    {
+      "source_id": "federal_register_newer_notices_search",
+      "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22civics+test%22&conditions%5Bpublication_date%5D%5Bgte%5D=2025-09-18&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-27&order=newest&per_page=100",
+      "checked_as_of": "2026-10-27",
+      "http_status": 200,
+      "result_count": 2,
+      "results": [
+        {
+          "document_number": "2026-12542",
+          "publication_date": "2026-06-23",
+          "title": "Naturalization Application Fee Adjustments",
+          "announces_new_question_bank": false
+        },
+        {
+          "document_number": "2025-18050",
+          "publication_date": "2025-09-18",
+          "title": "Notice of Implementation of 2025 Naturalization Civics Test",
+          "announces_new_question_bank": true
+        }
+      ],
+      "interpretation": "No newer question-bank replacement or future replacement date was identified by this search. This is bounded research evidence, not a guarantee that no other future notice exists."
+    }
+  ],
+  "rejected_obsolete_source": {
+    "url": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/100q.pdf",
+    "printed_revision": "01/19",
+    "reason": "Old official URL still accessible; use the newer rev. 08/21 PDF linked by the current USCIS Study for the Test page."
+  }
+}

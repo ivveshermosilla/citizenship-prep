@@ -1,52 +1,124 @@
-# Citizenship Prep
+# Civic Compass
 
-A planned web application for practicing U.S. naturalization questions.
+Local web app for practicing U.S. naturalization civics questions.
 
 ## Project status
 
-The repository foundation is ready. The practice application, question bank,
-authentication, database schema, and deployment are not implemented yet.
+The React/TypeScript/Vite app supports anonymous recovery-code sessions,
+both filing cohorts, all jurisdictions and congressional districts, study cards,
+and self-check quizzes backed by the dedicated Supabase project. All user-facing
+app content is English. The coordinator is preparing a reviewed first GitHub
+publication and a dedicated Vercel deployment for phone testing; neither has
+been published yet. Licensing remains unselected.
 
-The planned platform is GitHub for source control, a dedicated Supabase project
-for application data, and a dedicated Vercel project for hosting. Development
-will proceed in small, verified steps. The application framework and license
-are still to be selected.
+The [October 27, 2026 research draft](research/2026-10-27/README.md) records the
+128-question 2025 bank and the separately applicable 100-question 2008 bank.
+Its [current-answer follow-up](research/2026-10-27/answers/README.md) documents
+answers for all states and districts, sources, monthly review dates, and explicit
+vacancy/D.C./territory cases. [Supabase documentation](supabase/README.md) covers
+the private import and app access boundary. See [product requirements](docs/PRODUCT_REQUIREMENTS.md).
 
 ## Working locally
 
-```sh
-git clone git@github.com:ivveshermosilla/citizenship-prep.git
-cd citizenship-prep
-# Install Gitleaks first; see CONTRIBUTING.md.
-bash scripts/enable-git-hooks.sh
-```
-
-There is no application start command yet. No service credentials are required
-to review this foundation or run its repository checks.
-
-## Repository checks
+Install the pinned packages and create an ignored `.env.local` from the empty
+`.env.example`. Fill only the Supabase project URL and publishable key. Never put
+a secret/service key or database password in Vite browser configuration.
 
 ```sh
-bash scripts/check-secrets.sh staged   # Inspect the staged diff before committing.
-bash scripts/check-secrets.sh history  # Inspect all local Git refs before pushing.
-git diff --check
+npm ci
+test -e .env.local || cp .env.example .env.local
+# Fill VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY locally.
+npm run dev -- --port 4173 --strictPort
 ```
 
-Local Git hooks run these secret checks automatically once enabled. GitHub
-Actions also scans repository history on pushes and pull requests. GitHub secret
-scanning and push protection provide an additional layer for supported secrets.
-These checks reduce risk; they do not replace reviewing changes before publication.
+Vite prints the local review URL. If configuration or the backend is unavailable,
+the app shows a retryable error and does not substitute local mock persistence.
 
-## Configuration and privacy
+## Checks
 
-`.env.example` contains empty placeholders only. Local `.env` files, deployment
-state, credentials, and private exports must stay outside Git. Environment
-variable names will be finalized when the application framework is chosen.
+```sh
+npm run typecheck
+npm run build
+npm test
+npm run test:english
+npm run test:browser
+```
 
-Only publishable Supabase configuration may reach browser code. Administrative
-secrets must remain on the server. Private user data will require explicit access
-grants and Row Level Security policies before application integration.
+The unit tests cover the 168-hour boundary, code format/entropy, English vacancy display,
+cohorts, and district selection. [The SQL verifier](supabase/tests/verify_app_mvp.sql)
+checks all 441 districts in both cohorts and all 56 jurisdictions, allowlisted
+fields, role denials, isolation, aggregate limits, expiry, and cleanup in a
+rollback transaction. The API and full browser scripts use the real project and
+create synthetic sessions; delete only the rows whose one-way verifier hashes
+those scripts return. For example, replace the placeholders with those hashes:
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow,
-[SECURITY.md](SECURITY.md) for security reporting, and [AGENTS.md](AGENTS.md)
-for agent instructions.
+```sql
+DELETE FROM game_private.sessions
+WHERE code_verifier IN (decode('VERIFIER_1', 'hex'), decode('VERIFIER_2', 'hex'));
+```
+
+Run browser checks in separate terminals. Keep Vite running in the first terminal
+at port 4173. In a second terminal, start system Chrome with an isolated
+temporary profile and loopback-only debugging port:
+
+```sh
+google-chrome --headless --no-sandbox --disable-gpu \
+  --remote-debugging-address=127.0.0.1 --remote-debugging-port=9223 \
+  --user-data-dir=/tmp/citizenship-prep-chrome about:blank
+```
+
+Then run the checks in a third terminal:
+
+```sh
+npm run test:browser
+BROWSER_REVIEW_SHOT_PHONE=/tmp/citizenship-prep-hub-phone.png \
+BROWSER_REVIEW_SHOT_DESKTOP=/tmp/citizenship-prep-hub-desktop.png \
+  npm run test:browser-flow
+```
+
+Chrome emulation covers 320, 390, 820, and 1440 CSS-pixel widths. It does not
+replace testing other browser engines or physical devices. The browser flow only
+saves screenshots after verifying it is on the hub with no recovery code visible.
+Never capture the save-code screen.
+
+For static hosting, Vercel builds `dist` with `npm run build`. `vercel.json`
+sets the output directory and security response headers, including a CSP that
+allows native fetch only to the app origin and Supabase. No analytics or
+telemetry SDK is included. `.vercelignore` filters CLI deployment uploads;
+Git-linked builds use the repository as build input, while only `dist` is
+configured as the published static output.
+
+See the [implementation checklist](docs/IMPLEMENTATION_CHECKLIST.md) for Luna's
+authorship and the coordinator's review, and the [review record](docs/MVP_REVIEW.md)
+for completed checks and remaining release limitations.
+
+## Privacy and deployment limits
+
+The MVP does not use accounts or collect personal identifiers. It has no
+analytics, advertising, geolocation, fingerprinting, session replay, or
+third-party font/asset requests. Supabase stores a one-way recovery-code
+verifier, creation and last-activity timestamps, aggregate quiz/card counters,
+and the cohort/coarse jurisdiction needed to restore the right bank. The usable
+code stays in app memory and is never stored in browser storage or the database.
+Direct table access is denied; narrow anonymous RPCs validate the code and
+return only necessary fields.
+
+The app does not ask for identity details or use tracking analytics. Hosting
+and database providers may retain technical request/security logs under their
+own policies; those infrastructure logs are outside the app's session data.
+
+Sessions are rejected at 168 elapsed hours without activity. The active hourly
+cleanup job deletes expired records on its next run, up to about an hour later.
+Provider backup and request-log retention have not been audited. This local MVP
+is not a production privacy certification; public launch still needs provider
+retention and abuse-control review.
+
+`.env.example` contains empty values only. `.env.local`, deployment state,
+credentials, and private exports stay outside Git. See [CONTRIBUTING.md](CONTRIBUTING.md)
+for workflow, [SECURITY.md](SECURITY.md) for reporting, and [AGENTS.md](AGENTS.md)
+for repository instructions.
+
+Secret scanning of non-ignored source files found no leaks. A full-directory scan
+also flags the ignored `.env.local` publishable browser key as a generic API-key
+pattern; it is intentionally public client configuration, not a service/secret
+key. Do not suppress the scanner rule or commit the local file.

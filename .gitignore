@@ -21,7 +21,7 @@ service-account*.json
 *.p12
 *.pfx
 
-# Dependencies and generated output (framework still undecided).
+# Dependencies and generated output.
 node_modules/
 .next/
 .nuxt/
@@ -32,6 +32,8 @@ dist/
 build/
 out/
 coverage/
+__pycache__/
+*.py[cod]
 
 # Private exports, logs, reports, and local context.
 private/
@@ -53,3 +55,5 @@ gitleaks-report.*
 Thumbs.db
 *.swp
 *.swo
+.vercel
+.env*

@@ -1,0 +1,161 @@
+{
+  "as_of": "2026-10-27",
+  "sources": [
+    {
+      "id": "uscis_2025_pdf",
+      "url": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "source_type": "official_federal_question_and_answer_bank",
+      "printed_revision": "09/25",
+      "verified_on": "2026-10-27",
+      "sha256": "f280608c0fb6dc1eba344b4746a7ba52d02fe411fba30cedd4371819f0abe11c"
+    },
+    {
+      "id": "uscis_2008_pdf",
+      "url": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/OoC_100_Questions_2008_Civics_Test_V1.pdf",
+      "source_type": "official_federal_question_and_answer_bank",
+      "printed_revision": "08/21",
+      "verified_on": "2026-10-27",
+      "sha256": "1f47f0e2237fd34ac9e82513bd7cae5d5f380ac5bf1e6ec58f7c956b5f41562d"
+    },
+    {
+      "id": "uscis_updates",
+      "url": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/check-for-test-updates",
+      "source_type": "official_federal_current_test_answers",
+      "page_last_reviewed_on": "2025-09-18",
+      "note": "Page review date is distinct from this verification date; dynamic values were read directly today.",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "senate_phone",
+      "url": "https://www.senate.gov/general/resources/pdf/senators_phone_list.pdf",
+      "source_type": "official_senate_current_linked_directory",
+      "source_published_on": "2026-08-03",
+      "retrieval_method": "Browser PDF text; direct Senate XML was inaccessible.",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "senate_class_ii",
+      "url": "https://www.senate.gov/senators/Class_II.htm",
+      "source_type": "official_senate_term_class_roster",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "senate_class_iii",
+      "url": "https://www.senate.gov/senators/Class_III.htm",
+      "source_type": "official_senate_term_class_roster",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "senate_appointments",
+      "url": "https://www.senate.gov/senators/AppointedSenators.htm",
+      "source_type": "official_senate_appointment_and_succession_rules",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "senate_new_members",
+      "url": "https://www.senate.gov/senators/NewSenators.htm",
+      "source_type": "official_senate_new_member_roster",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "sc_senate_appointment",
+      "url": "https://www.governor.sc.gov/news/2026-07/gov-mcmaster-appoints-darline-graham-us-senate",
+      "source_type": "official_state_appointment_notice",
+      "source_published_on": "2026-07-13",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "house_members",
+      "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+      "source_type": "official_house_member_and_vacancy_data",
+      "source_published_on": "2026-10-01",
+      "verified_on": "2026-10-27",
+      "sha256": "01833c6c646873b2247950e8ab9c7ecc2c57fd2bf019d1014bd64a58b496ed3d"
+    },
+    {
+      "id": "house_vacancies",
+      "url": "https://clerk.house.gov/Members/ViewVacancies",
+      "source_type": "official_house_vacancy_and_successor_register",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "pr_resident_commissioner",
+      "url": "https://history.house.gov/People/Listing/H/HERNANDEZ%2C-Pablo-Jose-%28H001103%29/",
+      "source_type": "official_house_biography",
+      "note": "Confirms the four-year term beginning January 3, 2025.",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "nga_governors",
+      "url": "https://www.nga.org/governors/",
+      "source_type": "primary_governors_association_membership_roster",
+      "retrieval_method": "Live primary-association page via browser; 55 governors parsed.",
+      "note": "Association source, not a federal agency. Use the live roster for current names, not stale term columns in its linked PDF.",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "nga_elections",
+      "url": "https://www.nga.org/governors/elections/",
+      "source_type": "primary_governors_association_election_calendar",
+      "note": "Election results are not treated as an immediate change in officeholder.",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "state_capitals",
+      "url": "https://www.lrl.mn.gov/docs/2013/other/130551.pdf",
+      "source_type": "official_state_legislative_reference_table",
+      "source_edition_year": 2013,
+      "retrieval_method": "All fifty capital facts inspected in search-index text of the official PDF; direct host retrieval failed and the companion PDF exceeded browser size limits.",
+      "note": "Historical reference publication, not a claim of fifty separate current state-government confirmations.",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "island_capitals",
+      "url": "https://www.census.gov/content/dam/Census/library/publications/2015/demo/p23-213.pdf",
+      "source_type": "official_federal_geographic_reference",
+      "source_published_on": "2015-04",
+      "note": "American Samoa, Guam, Northern Mariana Islands, and U.S. Virgin Islands capital references; Capitol Hill is on Saipan.",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "guam_capital",
+      "url": "https://www.mcog.guam.gov/villages-list?keyword=capital",
+      "source_type": "official_territorial_government_geography",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "pr_capital",
+      "url": "https://home.treasury.gov/system/files/136/San-Juan-Municipio-Puerto-Rico_2024-Recovery-Plan_SLT-2215.pdf",
+      "source_type": "official_municipal_report_hosted_by_us_treasury",
+      "source_edition_year": 2024,
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "irs_filing",
+      "url": "https://www.irs.gov/individual-tax-filing",
+      "source_type": "official_federal_tax_calendar",
+      "note": "Distinguish the USCIS study response from taxpayer-specific IRS extensions and relief; no unsupported 2027 deadline was substituted.",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "constitution",
+      "url": "https://www.archives.gov/founding-docs/constitution-transcript",
+      "source_type": "official_federal_constitution_transcription",
+      "verified_on": "2026-10-27"
+    },
+    {
+      "id": "amendments",
+      "url": "https://www.archives.gov/founding-docs/amendments-11-27",
+      "source_type": "official_federal_constitution_amendments",
+      "verified_on": "2026-10-27"
+    }
+  ],
+  "limits": [
+    "Verification dates describe this research, not proof of continuous freshness between checks.",
+    "Senate directory dated August 3, 2026; House source dated October 1, 2026; official live class, appointment and vacancy pages were also consulted.",
+    "State capital baseline is an older official reference table inspected through its search-index text.",
+    "NGA is a primary governors association source, not a government agency; inconsistent historical term columns in its linked PDF were not imported.",
+    "Per-state governor term-end days were not invented; each current name has a concrete monthly update suggestion.",
+    "Specific interview acceptance of vacancy wording and geographic name variants is not certified by this dataset."
+  ]
+}

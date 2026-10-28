@@ -1,0 +1,14 @@
+{
+  "cadence": "monthly",
+  "interval_calendar_months": 1,
+  "confirmed_on": "2026-10-27",
+  "answer_updated_on": "2026-10-27",
+  "next_update_on": "2026-11-27",
+  "review_is_expiration": false,
+  "automatic_job_created": false,
+  "supersedes": "All earlier weekly, next-day, thirty-day and per-class cadences.",
+  "verified_dates_must_not_be_advanced_by_import": true,
+  "vacancy_canonical_answer": "Vacant",
+  "vacancy_display_template_en": "Vacant (previously: {previous_officeholder})",
+  "vacancy_display_template_es": "Vacante (anteriormente: {previous_officeholder})"
+}

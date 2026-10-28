@@ -1,0 +1,43 @@
+{
+  "verified_at": "2026-10-27T13:38:10-06:00",
+  "migration_version": "20261027193452",
+  "guide_rows": 1438,
+  "dated_rows": 1100,
+  "explicitly_undated_rows": 338,
+  "per_bank": {
+    "2008": {
+      "rows": 705,
+      "dated_rows": 551
+    },
+    "2025": {
+      "rows": 733,
+      "dated_rows": 549
+    }
+  },
+  "guidance_source_sha256": "04f0d2804aec73a161921ee38721a6526d33a7bbf62ec2aaef8fa1dce1f6c58c",
+  "current_seed_sha256": "0f0148c020bf5a96e68e7955a8847a4ca23ac5bafc0f614d042d55316bc17767",
+  "source_metadata_comparisons": {
+    "compared_rows": 1438,
+    "all_match": true
+  },
+  "answer_dates_preserved": true,
+  "core_content_fingerprints_unchanged": true,
+  "possibly_outdated_at_verification": 0,
+  "persisted_manual_incident_flags": 0,
+  "monthly_next_review": "2026-11-27",
+  "checks": [
+    "verify_change_guidance.sql passed; reached/future/window/monthly/manual cases and date constraints",
+    "service_role read succeeds; anon/authenticated denial; independent caller RLS under rolled-back grants",
+    "verify_civics.sql passed again, all 441 geographic selectors and original constraints",
+    "All 1438 metadata records agree with local guide; original core fingerprints unchanged",
+    "Seed reproducible, local guide/JSON/senator answer alignment validated",
+    "Gitleaks full repository scan: no findings; git diff --check passed"
+  ],
+  "security_advisor_notices": 0,
+  "performance_advisor_notices": 0,
+  "temporary_probes_rolled_back": true,
+  "new_application_tables": 0,
+  "clock_evaluation": "Private security-invoker view on read; no automatic job",
+  "no_git_commit_or_push": true,
+  "vercel_unchanged": true
+}

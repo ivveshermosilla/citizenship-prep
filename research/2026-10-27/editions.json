@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-27",
+  "editions": [
+    {
+      "id": "uscis-2025",
+      "status": "latest_announced_question_bank_in_sources_checked",
+      "question_count": 128,
+      "official_document_code": "M-1778",
+      "printed_edition": "09/25",
+      "announced_on": "2025-09-17",
+      "announcement_source_id": "uscis_announcement",
+      "federal_register_publication_on": "2025-09-18",
+      "federal_register_document_number": "2025-18050",
+      "effective_for_n400_filed_on_or_after": "2025-10-20",
+      "exact_pdf_first_publication_on": null,
+      "pdf_source_id": "uscis_2025_pdf",
+      "landing_page_last_reviewed_on": "2025-09-17",
+      "question_bank_retirement_on": null,
+      "next_edition_announced_on": null,
+      "next_edition_expected_on": null,
+      "fixed_annual_renewal_schedule_found": false,
+      "next_edition_date_status": "No announced date identified in the official sources consulted as of the research date. Do not invent a 2026 edition from the current calendar year."
+    },
+    {
+      "id": "uscis-2008",
+      "status": "still_applicable_to_earlier_filing_cohort",
+      "question_count": 100,
+      "printed_pdf_revision": "08/21",
+      "exact_revision_publication_on": null,
+      "effective_for_n400_filed_before": "2025-10-20",
+      "pdf_source_id": "uscis_2008_pdf",
+      "question_bank_retirement_on": null,
+      "note": "Version year, printed PDF revision, PDF metadata modification, and download date are separate concepts."
+    }
+  ],
+  "maintenance": {
+    "official_policy": "USCIS updates responses and, if applicable, public question banks/study materials on a rolling basis after elections, appointments, statutory changes or other updates. Officeholder-dependent test responses must match the official serving at interview.",
+    "source_ids": [
+      "uscis_policy",
+      "uscis_updates",
+      "uscis_study"
+    ],
+    "editorial_recommendations": {
+      "policy_origin": "owner_instruction_2026-10-27",
+      "update_interval_calendar_months": 1,
+      "next_update_on": "2026-11-27",
+      "cadence_is_official_uscis_requirement": false,
+      "shorter_cadences_superseded": true
+    },
+    "question_expiration_is_distinct_from_response_change": true,
+    "government_term_checkpoints_are_not_guaranteed_expiration_dates": true
+  },
+  "summary_counts": {
+    "2025": {
+      "total": 128,
+      "national": 124,
+      "residence_dependent": 4,
+      "officeholder_or_affiliation": 7,
+      "65_20": 20,
+      "temporal_classes": {
+        "constitutional_or_legal_rule": 57,
+        "institutional_count": 5,
+        "current_officeholder": 7,
+        "institutional_roles": 2,
+        "jurisdiction_reference": 1,
+        "stable_historical": 43,
+        "open_ended_historical_set": 2,
+        "official_recognition_set": 1,
+        "geopolitical_structure": 2,
+        "stable_civic_knowledge": 5,
+        "holiday_designation": 3
+      }
+    },
+    "2008": {
+      "total": 100,
+      "national": 96,
+      "residence_dependent": 4,
+      "officeholder_or_affiliation": 8,
+      "65_20": 20,
+      "temporal_classes": {
+        "constitutional_or_legal_rule": 41,
+        "institutional_count": 3,
+        "current_officeholder": 7,
+        "institutional_roles": 1,
+        "institutional_composition": 1,
+        "jurisdiction_reference": 1,
+        "current_party_landscape": 1,
+        "current_officeholder_affiliation": 1,
+        "calendar_sensitive": 1,
+        "stable_historical": 29,
+        "official_recognition_set": 1,
+        "stable_civic_knowledge": 7,
+        "geopolitical_structure": 5,
+        "holiday_designation": 1
+      }
+    }
+  }
+}

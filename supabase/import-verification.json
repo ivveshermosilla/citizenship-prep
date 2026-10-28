@@ -1,0 +1,43 @@
+{
+  "verified_on": "2026-10-27",
+  "migration_version": "20261027191328",
+  "tables": [
+    {
+      "name": "civics_questions_2008",
+      "rows": 705,
+      "questions": 100
+    },
+    {
+      "name": "civics_questions_2025",
+      "rows": 733,
+      "questions": 128
+    }
+  ],
+  "answer_updated_on": "2026-10-27",
+  "next_update_on": "2026-11-27",
+  "maintenance_interval_calendar_months": 1,
+  "source_payload_core_fingerprints": [
+    {
+      "edition": "2008",
+      "core_content_md5": "2c79ad56f1b2df4ad1be60e32fd5e405"
+    },
+    {
+      "edition": "2025",
+      "core_content_md5": "3072b66de54693a8359fe9131ea3fa54"
+    }
+  ],
+  "all_441_district_selectors_verified": true,
+  "clients_read_write_grants": false,
+  "rls_enabled": true,
+  "client_role_and_independent_rls_tests_passed": true,
+  "temporary_test_data_and_grants_rolled_back": true,
+  "automatic_rls_trigger_preserved": true,
+  "security_advisor_notices": 0,
+  "github_pushed": false,
+  "vercel_created": false,
+  "follow_up_change_guidance": {
+    "migration_version": "20261027193452",
+    "verification_artifact": "change-guidance-verification.json",
+    "answer_dates_and_core_content_preserved": true
+  }
+}

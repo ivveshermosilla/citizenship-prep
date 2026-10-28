@@ -1,0 +1,28 @@
+{
+  "name": "citizenship-prep",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --pretty",
+    "test": "node --test src/lib/domain.test.ts",
+    "test:english": "node scripts/check-english-copy.mjs",
+    "test:browser": "node scripts/browser-smoke.mjs",
+    "test:browser-flow": "node scripts/browser-flow.mjs",
+    "test:api": "node scripts/api-smoke.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}

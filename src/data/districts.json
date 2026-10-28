@@ -1,0 +1,2207 @@
+[
+  {
+    "code": "AK00",
+    "jurisdiction": "AK",
+    "name": "At Large"
+  },
+  {
+    "code": "AL01",
+    "jurisdiction": "AL",
+    "name": "1st"
+  },
+  {
+    "code": "AL02",
+    "jurisdiction": "AL",
+    "name": "2nd"
+  },
+  {
+    "code": "AL03",
+    "jurisdiction": "AL",
+    "name": "3rd"
+  },
+  {
+    "code": "AL04",
+    "jurisdiction": "AL",
+    "name": "4th"
+  },
+  {
+    "code": "AL05",
+    "jurisdiction": "AL",
+    "name": "5th"
+  },
+  {
+    "code": "AL06",
+    "jurisdiction": "AL",
+    "name": "6th"
+  },
+  {
+    "code": "AL07",
+    "jurisdiction": "AL",
+    "name": "7th"
+  },
+  {
+    "code": "AR01",
+    "jurisdiction": "AR",
+    "name": "1st"
+  },
+  {
+    "code": "AR02",
+    "jurisdiction": "AR",
+    "name": "2nd"
+  },
+  {
+    "code": "AR03",
+    "jurisdiction": "AR",
+    "name": "3rd"
+  },
+  {
+    "code": "AR04",
+    "jurisdiction": "AR",
+    "name": "4th"
+  },
+  {
+    "code": "AS00",
+    "jurisdiction": "AS",
+    "name": "Delegate"
+  },
+  {
+    "code": "AZ01",
+    "jurisdiction": "AZ",
+    "name": "1st"
+  },
+  {
+    "code": "AZ02",
+    "jurisdiction": "AZ",
+    "name": "2nd"
+  },
+  {
+    "code": "AZ03",
+    "jurisdiction": "AZ",
+    "name": "3rd"
+  },
+  {
+    "code": "AZ04",
+    "jurisdiction": "AZ",
+    "name": "4th"
+  },
+  {
+    "code": "AZ05",
+    "jurisdiction": "AZ",
+    "name": "5th"
+  },
+  {
+    "code": "AZ06",
+    "jurisdiction": "AZ",
+    "name": "6th"
+  },
+  {
+    "code": "AZ07",
+    "jurisdiction": "AZ",
+    "name": "7th"
+  },
+  {
+    "code": "AZ08",
+    "jurisdiction": "AZ",
+    "name": "8th"
+  },
+  {
+    "code": "AZ09",
+    "jurisdiction": "AZ",
+    "name": "9th"
+  },
+  {
+    "code": "CA01",
+    "jurisdiction": "CA",
+    "name": "1st"
+  },
+  {
+    "code": "CA02",
+    "jurisdiction": "CA",
+    "name": "2nd"
+  },
+  {
+    "code": "CA03",
+    "jurisdiction": "CA",
+    "name": "3rd"
+  },
+  {
+    "code": "CA04",
+    "jurisdiction": "CA",
+    "name": "4th"
+  },
+  {
+    "code": "CA05",
+    "jurisdiction": "CA",
+    "name": "5th"
+  },
+  {
+    "code": "CA06",
+    "jurisdiction": "CA",
+    "name": "6th"
+  },
+  {
+    "code": "CA07",
+    "jurisdiction": "CA",
+    "name": "7th"
+  },
+  {
+    "code": "CA08",
+    "jurisdiction": "CA",
+    "name": "8th"
+  },
+  {
+    "code": "CA09",
+    "jurisdiction": "CA",
+    "name": "9th"
+  },
+  {
+    "code": "CA10",
+    "jurisdiction": "CA",
+    "name": "10th"
+  },
+  {
+    "code": "CA11",
+    "jurisdiction": "CA",
+    "name": "11th"
+  },
+  {
+    "code": "CA12",
+    "jurisdiction": "CA",
+    "name": "12th"
+  },
+  {
+    "code": "CA13",
+    "jurisdiction": "CA",
+    "name": "13th"
+  },
+  {
+    "code": "CA14",
+    "jurisdiction": "CA",
+    "name": "14th"
+  },
+  {
+    "code": "CA15",
+    "jurisdiction": "CA",
+    "name": "15th"
+  },
+  {
+    "code": "CA16",
+    "jurisdiction": "CA",
+    "name": "16th"
+  },
+  {
+    "code": "CA17",
+    "jurisdiction": "CA",
+    "name": "17th"
+  },
+  {
+    "code": "CA18",
+    "jurisdiction": "CA",
+    "name": "18th"
+  },
+  {
+    "code": "CA19",
+    "jurisdiction": "CA",
+    "name": "19th"
+  },
+  {
+    "code": "CA20",
+    "jurisdiction": "CA",
+    "name": "20th"
+  },
+  {
+    "code": "CA21",
+    "jurisdiction": "CA",
+    "name": "21st"
+  },
+  {
+    "code": "CA22",
+    "jurisdiction": "CA",
+    "name": "22nd"
+  },
+  {
+    "code": "CA23",
+    "jurisdiction": "CA",
+    "name": "23rd"
+  },
+  {
+    "code": "CA24",
+    "jurisdiction": "CA",
+    "name": "24th"
+  },
+  {
+    "code": "CA25",
+    "jurisdiction": "CA",
+    "name": "25th"
+  },
+  {
+    "code": "CA26",
+    "jurisdiction": "CA",
+    "name": "26th"
+  },
+  {
+    "code": "CA27",
+    "jurisdiction": "CA",
+    "name": "27th"
+  },
+  {
+    "code": "CA28",
+    "jurisdiction": "CA",
+    "name": "28th"
+  },
+  {
+    "code": "CA29",
+    "jurisdiction": "CA",
+    "name": "29th"
+  },
+  {
+    "code": "CA30",
+    "jurisdiction": "CA",
+    "name": "30th"
+  },
+  {
+    "code": "CA31",
+    "jurisdiction": "CA",
+    "name": "31st"
+  },
+  {
+    "code": "CA32",
+    "jurisdiction": "CA",
+    "name": "32nd"
+  },
+  {
+    "code": "CA33",
+    "jurisdiction": "CA",
+    "name": "33rd"
+  },
+  {
+    "code": "CA34",
+    "jurisdiction": "CA",
+    "name": "34th"
+  },
+  {
+    "code": "CA35",
+    "jurisdiction": "CA",
+    "name": "35th"
+  },
+  {
+    "code": "CA36",
+    "jurisdiction": "CA",
+    "name": "36th"
+  },
+  {
+    "code": "CA37",
+    "jurisdiction": "CA",
+    "name": "37th"
+  },
+  {
+    "code": "CA38",
+    "jurisdiction": "CA",
+    "name": "38th"
+  },
+  {
+    "code": "CA39",
+    "jurisdiction": "CA",
+    "name": "39th"
+  },
+  {
+    "code": "CA40",
+    "jurisdiction": "CA",
+    "name": "40th"
+  },
+  {
+    "code": "CA41",
+    "jurisdiction": "CA",
+    "name": "41st"
+  },
+  {
+    "code": "CA42",
+    "jurisdiction": "CA",
+    "name": "42nd"
+  },
+  {
+    "code": "CA43",
+    "jurisdiction": "CA",
+    "name": "43rd"
+  },
+  {
+    "code": "CA44",
+    "jurisdiction": "CA",
+    "name": "44th"
+  },
+  {
+    "code": "CA45",
+    "jurisdiction": "CA",
+    "name": "45th"
+  },
+  {
+    "code": "CA46",
+    "jurisdiction": "CA",
+    "name": "46th"
+  },
+  {
+    "code": "CA47",
+    "jurisdiction": "CA",
+    "name": "47th"
+  },
+  {
+    "code": "CA48",
+    "jurisdiction": "CA",
+    "name": "48th"
+  },
+  {
+    "code": "CA49",
+    "jurisdiction": "CA",
+    "name": "49th"
+  },
+  {
+    "code": "CA50",
+    "jurisdiction": "CA",
+    "name": "50th"
+  },
+  {
+    "code": "CA51",
+    "jurisdiction": "CA",
+    "name": "51st"
+  },
+  {
+    "code": "CA52",
+    "jurisdiction": "CA",
+    "name": "52nd"
+  },
+  {
+    "code": "CO01",
+    "jurisdiction": "CO",
+    "name": "1st"
+  },
+  {
+    "code": "CO02",
+    "jurisdiction": "CO",
+    "name": "2nd"
+  },
+  {
+    "code": "CO03",
+    "jurisdiction": "CO",
+    "name": "3rd"
+  },
+  {
+    "code": "CO04",
+    "jurisdiction": "CO",
+    "name": "4th"
+  },
+  {
+    "code": "CO05",
+    "jurisdiction": "CO",
+    "name": "5th"
+  },
+  {
+    "code": "CO06",
+    "jurisdiction": "CO",
+    "name": "6th"
+  },
+  {
+    "code": "CO07",
+    "jurisdiction": "CO",
+    "name": "7th"
+  },
+  {
+    "code": "CO08",
+    "jurisdiction": "CO",
+    "name": "8th"
+  },
+  {
+    "code": "CT01",
+    "jurisdiction": "CT",
+    "name": "1st"
+  },
+  {
+    "code": "CT02",
+    "jurisdiction": "CT",
+    "name": "2nd"
+  },
+  {
+    "code": "CT03",
+    "jurisdiction": "CT",
+    "name": "3rd"
+  },
+  {
+    "code": "CT04",
+    "jurisdiction": "CT",
+    "name": "4th"
+  },
+  {
+    "code": "CT05",
+    "jurisdiction": "CT",
+    "name": "5th"
+  },
+  {
+    "code": "DC00",
+    "jurisdiction": "DC",
+    "name": "Delegate"
+  },
+  {
+    "code": "DE00",
+    "jurisdiction": "DE",
+    "name": "At Large"
+  },
+  {
+    "code": "FL01",
+    "jurisdiction": "FL",
+    "name": "1st"
+  },
+  {
+    "code": "FL02",
+    "jurisdiction": "FL",
+    "name": "2nd"
+  },
+  {
+    "code": "FL03",
+    "jurisdiction": "FL",
+    "name": "3rd"
+  },
+  {
+    "code": "FL04",
+    "jurisdiction": "FL",
+    "name": "4th"
+  },
+  {
+    "code": "FL05",
+    "jurisdiction": "FL",
+    "name": "5th"
+  },
+  {
+    "code": "FL06",
+    "jurisdiction": "FL",
+    "name": "6th"
+  },
+  {
+    "code": "FL07",
+    "jurisdiction": "FL",
+    "name": "7th"
+  },
+  {
+    "code": "FL08",
+    "jurisdiction": "FL",
+    "name": "8th"
+  },
+  {
+    "code": "FL09",
+    "jurisdiction": "FL",
+    "name": "9th"
+  },
+  {
+    "code": "FL10",
+    "jurisdiction": "FL",
+    "name": "10th"
+  },
+  {
+    "code": "FL11",
+    "jurisdiction": "FL",
+    "name": "11th"
+  },
+  {
+    "code": "FL12",
+    "jurisdiction": "FL",
+    "name": "12th"
+  },
+  {
+    "code": "FL13",
+    "jurisdiction": "FL",
+    "name": "13th"
+  },
+  {
+    "code": "FL14",
+    "jurisdiction": "FL",
+    "name": "14th"
+  },
+  {
+    "code": "FL15",
+    "jurisdiction": "FL",
+    "name": "15th"
+  },
+  {
+    "code": "FL16",
+    "jurisdiction": "FL",
+    "name": "16th"
+  },
+  {
+    "code": "FL17",
+    "jurisdiction": "FL",
+    "name": "17th"
+  },
+  {
+    "code": "FL18",
+    "jurisdiction": "FL",
+    "name": "18th"
+  },
+  {
+    "code": "FL19",
+    "jurisdiction": "FL",
+    "name": "19th"
+  },
+  {
+    "code": "FL20",
+    "jurisdiction": "FL",
+    "name": "20th"
+  },
+  {
+    "code": "FL21",
+    "jurisdiction": "FL",
+    "name": "21st"
+  },
+  {
+    "code": "FL22",
+    "jurisdiction": "FL",
+    "name": "22nd"
+  },
+  {
+    "code": "FL23",
+    "jurisdiction": "FL",
+    "name": "23rd"
+  },
+  {
+    "code": "FL24",
+    "jurisdiction": "FL",
+    "name": "24th"
+  },
+  {
+    "code": "FL25",
+    "jurisdiction": "FL",
+    "name": "25th"
+  },
+  {
+    "code": "FL26",
+    "jurisdiction": "FL",
+    "name": "26th"
+  },
+  {
+    "code": "FL27",
+    "jurisdiction": "FL",
+    "name": "27th"
+  },
+  {
+    "code": "FL28",
+    "jurisdiction": "FL",
+    "name": "28th"
+  },
+  {
+    "code": "GA01",
+    "jurisdiction": "GA",
+    "name": "1st"
+  },
+  {
+    "code": "GA02",
+    "jurisdiction": "GA",
+    "name": "2nd"
+  },
+  {
+    "code": "GA03",
+    "jurisdiction": "GA",
+    "name": "3rd"
+  },
+  {
+    "code": "GA04",
+    "jurisdiction": "GA",
+    "name": "4th"
+  },
+  {
+    "code": "GA05",
+    "jurisdiction": "GA",
+    "name": "5th"
+  },
+  {
+    "code": "GA06",
+    "jurisdiction": "GA",
+    "name": "6th"
+  },
+  {
+    "code": "GA07",
+    "jurisdiction": "GA",
+    "name": "7th"
+  },
+  {
+    "code": "GA08",
+    "jurisdiction": "GA",
+    "name": "8th"
+  },
+  {
+    "code": "GA09",
+    "jurisdiction": "GA",
+    "name": "9th"
+  },
+  {
+    "code": "GA10",
+    "jurisdiction": "GA",
+    "name": "10th"
+  },
+  {
+    "code": "GA11",
+    "jurisdiction": "GA",
+    "name": "11th"
+  },
+  {
+    "code": "GA12",
+    "jurisdiction": "GA",
+    "name": "12th"
+  },
+  {
+    "code": "GA13",
+    "jurisdiction": "GA",
+    "name": "13th"
+  },
+  {
+    "code": "GA14",
+    "jurisdiction": "GA",
+    "name": "14th"
+  },
+  {
+    "code": "GU00",
+    "jurisdiction": "GU",
+    "name": "Delegate"
+  },
+  {
+    "code": "HI01",
+    "jurisdiction": "HI",
+    "name": "1st"
+  },
+  {
+    "code": "HI02",
+    "jurisdiction": "HI",
+    "name": "2nd"
+  },
+  {
+    "code": "IA01",
+    "jurisdiction": "IA",
+    "name": "1st"
+  },
+  {
+    "code": "IA02",
+    "jurisdiction": "IA",
+    "name": "2nd"
+  },
+  {
+    "code": "IA03",
+    "jurisdiction": "IA",
+    "name": "3rd"
+  },
+  {
+    "code": "IA04",
+    "jurisdiction": "IA",
+    "name": "4th"
+  },
+  {
+    "code": "ID01",
+    "jurisdiction": "ID",
+    "name": "1st"
+  },
+  {
+    "code": "ID02",
+    "jurisdiction": "ID",
+    "name": "2nd"
+  },
+  {
+    "code": "IL01",
+    "jurisdiction": "IL",
+    "name": "1st"
+  },
+  {
+    "code": "IL02",
+    "jurisdiction": "IL",
+    "name": "2nd"
+  },
+  {
+    "code": "IL03",
+    "jurisdiction": "IL",
+    "name": "3rd"
+  },
+  {
+    "code": "IL04",
+    "jurisdiction": "IL",
+    "name": "4th"
+  },
+  {
+    "code": "IL05",
+    "jurisdiction": "IL",
+    "name": "5th"
+  },
+  {
+    "code": "IL06",
+    "jurisdiction": "IL",
+    "name": "6th"
+  },
+  {
+    "code": "IL07",
+    "jurisdiction": "IL",
+    "name": "7th"
+  },
+  {
+    "code": "IL08",
+    "jurisdiction": "IL",
+    "name": "8th"
+  },
+  {
+    "code": "IL09",
+    "jurisdiction": "IL",
+    "name": "9th"
+  },
+  {
+    "code": "IL10",
+    "jurisdiction": "IL",
+    "name": "10th"
+  },
+  {
+    "code": "IL11",
+    "jurisdiction": "IL",
+    "name": "11th"
+  },
+  {
+    "code": "IL12",
+    "jurisdiction": "IL",
+    "name": "12th"
+  },
+  {
+    "code": "IL13",
+    "jurisdiction": "IL",
+    "name": "13th"
+  },
+  {
+    "code": "IL14",
+    "jurisdiction": "IL",
+    "name": "14th"
+  },
+  {
+    "code": "IL15",
+    "jurisdiction": "IL",
+    "name": "15th"
+  },
+  {
+    "code": "IL16",
+    "jurisdiction": "IL",
+    "name": "16th"
+  },
+  {
+    "code": "IL17",
+    "jurisdiction": "IL",
+    "name": "17th"
+  },
+  {
+    "code": "IN01",
+    "jurisdiction": "IN",
+    "name": "1st"
+  },
+  {
+    "code": "IN02",
+    "jurisdiction": "IN",
+    "name": "2nd"
+  },
+  {
+    "code": "IN03",
+    "jurisdiction": "IN",
+    "name": "3rd"
+  },
+  {
+    "code": "IN04",
+    "jurisdiction": "IN",
+    "name": "4th"
+  },
+  {
+    "code": "IN05",
+    "jurisdiction": "IN",
+    "name": "5th"
+  },
+  {
+    "code": "IN06",
+    "jurisdiction": "IN",
+    "name": "6th"
+  },
+  {
+    "code": "IN07",
+    "jurisdiction": "IN",
+    "name": "7th"
+  },
+  {
+    "code": "IN08",
+    "jurisdiction": "IN",
+    "name": "8th"
+  },
+  {
+    "code": "IN09",
+    "jurisdiction": "IN",
+    "name": "9th"
+  },
+  {
+    "code": "KS01",
+    "jurisdiction": "KS",
+    "name": "1st"
+  },
+  {
+    "code": "KS02",
+    "jurisdiction": "KS",
+    "name": "2nd"
+  },
+  {
+    "code": "KS03",
+    "jurisdiction": "KS",
+    "name": "3rd"
+  },
+  {
+    "code": "KS04",
+    "jurisdiction": "KS",
+    "name": "4th"
+  },
+  {
+    "code": "KY01",
+    "jurisdiction": "KY",
+    "name": "1st"
+  },
+  {
+    "code": "KY02",
+    "jurisdiction": "KY",
+    "name": "2nd"
+  },
+  {
+    "code": "KY03",
+    "jurisdiction": "KY",
+    "name": "3rd"
+  },
+  {
+    "code": "KY04",
+    "jurisdiction": "KY",
+    "name": "4th"
+  },
+  {
+    "code": "KY05",
+    "jurisdiction": "KY",
+    "name": "5th"
+  },
+  {
+    "code": "KY06",
+    "jurisdiction": "KY",
+    "name": "6th"
+  },
+  {
+    "code": "LA01",
+    "jurisdiction": "LA",
+    "name": "1st"
+  },
+  {
+    "code": "LA02",
+    "jurisdiction": "LA",
+    "name": "2nd"
+  },
+  {
+    "code": "LA03",
+    "jurisdiction": "LA",
+    "name": "3rd"
+  },
+  {
+    "code": "LA04",
+    "jurisdiction": "LA",
+    "name": "4th"
+  },
+  {
+    "code": "LA05",
+    "jurisdiction": "LA",
+    "name": "5th"
+  },
+  {
+    "code": "LA06",
+    "jurisdiction": "LA",
+    "name": "6th"
+  },
+  {
+    "code": "MA01",
+    "jurisdiction": "MA",
+    "name": "1st"
+  },
+  {
+    "code": "MA02",
+    "jurisdiction": "MA",
+    "name": "2nd"
+  },
+  {
+    "code": "MA03",
+    "jurisdiction": "MA",
+    "name": "3rd"
+  },
+  {
+    "code": "MA04",
+    "jurisdiction": "MA",
+    "name": "4th"
+  },
+  {
+    "code": "MA05",
+    "jurisdiction": "MA",
+    "name": "5th"
+  },
+  {
+    "code": "MA06",
+    "jurisdiction": "MA",
+    "name": "6th"
+  },
+  {
+    "code": "MA07",
+    "jurisdiction": "MA",
+    "name": "7th"
+  },
+  {
+    "code": "MA08",
+    "jurisdiction": "MA",
+    "name": "8th"
+  },
+  {
+    "code": "MA09",
+    "jurisdiction": "MA",
+    "name": "9th"
+  },
+  {
+    "code": "MD01",
+    "jurisdiction": "MD",
+    "name": "1st"
+  },
+  {
+    "code": "MD02",
+    "jurisdiction": "MD",
+    "name": "2nd"
+  },
+  {
+    "code": "MD03",
+    "jurisdiction": "MD",
+    "name": "3rd"
+  },
+  {
+    "code": "MD04",
+    "jurisdiction": "MD",
+    "name": "4th"
+  },
+  {
+    "code": "MD05",
+    "jurisdiction": "MD",
+    "name": "5th"
+  },
+  {
+    "code": "MD06",
+    "jurisdiction": "MD",
+    "name": "6th"
+  },
+  {
+    "code": "MD07",
+    "jurisdiction": "MD",
+    "name": "7th"
+  },
+  {
+    "code": "MD08",
+    "jurisdiction": "MD",
+    "name": "8th"
+  },
+  {
+    "code": "ME01",
+    "jurisdiction": "ME",
+    "name": "1st"
+  },
+  {
+    "code": "ME02",
+    "jurisdiction": "ME",
+    "name": "2nd"
+  },
+  {
+    "code": "MI01",
+    "jurisdiction": "MI",
+    "name": "1st"
+  },
+  {
+    "code": "MI02",
+    "jurisdiction": "MI",
+    "name": "2nd"
+  },
+  {
+    "code": "MI03",
+    "jurisdiction": "MI",
+    "name": "3rd"
+  },
+  {
+    "code": "MI04",
+    "jurisdiction": "MI",
+    "name": "4th"
+  },
+  {
+    "code": "MI05",
+    "jurisdiction": "MI",
+    "name": "5th"
+  },
+  {
+    "code": "MI06",
+    "jurisdiction": "MI",
+    "name": "6th"
+  },
+  {
+    "code": "MI07",
+    "jurisdiction": "MI",
+    "name": "7th"
+  },
+  {
+    "code": "MI08",
+    "jurisdiction": "MI",
+    "name": "8th"
+  },
+  {
+    "code": "MI09",
+    "jurisdiction": "MI",
+    "name": "9th"
+  },
+  {
+    "code": "MI10",
+    "jurisdiction": "MI",
+    "name": "10th"
+  },
+  {
+    "code": "MI11",
+    "jurisdiction": "MI",
+    "name": "11th"
+  },
+  {
+    "code": "MI12",
+    "jurisdiction": "MI",
+    "name": "12th"
+  },
+  {
+    "code": "MI13",
+    "jurisdiction": "MI",
+    "name": "13th"
+  },
+  {
+    "code": "MN01",
+    "jurisdiction": "MN",
+    "name": "1st"
+  },
+  {
+    "code": "MN02",
+    "jurisdiction": "MN",
+    "name": "2nd"
+  },
+  {
+    "code": "MN03",
+    "jurisdiction": "MN",
+    "name": "3rd"
+  },
+  {
+    "code": "MN04",
+    "jurisdiction": "MN",
+    "name": "4th"
+  },
+  {
+    "code": "MN05",
+    "jurisdiction": "MN",
+    "name": "5th"
+  },
+  {
+    "code": "MN06",
+    "jurisdiction": "MN",
+    "name": "6th"
+  },
+  {
+    "code": "MN07",
+    "jurisdiction": "MN",
+    "name": "7th"
+  },
+  {
+    "code": "MN08",
+    "jurisdiction": "MN",
+    "name": "8th"
+  },
+  {
+    "code": "MO01",
+    "jurisdiction": "MO",
+    "name": "1st"
+  },
+  {
+    "code": "MO02",
+    "jurisdiction": "MO",
+    "name": "2nd"
+  },
+  {
+    "code": "MO03",
+    "jurisdiction": "MO",
+    "name": "3rd"
+  },
+  {
+    "code": "MO04",
+    "jurisdiction": "MO",
+    "name": "4th"
+  },
+  {
+    "code": "MO05",
+    "jurisdiction": "MO",
+    "name": "5th"
+  },
+  {
+    "code": "MO06",
+    "jurisdiction": "MO",
+    "name": "6th"
+  },
+  {
+    "code": "MO07",
+    "jurisdiction": "MO",
+    "name": "7th"
+  },
+  {
+    "code": "MO08",
+    "jurisdiction": "MO",
+    "name": "8th"
+  },
+  {
+    "code": "MP00",
+    "jurisdiction": "MP",
+    "name": "Delegate"
+  },
+  {
+    "code": "MS01",
+    "jurisdiction": "MS",
+    "name": "1st"
+  },
+  {
+    "code": "MS02",
+    "jurisdiction": "MS",
+    "name": "2nd"
+  },
+  {
+    "code": "MS03",
+    "jurisdiction": "MS",
+    "name": "3rd"
+  },
+  {
+    "code": "MS04",
+    "jurisdiction": "MS",
+    "name": "4th"
+  },
+  {
+    "code": "MT01",
+    "jurisdiction": "MT",
+    "name": "1st"
+  },
+  {
+    "code": "MT02",
+    "jurisdiction": "MT",
+    "name": "2nd"
+  },
+  {
+    "code": "NC01",
+    "jurisdiction": "NC",
+    "name": "1st"
+  },
+  {
+    "code": "NC02",
+    "jurisdiction": "NC",
+    "name": "2nd"
+  },
+  {
+    "code": "NC03",
+    "jurisdiction": "NC",
+    "name": "3rd"
+  },
+  {
+    "code": "NC04",
+    "jurisdiction": "NC",
+    "name": "4th"
+  },
+  {
+    "code": "NC05",
+    "jurisdiction": "NC",
+    "name": "5th"
+  },
+  {
+    "code": "NC06",
+    "jurisdiction": "NC",
+    "name": "6th"
+  },
+  {
+    "code": "NC07",
+    "jurisdiction": "NC",
+    "name": "7th"
+  },
+  {
+    "code": "NC08",
+    "jurisdiction": "NC",
+    "name": "8th"
+  },
+  {
+    "code": "NC09",
+    "jurisdiction": "NC",
+    "name": "9th"
+  },
+  {
+    "code": "NC10",
+    "jurisdiction": "NC",
+    "name": "10th"
+  },
+  {
+    "code": "NC11",
+    "jurisdiction": "NC",
+    "name": "11th"
+  },
+  {
+    "code": "NC12",
+    "jurisdiction": "NC",
+    "name": "12th"
+  },
+  {
+    "code": "NC13",
+    "jurisdiction": "NC",
+    "name": "13th"
+  },
+  {
+    "code": "NC14",
+    "jurisdiction": "NC",
+    "name": "14th"
+  },
+  {
+    "code": "ND00",
+    "jurisdiction": "ND",
+    "name": "At Large"
+  },
+  {
+    "code": "NE01",
+    "jurisdiction": "NE",
+    "name": "1st"
+  },
+  {
+    "code": "NE02",
+    "jurisdiction": "NE",
+    "name": "2nd"
+  },
+  {
+    "code": "NE03",
+    "jurisdiction": "NE",
+    "name": "3rd"
+  },
+  {
+    "code": "NH01",
+    "jurisdiction": "NH",
+    "name": "1st"
+  },
+  {
+    "code": "NH02",
+    "jurisdiction": "NH",
+    "name": "2nd"
+  },
+  {
+    "code": "NJ01",
+    "jurisdiction": "NJ",
+    "name": "1st"
+  },
+  {
+    "code": "NJ02",
+    "jurisdiction": "NJ",
+    "name": "2nd"
+  },
+  {
+    "code": "NJ03",
+    "jurisdiction": "NJ",
+    "name": "3rd"
+  },
+  {
+    "code": "NJ04",
+    "jurisdiction": "NJ",
+    "name": "4th"
+  },
+  {
+    "code": "NJ05",
+    "jurisdiction": "NJ",
+    "name": "5th"
+  },
+  {
+    "code": "NJ06",
+    "jurisdiction": "NJ",
+    "name": "6th"
+  },
+  {
+    "code": "NJ07",
+    "jurisdiction": "NJ",
+    "name": "7th"
+  },
+  {
+    "code": "NJ08",
+    "jurisdiction": "NJ",
+    "name": "8th"
+  },
+  {
+    "code": "NJ09",
+    "jurisdiction": "NJ",
+    "name": "9th"
+  },
+  {
+    "code": "NJ10",
+    "jurisdiction": "NJ",
+    "name": "10th"
+  },
+  {
+    "code": "NJ11",
+    "jurisdiction": "NJ",
+    "name": "11th"
+  },
+  {
+    "code": "NJ12",
+    "jurisdiction": "NJ",
+    "name": "12th"
+  },
+  {
+    "code": "NM01",
+    "jurisdiction": "NM",
+    "name": "1st"
+  },
+  {
+    "code": "NM02",
+    "jurisdiction": "NM",
+    "name": "2nd"
+  },
+  {
+    "code": "NM03",
+    "jurisdiction": "NM",
+    "name": "3rd"
+  },
+  {
+    "code": "NV01",
+    "jurisdiction": "NV",
+    "name": "1st"
+  },
+  {
+    "code": "NV02",
+    "jurisdiction": "NV",
+    "name": "2nd"
+  },
+  {
+    "code": "NV03",
+    "jurisdiction": "NV",
+    "name": "3rd"
+  },
+  {
+    "code": "NV04",
+    "jurisdiction": "NV",
+    "name": "4th"
+  },
+  {
+    "code": "NY01",
+    "jurisdiction": "NY",
+    "name": "1st"
+  },
+  {
+    "code": "NY02",
+    "jurisdiction": "NY",
+    "name": "2nd"
+  },
+  {
+    "code": "NY03",
+    "jurisdiction": "NY",
+    "name": "3rd"
+  },
+  {
+    "code": "NY04",
+    "jurisdiction": "NY",
+    "name": "4th"
+  },
+  {
+    "code": "NY05",
+    "jurisdiction": "NY",
+    "name": "5th"
+  },
+  {
+    "code": "NY06",
+    "jurisdiction": "NY",
+    "name": "6th"
+  },
+  {
+    "code": "NY07",
+    "jurisdiction": "NY",
+    "name": "7th"
+  },
+  {
+    "code": "NY08",
+    "jurisdiction": "NY",
+    "name": "8th"
+  },
+  {
+    "code": "NY09",
+    "jurisdiction": "NY",
+    "name": "9th"
+  },
+  {
+    "code": "NY10",
+    "jurisdiction": "NY",
+    "name": "10th"
+  },
+  {
+    "code": "NY11",
+    "jurisdiction": "NY",
+    "name": "11th"
+  },
+  {
+    "code": "NY12",
+    "jurisdiction": "NY",
+    "name": "12th"
+  },
+  {
+    "code": "NY13",
+    "jurisdiction": "NY",
+    "name": "13th"
+  },
+  {
+    "code": "NY14",
+    "jurisdiction": "NY",
+    "name": "14th"
+  },
+  {
+    "code": "NY15",
+    "jurisdiction": "NY",
+    "name": "15th"
+  },
+  {
+    "code": "NY16",
+    "jurisdiction": "NY",
+    "name": "16th"
+  },
+  {
+    "code": "NY17",
+    "jurisdiction": "NY",
+    "name": "17th"
+  },
+  {
+    "code": "NY18",
+    "jurisdiction": "NY",
+    "name": "18th"
+  },
+  {
+    "code": "NY19",
+    "jurisdiction": "NY",
+    "name": "19th"
+  },
+  {
+    "code": "NY20",
+    "jurisdiction": "NY",
+    "name": "20th"
+  },
+  {
+    "code": "NY21",
+    "jurisdiction": "NY",
+    "name": "21st"
+  },
+  {
+    "code": "NY22",
+    "jurisdiction": "NY",
+    "name": "22nd"
+  },
+  {
+    "code": "NY23",
+    "jurisdiction": "NY",
+    "name": "23rd"
+  },
+  {
+    "code": "NY24",
+    "jurisdiction": "NY",
+    "name": "24th"
+  },
+  {
+    "code": "NY25",
+    "jurisdiction": "NY",
+    "name": "25th"
+  },
+  {
+    "code": "NY26",
+    "jurisdiction": "NY",
+    "name": "26th"
+  },
+  {
+    "code": "OH01",
+    "jurisdiction": "OH",
+    "name": "1st"
+  },
+  {
+    "code": "OH02",
+    "jurisdiction": "OH",
+    "name": "2nd"
+  },
+  {
+    "code": "OH03",
+    "jurisdiction": "OH",
+    "name": "3rd"
+  },
+  {
+    "code": "OH04",
+    "jurisdiction": "OH",
+    "name": "4th"
+  },
+  {
+    "code": "OH05",
+    "jurisdiction": "OH",
+    "name": "5th"
+  },
+  {
+    "code": "OH06",
+    "jurisdiction": "OH",
+    "name": "6th"
+  },
+  {
+    "code": "OH07",
+    "jurisdiction": "OH",
+    "name": "7th"
+  },
+  {
+    "code": "OH08",
+    "jurisdiction": "OH",
+    "name": "8th"
+  },
+  {
+    "code": "OH09",
+    "jurisdiction": "OH",
+    "name": "9th"
+  },
+  {
+    "code": "OH10",
+    "jurisdiction": "OH",
+    "name": "10th"
+  },
+  {
+    "code": "OH11",
+    "jurisdiction": "OH",
+    "name": "11th"
+  },
+  {
+    "code": "OH12",
+    "jurisdiction": "OH",
+    "name": "12th"
+  },
+  {
+    "code": "OH13",
+    "jurisdiction": "OH",
+    "name": "13th"
+  },
+  {
+    "code": "OH14",
+    "jurisdiction": "OH",
+    "name": "14th"
+  },
+  {
+    "code": "OH15",
+    "jurisdiction": "OH",
+    "name": "15th"
+  },
+  {
+    "code": "OK01",
+    "jurisdiction": "OK",
+    "name": "1st"
+  },
+  {
+    "code": "OK02",
+    "jurisdiction": "OK",
+    "name": "2nd"
+  },
+  {
+    "code": "OK03",
+    "jurisdiction": "OK",
+    "name": "3rd"
+  },
+  {
+    "code": "OK04",
+    "jurisdiction": "OK",
+    "name": "4th"
+  },
+  {
+    "code": "OK05",
+    "jurisdiction": "OK",
+    "name": "5th"
+  },
+  {
+    "code": "OR01",
+    "jurisdiction": "OR",
+    "name": "1st"
+  },
+  {
+    "code": "OR02",
+    "jurisdiction": "OR",
+    "name": "2nd"
+  },
+  {
+    "code": "OR03",
+    "jurisdiction": "OR",
+    "name": "3rd"
+  },
+  {
+    "code": "OR04",
+    "jurisdiction": "OR",
+    "name": "4th"
+  },
+  {
+    "code": "OR05",
+    "jurisdiction": "OR",
+    "name": "5th"
+  },
+  {
+    "code": "OR06",
+    "jurisdiction": "OR",
+    "name": "6th"
+  },
+  {
+    "code": "PA01",
+    "jurisdiction": "PA",
+    "name": "1st"
+  },
+  {
+    "code": "PA02",
+    "jurisdiction": "PA",
+    "name": "2nd"
+  },
+  {
+    "code": "PA03",
+    "jurisdiction": "PA",
+    "name": "3rd"
+  },
+  {
+    "code": "PA04",
+    "jurisdiction": "PA",
+    "name": "4th"
+  },
+  {
+    "code": "PA05",
+    "jurisdiction": "PA",
+    "name": "5th"
+  },
+  {
+    "code": "PA06",
+    "jurisdiction": "PA",
+    "name": "6th"
+  },
+  {
+    "code": "PA07",
+    "jurisdiction": "PA",
+    "name": "7th"
+  },
+  {
+    "code": "PA08",
+    "jurisdiction": "PA",
+    "name": "8th"
+  },
+  {
+    "code": "PA09",
+    "jurisdiction": "PA",
+    "name": "9th"
+  },
+  {
+    "code": "PA10",
+    "jurisdiction": "PA",
+    "name": "10th"
+  },
+  {
+    "code": "PA11",
+    "jurisdiction": "PA",
+    "name": "11th"
+  },
+  {
+    "code": "PA12",
+    "jurisdiction": "PA",
+    "name": "12th"
+  },
+  {
+    "code": "PA13",
+    "jurisdiction": "PA",
+    "name": "13th"
+  },
+  {
+    "code": "PA14",
+    "jurisdiction": "PA",
+    "name": "14th"
+  },
+  {
+    "code": "PA15",
+    "jurisdiction": "PA",
+    "name": "15th"
+  },
+  {
+    "code": "PA16",
+    "jurisdiction": "PA",
+    "name": "16th"
+  },
+  {
+    "code": "PA17",
+    "jurisdiction": "PA",
+    "name": "17th"
+  },
+  {
+    "code": "PR00",
+    "jurisdiction": "PR",
+    "name": "Resident Commissioner"
+  },
+  {
+    "code": "RI01",
+    "jurisdiction": "RI",
+    "name": "1st"
+  },
+  {
+    "code": "RI02",
+    "jurisdiction": "RI",
+    "name": "2nd"
+  },
+  {
+    "code": "SC01",
+    "jurisdiction": "SC",
+    "name": "1st"
+  },
+  {
+    "code": "SC02",
+    "jurisdiction": "SC",
+    "name": "2nd"
+  },
+  {
+    "code": "SC03",
+    "jurisdiction": "SC",
+    "name": "3rd"
+  },
+  {
+    "code": "SC04",
+    "jurisdiction": "SC",
+    "name": "4th"
+  },
+  {
+    "code": "SC05",
+    "jurisdiction": "SC",
+    "name": "5th"
+  },
+  {
+    "code": "SC06",
+    "jurisdiction": "SC",
+    "name": "6th"
+  },
+  {
+    "code": "SC07",
+    "jurisdiction": "SC",
+    "name": "7th"
+  },
+  {
+    "code": "SD00",
+    "jurisdiction": "SD",
+    "name": "At Large"
+  },
+  {
+    "code": "TN01",
+    "jurisdiction": "TN",
+    "name": "1st"
+  },
+  {
+    "code": "TN02",
+    "jurisdiction": "TN",
+    "name": "2nd"
+  },
+  {
+    "code": "TN03",
+    "jurisdiction": "TN",
+    "name": "3rd"
+  },
+  {
+    "code": "TN04",
+    "jurisdiction": "TN",
+    "name": "4th"
+  },
+  {
+    "code": "TN05",
+    "jurisdiction": "TN",
+    "name": "5th"
+  },
+  {
+    "code": "TN06",
+    "jurisdiction": "TN",
+    "name": "6th"
+  },
+  {
+    "code": "TN07",
+    "jurisdiction": "TN",
+    "name": "7th"
+  },
+  {
+    "code": "TN08",
+    "jurisdiction": "TN",
+    "name": "8th"
+  },
+  {
+    "code": "TN09",
+    "jurisdiction": "TN",
+    "name": "9th"
+  },
+  {
+    "code": "TX01",
+    "jurisdiction": "TX",
+    "name": "1st"
+  },
+  {
+    "code": "TX02",
+    "jurisdiction": "TX",
+    "name": "2nd"
+  },
+  {
+    "code": "TX03",
+    "jurisdiction": "TX",
+    "name": "3rd"
+  },
+  {
+    "code": "TX04",
+    "jurisdiction": "TX",
+    "name": "4th"
+  },
+  {
+    "code": "TX05",
+    "jurisdiction": "TX",
+    "name": "5th"
+  },
+  {
+    "code": "TX06",
+    "jurisdiction": "TX",
+    "name": "6th"
+  },
+  {
+    "code": "TX07",
+    "jurisdiction": "TX",
+    "name": "7th"
+  },
+  {
+    "code": "TX08",
+    "jurisdiction": "TX",
+    "name": "8th"
+  },
+  {
+    "code": "TX09",
+    "jurisdiction": "TX",
+    "name": "9th"
+  },
+  {
+    "code": "TX10",
+    "jurisdiction": "TX",
+    "name": "10th"
+  },
+  {
+    "code": "TX11",
+    "jurisdiction": "TX",
+    "name": "11th"
+  },
+  {
+    "code": "TX12",
+    "jurisdiction": "TX",
+    "name": "12th"
+  },
+  {
+    "code": "TX13",
+    "jurisdiction": "TX",
+    "name": "13th"
+  },
+  {
+    "code": "TX14",
+    "jurisdiction": "TX",
+    "name": "14th"
+  },
+  {
+    "code": "TX15",
+    "jurisdiction": "TX",
+    "name": "15th"
+  },
+  {
+    "code": "TX16",
+    "jurisdiction": "TX",
+    "name": "16th"
+  },
+  {
+    "code": "TX17",
+    "jurisdiction": "TX",
+    "name": "17th"
+  },
+  {
+    "code": "TX18",
+    "jurisdiction": "TX",
+    "name": "18th"
+  },
+  {
+    "code": "TX19",
+    "jurisdiction": "TX",
+    "name": "19th"
+  },
+  {
+    "code": "TX20",
+    "jurisdiction": "TX",
+    "name": "20th"
+  },
+  {
+    "code": "TX21",
+    "jurisdiction": "TX",
+    "name": "21st"
+  },
+  {
+    "code": "TX22",
+    "jurisdiction": "TX",
+    "name": "22nd"
+  },
+  {
+    "code": "TX23",
+    "jurisdiction": "TX",
+    "name": "23rd"
+  },
+  {
+    "code": "TX24",
+    "jurisdiction": "TX",
+    "name": "24th"
+  },
+  {
+    "code": "TX25",
+    "jurisdiction": "TX",
+    "name": "25th"
+  },
+  {
+    "code": "TX26",
+    "jurisdiction": "TX",
+    "name": "26th"
+  },
+  {
+    "code": "TX27",
+    "jurisdiction": "TX",
+    "name": "27th"
+  },
+  {
+    "code": "TX28",
+    "jurisdiction": "TX",
+    "name": "28th"
+  },
+  {
+    "code": "TX29",
+    "jurisdiction": "TX",
+    "name": "29th"
+  },
+  {
+    "code": "TX30",
+    "jurisdiction": "TX",
+    "name": "30th"
+  },
+  {
+    "code": "TX31",
+    "jurisdiction": "TX",
+    "name": "31st"
+  },
+  {
+    "code": "TX32",
+    "jurisdiction": "TX",
+    "name": "32nd"
+  },
+  {
+    "code": "TX33",
+    "jurisdiction": "TX",
+    "name": "33rd"
+  },
+  {
+    "code": "TX34",
+    "jurisdiction": "TX",
+    "name": "34th"
+  },
+  {
+    "code": "TX35",
+    "jurisdiction": "TX",
+    "name": "35th"
+  },
+  {
+    "code": "TX36",
+    "jurisdiction": "TX",
+    "name": "36th"
+  },
+  {
+    "code": "TX37",
+    "jurisdiction": "TX",
+    "name": "37th"
+  },
+  {
+    "code": "TX38",
+    "jurisdiction": "TX",
+    "name": "38th"
+  },
+  {
+    "code": "UT01",
+    "jurisdiction": "UT",
+    "name": "1st"
+  },
+  {
+    "code": "UT02",
+    "jurisdiction": "UT",
+    "name": "2nd"
+  },
+  {
+    "code": "UT03",
+    "jurisdiction": "UT",
+    "name": "3rd"
+  },
+  {
+    "code": "UT04",
+    "jurisdiction": "UT",
+    "name": "4th"
+  },
+  {
+    "code": "VA01",
+    "jurisdiction": "VA",
+    "name": "1st"
+  },
+  {
+    "code": "VA02",
+    "jurisdiction": "VA",
+    "name": "2nd"
+  },
+  {
+    "code": "VA03",
+    "jurisdiction": "VA",
+    "name": "3rd"
+  },
+  {
+    "code": "VA04",
+    "jurisdiction": "VA",
+    "name": "4th"
+  },
+  {
+    "code": "VA05",
+    "jurisdiction": "VA",
+    "name": "5th"
+  },
+  {
+    "code": "VA06",
+    "jurisdiction": "VA",
+    "name": "6th"
+  },
+  {
+    "code": "VA07",
+    "jurisdiction": "VA",
+    "name": "7th"
+  },
+  {
+    "code": "VA08",
+    "jurisdiction": "VA",
+    "name": "8th"
+  },
+  {
+    "code": "VA09",
+    "jurisdiction": "VA",
+    "name": "9th"
+  },
+  {
+    "code": "VA10",
+    "jurisdiction": "VA",
+    "name": "10th"
+  },
+  {
+    "code": "VA11",
+    "jurisdiction": "VA",
+    "name": "11th"
+  },
+  {
+    "code": "VI00",
+    "jurisdiction": "VI",
+    "name": "Delegate"
+  },
+  {
+    "code": "VT00",
+    "jurisdiction": "VT",
+    "name": "At Large"
+  },
+  {
+    "code": "WA01",
+    "jurisdiction": "WA",
+    "name": "1st"
+  },
+  {
+    "code": "WA02",
+    "jurisdiction": "WA",
+    "name": "2nd"
+  },
+  {
+    "code": "WA03",
+    "jurisdiction": "WA",
+    "name": "3rd"
+  },
+  {
+    "code": "WA04",
+    "jurisdiction": "WA",
+    "name": "4th"
+  },
+  {
+    "code": "WA05",
+    "jurisdiction": "WA",
+    "name": "5th"
+  },
+  {
+    "code": "WA06",
+    "jurisdiction": "WA",
+    "name": "6th"
+  },
+  {
+    "code": "WA07",
+    "jurisdiction": "WA",
+    "name": "7th"
+  },
+  {
+    "code": "WA08",
+    "jurisdiction": "WA",
+    "name": "8th"
+  },
+  {
+    "code": "WA09",
+    "jurisdiction": "WA",
+    "name": "9th"
+  },
+  {
+    "code": "WA10",
+    "jurisdiction": "WA",
+    "name": "10th"
+  },
+  {
+    "code": "WI01",
+    "jurisdiction": "WI",
+    "name": "1st"
+  },
+  {
+    "code": "WI02",
+    "jurisdiction": "WI",
+    "name": "2nd"
+  },
+  {
+    "code": "WI03",
+    "jurisdiction": "WI",
+    "name": "3rd"
+  },
+  {
+    "code": "WI04",
+    "jurisdiction": "WI",
+    "name": "4th"
+  },
+  {
+    "code": "WI05",
+    "jurisdiction": "WI",
+    "name": "5th"
+  },
+  {
+    "code": "WI06",
+    "jurisdiction": "WI",
+    "name": "6th"
+  },
+  {
+    "code": "WI07",
+    "jurisdiction": "WI",
+    "name": "7th"
+  },
+  {
+    "code": "WI08",
+    "jurisdiction": "WI",
+    "name": "8th"
+  },
+  {
+    "code": "WV01",
+    "jurisdiction": "WV",
+    "name": "1st"
+  },
+  {
+    "code": "WV02",
+    "jurisdiction": "WV",
+    "name": "2nd"
+  },
+  {
+    "code": "WY00",
+    "jurisdiction": "WY",
+    "name": "At Large"
+  }
+]
