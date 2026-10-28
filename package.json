@@ -12,7 +12,8 @@
     "test:browser": "node scripts/browser-smoke.mjs",
     "test:browser-flow": "node scripts/browser-flow.mjs",
     "test:api": "node scripts/api-smoke.mjs",
-    "test:api:flashcards": "node scripts/api-flashcards.mjs"
+    "test:api:flashcards": "node scripts/api-flashcards.mjs",
+    "test:api:quick-question": "node scripts/api-quick-question.mjs"
   },
   "dependencies": {
     "react": "19.3.1",

@@ -16,6 +16,13 @@ const pending = new Map()
 let recoveryCode = ''
 const verifierList = []
 const runtimeErrors = []
+const practiceMetadataByQuestion = new Map()
+const writtenRpcCalls = []
+const metadataRequestIds = new Set()
+const questionRequestIds = new Set()
+let questionOrder = []
+let questionAnswerCounts = new Map()
+let quickDiagnostic = null
 socket.addEventListener('message', event => {
   const msg = JSON.parse(event.data)
   if (msg.id && pending.has(msg.id)) { pending.get(msg.id)(msg); pending.delete(msg.id) }
@@ -24,6 +31,49 @@ socket.addEventListener('message', event => {
     const detail = msg.params.exceptionDetails
     const raw = detail?.exception?.description?.split('\n')[0] ?? detail?.text ?? 'Runtime exception'
     runtimeErrors.push({ text: String(raw).slice(0, 180).replace(/[A-Z0-9_-]{35,}/giu, '[redacted]'), line: detail?.lineNumber ?? null })
+  }
+  if (msg.method === 'Network.requestWillBeSent') {
+    const request = msg.params.request
+    if (request.url.endsWith('/rpc/get_practice_metadata')) {
+      metadataRequestIds.add(msg.params.requestId)
+      practiceMetadataByQuestion.clear()
+    }
+    if (request.url.endsWith('/rpc/get_practice_questions')) questionRequestIds.add(msg.params.requestId)
+    if (request.url.endsWith('/rpc/record_written_answer')) {
+      try {
+        const payload = JSON.parse(request.postData ?? '{}')
+        writtenRpcCalls.push({
+          requestId: msg.params.requestId,
+          questionNumber: Number.isSafeInteger(payload.p_question_number) ? payload.p_question_number : null,
+          outcome: ['correct', 'incorrect', 'skipped'].includes(payload.p_outcome) ? payload.p_outcome : null,
+          attemptId: typeof payload.p_attempt_id === 'string' ? payload.p_attempt_id : null,
+          keys: Object.keys(payload).sort(),
+          codeShapeValid: typeof payload.p_code === 'string' && payload.p_code.length === 43,
+          codeMatchesSession: payload.p_code === recoveryCode,
+        })
+      } catch { writtenRpcCalls.push({ requestId: msg.params.requestId, questionNumber: null, outcome: null, attemptId: null, keys: [], codeShapeValid: false, codeMatchesSession: false }) }
+    }
+  }
+  if (msg.method === 'Network.loadingFinished' && metadataRequestIds.has(msg.params.requestId)) {
+    metadataRequestIds.delete(msg.params.requestId)
+    void cdp('Network.getResponseBody', { requestId: msg.params.requestId }).then(({ body, base64Encoded }) => {
+      const decoded = base64Encoded ? Buffer.from(body, 'base64').toString('utf8') : body
+      const content = JSON.parse(decoded)
+      if (Array.isArray(content)) for (const item of content) {
+        if (Number.isSafeInteger(item.question_number)) practiceMetadataByQuestion.set(item.question_number, item)
+      }
+    }).catch(() => {})
+  }
+  if (msg.method === 'Network.loadingFinished' && questionRequestIds.has(msg.params.requestId)) {
+    questionRequestIds.delete(msg.params.requestId)
+    void cdp('Network.getResponseBody', { requestId: msg.params.requestId }).then(({ body, base64Encoded }) => {
+      const decoded = base64Encoded ? Buffer.from(body, 'base64').toString('utf8') : body
+      const questions = JSON.parse(decoded)
+      if (Array.isArray(questions)) {
+        questionOrder = questions.map(item => item.question_number).filter(Number.isSafeInteger)
+        questionAnswerCounts = new Map(questions.filter(item => Number.isSafeInteger(item.question_number)).map(item => [item.question_number, Array.isArray(item.answers) ? item.answers.length : 0]))
+      }
+    }).catch(() => {})
   }
 })
 await new Promise((resolve, reject) => {
@@ -64,6 +114,9 @@ async function waitBrief(expression, timeout = 2200) {
   }
   return false
 }
+function uniqueWrittenCalls() {
+  return [...new Map(writtenRpcCalls.map(call => [call.requestId, call])).values()]
+}
 async function clickText(text) {
   const point = await evaluate(`(async()=>{const e=[...document.querySelectorAll('button')].find(x=>x.textContent.includes(${JSON.stringify(text)}));if(!e) return null;e.scrollIntoView({behavior:'instant',block:'center',inline:'center'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));const r=e.getBoundingClientRect(),hit=document.elementFromPoint(r.left+r.width/2,r.top+r.height/2);if(!hit||!(hit===e||e.contains(hit)))return {blocked:true,hit:hit?.textContent?.trim().slice(0,80)||null};window.__codexTouchHit=false;document.addEventListener('touchstart',event=>{if(event.target===e||e.contains(event.target))window.__codexTouchHit=true},{capture:true,once:true});return {x:r.left+r.width/2,y:r.top+r.height/2}})()`)
   if (!point) {
@@ -75,6 +128,73 @@ async function clickText(text) {
   await cdp('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] })
   await new Promise(resolve => setTimeout(resolve, 300))
   if (!(await evaluate(`window.__codexTouchHit===true`))) throw new Error(`Touch event did not reach intended button: ${text}`)
+}
+async function quickQuestionNumber() {
+  return evaluate(`Number(document.querySelector('.quick-question-edition')?.textContent.match(/·\\s*QUESTION\\s+(\\d+)/u)?.[1]||0)`)
+}
+async function waitQuickQuestionReady(label = 'Quick Question ready') {
+  await waitFor(`!!document.querySelector('.quick-question') && document.querySelectorAll('.quick-answer-fields input').length>0 && !!document.querySelector('.quick-question-edition')`, label)
+  const questionNumber = await quickQuestionNumber()
+  if (!questionNumber || !practiceMetadataByQuestion.has(questionNumber) || !questionOrder.includes(questionNumber)) {
+    const started = Date.now()
+    while (Date.now() - started < 6000 && questionNumber && (!practiceMetadataByQuestion.has(questionNumber) || !questionOrder.includes(questionNumber))) await new Promise(resolve => setTimeout(resolve, 100))
+  }
+  if (!practiceMetadataByQuestion.has(questionNumber) || !questionOrder.includes(questionNumber)) throw new Error(`Reviewed question metadata was not captured for Quick Question ${questionNumber}`)
+  return questionNumber
+}
+async function selectQuickQuestion(questionNumber) {
+  const current = await quickQuestionNumber()
+  const candidates = questionOrder.filter(number => number !== current && practiceMetadataByQuestion.has(number))
+  const index = candidates.indexOf(questionNumber)
+  if (index < 0) throw new Error(`No reviewed question choice for Quick Question ${questionNumber}`)
+  const randomValue = (index + 0.25) / candidates.length
+  await evaluate(`(() => {const original=Math.random;Math.random=()=>{Math.random=original;return ${randomValue}}})()`)
+  await clickText('Another question')
+  await waitFor(`Number(document.querySelector('.quick-question-edition')?.textContent.match(/·\\s*QUESTION\\s+(\\d+)/u)?.[1]||0)===${questionNumber}`, `Quick Question ${questionNumber}`)
+  if (await quickQuestionNumber() === current) throw new Error('Another question repeated the prior question immediately')
+}
+async function fillQuickFields(values) {
+  const result = await evaluate(`(() => {const fields=[...document.querySelectorAll('.quick-answer-fields input')];const entries=${JSON.stringify(values)};if(fields.length!==entries.length)return false;for(let i=0;i<fields.length;i++){const setter=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set;setter.call(fields[i],entries[i]??'');fields[i].dispatchEvent(new Event('input',{bubbles:true}));fields[i].dispatchEvent(new Event('change',{bubbles:true}))}return true})()`)
+  if (!result) throw new Error('Quick Question fields did not match the reviewed answer count')
+}
+async function fillQuickField(index, value) {
+  const result = await evaluate(`(() => {const fields=[...document.querySelectorAll('.quick-answer-fields input')];const field=fields[${index}];if(!field)return false;const setter=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set;setter.call(field,${JSON.stringify(value)});field.dispatchEvent(new Event('input',{bubbles:true}));field.dispatchEvent(new Event('change',{bubbles:true}));return true})()`)
+  if (!result) throw new Error('The selected Quick Question answer field is missing')
+}
+async function quickFeedback(expected, doubleClick = false) {
+  const before = uniqueWrittenCalls().length
+  await evaluate(`(() => {const button=[...document.querySelectorAll('.quick-question-actions button')].find(item=>item.textContent.includes('Check answer'));if(!button)return false;button.click();${doubleClick ? 'button.click();' : ''}return true})()`)
+  if (!(await waitBrief(`!!document.querySelector('.quick-question-next')` , 12000))) {
+    const state = await evaluate(`({outcome:document.querySelector('.quick-question-outcome')?.textContent||'',error:document.querySelector('.quick-save-error')?.textContent||'',actions:[...document.querySelectorAll('.quick-question-actions button')].map(button=>({text:button.textContent,disabled:button.disabled}))})`)
+    throw new Error(`Quick Question did not save after Check answer: ${JSON.stringify(state)}`)
+  }
+  const actual = await evaluate(`document.querySelector('.quick-question-outcome')?.textContent.trim()||''`)
+  if (actual !== expected) throw new Error(`Expected Quick Question ${expected} feedback, received ${actual}`)
+  await new Promise(resolve => setTimeout(resolve, 250))
+  const uniqueCalls = uniqueWrittenCalls()
+  if (uniqueCalls.length !== before + 1 && process.env.QUICK_QUESTION_DIAGNOSTIC_ONLY !== '1') throw new Error(`Expected exactly one unique written RPC after submission; observed ${JSON.stringify(uniqueCalls.map(({ requestId, attemptId, questionNumber, outcome }) => ({ requestId, attemptId, questionNumber, outcome })))}`)
+  const write = uniqueCalls.at(-1)
+  const permittedKeys = ['p_attempt_id', 'p_code', 'p_outcome', 'p_question_number']
+  if (JSON.stringify(write.keys) !== JSON.stringify(permittedKeys) || !write.codeShapeValid || !write.codeMatchesSession || write.outcome !== expected.toLowerCase()) throw new Error(`Written RPC payload was not privacy-minimal: ${JSON.stringify({ ...write, attemptId: write.attemptId ? '[present]' : null })}`)
+  return write
+}
+async function skipQuickQuestion(expected = 'Skipped') {
+  const before = uniqueWrittenCalls().length
+  await clickText('Skip')
+  if (!(await waitBrief(`!!document.querySelector('.quick-question-next')`, 12000))) throw new Error('Quick Question Skip did not reach saved feedback')
+  const actual = await evaluate(`document.querySelector('.quick-question-outcome')?.textContent.trim()||''`)
+  await new Promise(resolve => setTimeout(resolve, 250))
+  const uniqueCalls = uniqueWrittenCalls()
+  if (actual !== expected || uniqueCalls.length !== before + 1) throw new Error(`Quick Question Skip persistence mismatch: ${actual}; writes ${JSON.stringify(uniqueCalls.map(({ requestId, attemptId, questionNumber, outcome }) => ({ requestId, attemptId, questionNumber, outcome })))}`)
+  const write = uniqueCalls.at(-1)
+  if (write.outcome !== 'skipped' || !write.codeShapeValid || !write.codeMatchesSession || JSON.stringify(write.keys) !== JSON.stringify(['p_attempt_id', 'p_code', 'p_outcome', 'p_question_number'])) throw new Error('Quick Question Skip did not use the minimal approved RPC payload')
+  return write
+}
+async function anotherQuickQuestion() {
+  const previous = await quickQuestionNumber()
+  await clickText('Another question')
+  await waitFor(`Number(document.querySelector('.quick-question-edition')?.textContent.match(/·\\s*QUESTION\\s+(\\d+)/u)?.[1]||0)!==${previous} && !!document.querySelector('.quick-answer-fields input')`, 'a non-repeating next Quick Question')
+  return await waitQuickQuestionReady()
 }
 async function setSelect(selector, value) {
   const changed = await evaluate(`(() => {const e=document.querySelector(${JSON.stringify(selector)});if(!e) return false;const s=Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype,'value').set;s.call(e,${JSON.stringify(value)});e.dispatchEvent(new Event('change',{bubbles:true}));return true})()`)
@@ -91,7 +211,7 @@ async function assertViewport(width, height) {
   if (metrics.language !== 'en' || !metrics.title.includes('Naturalization Preparation App (NPA)') || metrics.spanish || metrics.scroll > metrics.client || metrics.visual !== metrics.client || metrics.storage !== 0 || metrics.external !== 0 || !metrics.brandLabel?.includes('Naturalization Preparation App (NPA)') || metrics.compactBrandVisible !== compactWidth || metrics.fullBrandVisible === compactWidth) throw new Error(`Viewport/language/privacy/brand check failed at ${width}px: ${JSON.stringify(metrics)}`)
 }
 try {
-  await cdp('Page.enable'); await cdp('Runtime.enable')
+  await cdp('Page.enable'); await cdp('Runtime.enable'); await cdp('Network.enable')
   await cdp('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true })
   await cdp('Emulation.setTouchEmulationEnabled', { enabled: true, configuration: 'mobile' })
   await new Promise(resolve => setTimeout(resolve, 350))
@@ -141,6 +261,81 @@ try {
     const shot = await cdp('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false })
     writeFileSync(desktopShot, Buffer.from(shot.data, 'base64'))
   }
+  let quickNumber = await waitQuickQuestionReady('2025 reviewed Quick Question')
+  const writesBeforeInteraction = writtenRpcCalls.length
+  await new Promise(resolve => setTimeout(resolve, 700))
+  if (writtenRpcCalls.length !== writesBeforeInteraction) throw new Error('Quick Question recorded an impression before submission')
+  const firstMetadata = practiceMetadataByQuestion.get(quickNumber)
+  await fillQuickFields(firstMetadata.answer_groups.slice(0, firstMetadata.required_count).map(group => group.display))
+  await new Promise(resolve => setTimeout(resolve, 15500))
+  const stillUntimed = await evaluate(`!document.querySelector('.quick-question-outcome') && !document.querySelector('.quick-question-actions button:disabled') && document.querySelectorAll('.quick-answer-fields input').length===${firstMetadata.required_count}`)
+  if (!stillUntimed || writtenRpcCalls.length !== writesBeforeInteraction) throw new Error('Quick Question timed out, changed, or wrote data before a written submission')
+  await quickFeedback('Correct', true)
+  if (process.env.QUICK_QUESTION_DIAGNOSTIC_ONLY === '1') {
+    const calls = uniqueWrittenCalls()
+    quickDiagnostic = {
+      eventCount: writtenRpcCalls.length,
+      uniqueRequestCount: calls.length,
+      calls: calls.map(({ requestId, attemptId, questionNumber, outcome }) => ({ requestId, attemptId, questionNumber, outcome })),
+      attemptCount: new Set(calls.map(call => call.attemptId)).size,
+      savedDom: await evaluate(`(() => ({saved:!!document.querySelector('.quick-question-next'),anotherButton:[...document.querySelectorAll('.quick-question-next button')].map(button=>button.textContent.trim()),flipped:!!document.querySelector('.quick-card-rotator.is-flipped'),frontInert:!!document.querySelector('.quick-card-front')?.inert,backPresent:!!document.querySelector('.quick-card-back'),outcome:document.querySelector('.quick-question-outcome')?.textContent.trim()||''}))()`),
+      durableWrittenSummary: await evaluate(`document.querySelectorAll('.learning-mode-total')[1]?.innerText||''`),
+    }
+    throw new Error('QUICK_QUESTION_DIAGNOSTIC_COMPLETE')
+  }
+
+  const multiQuestions = [...practiceMetadataByQuestion.values()].filter(item => item.required_count > 1 && item.answer_groups.length >= item.required_count).sort((a, b) => a.question_number - b.question_number)
+  if (multiQuestions.length < 2) throw new Error('The reviewed cohort metadata lacks two multi-concept questions for written-flow coverage')
+  const partialTarget = multiQuestions.find(item => item.question_number !== quickNumber)
+  if (!partialTarget) throw new Error('No nonrepeating multi-concept partial-answer target is available')
+  await selectQuickQuestion(partialTarget.question_number)
+  await fillQuickField(partialTarget.required_count - 1, partialTarget.answer_groups[0].display)
+  await quickFeedback('Incorrect')
+
+  const reorderedTarget = multiQuestions.find(item => item.question_number !== partialTarget.question_number)
+  if (!reorderedTarget) throw new Error('No second multi-concept question is available for reordered-answer coverage')
+  await selectQuickQuestion(reorderedTarget.question_number)
+  await fillQuickFields(reorderedTarget.answer_groups.slice(0, reorderedTarget.required_count).reverse().map(group => group.display))
+  await quickFeedback('Correct')
+
+  const longAnswerTarget = [...practiceMetadataByQuestion.values()].filter(item => (questionAnswerCounts.get(item.question_number) ?? 0) >= 10 && item.question_number !== reorderedTarget.question_number).sort((a, b) => (questionAnswerCounts.get(b.question_number) ?? 0) - (questionAnswerCounts.get(a.question_number) ?? 0))[0]
+  if (!longAnswerTarget) throw new Error('The reviewed cohort has no long accepted-answer list for layout coverage')
+  await selectQuickQuestion(longAnswerTarget.question_number)
+  await cdp('Emulation.setDeviceMetricsOverride', { width: 320, height: 740, deviceScaleFactor: 1, mobile: true })
+  const longQuestionGeometry = await evaluate(`(() => {const q=document.querySelector('.quick-card-front h3').getBoundingClientRect(),i=document.querySelector('.quick-answer-fields input').getBoundingClientRect();return {gap:Math.round(i.top-q.bottom),fields:document.querySelectorAll('.quick-answer-fields input').length}})()`)
+  if (longQuestionGeometry.fields !== longAnswerTarget.required_count || longQuestionGeometry.gap > 280) throw new Error(`Long-answer question pushes its field too far below the prompt: ${JSON.stringify(longQuestionGeometry)}`)
+  await skipQuickQuestion()
+  const acceptedListState = await evaluate(`(() => ({count:document.querySelectorAll('.quick-accepted-groups li').length,button:!!document.querySelector('.quick-question-next button'),back:!!document.querySelector('.quick-card-rotator.is-flipped .quick-card-back')}))()`)
+  if (acceptedListState.count !== questionAnswerCounts.get(longAnswerTarget.question_number) || !acceptedListState.button || !acceptedListState.back) throw new Error(`Long accepted-answer feedback/Another question is incomplete: ${JSON.stringify(acceptedListState)}`)
+  let currentQuickNumber = await quickQuestionNumber()
+  const invalidTarget = [...practiceMetadataByQuestion.values()].find(item => item.question_number !== currentQuickNumber)
+  if (!invalidTarget) throw new Error('No question remains for incorrect-answer coverage')
+  await selectQuickQuestion(invalidTarget.question_number)
+  await fillQuickFields(Array.from({ length: invalidTarget.required_count }, (_, index) => index === 0 ? 'clearly incorrect unrelated response' : ''))
+  await quickFeedback('Incorrect')
+
+  currentQuickNumber = await quickQuestionNumber()
+  const retryTarget = [...practiceMetadataByQuestion.values()].find(item => item.question_number !== currentQuickNumber && item.question_number !== invalidTarget.question_number)
+  if (!retryTarget) throw new Error('No question remains for retry coverage')
+  await selectQuickQuestion(retryTarget.question_number)
+  await evaluate(`(() => {const original=window.fetch.bind(window);window.__quickRetryProbe={count:0,attemptId:null,questionNumber:null,outcome:null,keys:[]};window.fetch=async(input,init)=>{const url=typeof input==='string'?input:input.url;if(url.endsWith('/rpc/record_written_answer')&&window.__quickRetryProbe.count===0){const p=JSON.parse(init.body);window.__quickRetryProbe={count:1,attemptId:p.p_attempt_id,questionNumber:p.p_question_number,outcome:p.p_outcome,keys:Object.keys(p).sort()};window.fetch=original;throw new TypeError('Synthetic one-time network interruption')}return original(input,init)}})()`)
+  await clickText('Skip')
+  await waitFor(`!!document.querySelector('.quick-save-error')`, 'retryable written-answer network failure')
+  const writeCountBeforeRetry = uniqueWrittenCalls().length
+  await clickText('Retry saving result')
+  await waitFor(`!!document.querySelector('.quick-question-next')`, 'written result after network retry', 12000)
+  const retryProbe = await evaluate(`window.__quickRetryProbe`)
+  const uniqueCalls = uniqueWrittenCalls()
+  const retryWrite = uniqueCalls.at(-1)
+  if (!retryProbe || retryProbe.count !== 1 || !retryWrite || !retryWrite.codeMatchesSession || retryWrite.attemptId !== retryProbe.attemptId || retryWrite.questionNumber !== retryProbe.questionNumber || retryWrite.outcome !== retryProbe.outcome || uniqueCalls.length !== writeCountBeforeRetry + 1) throw new Error('Written-answer retry did not reuse one idempotency attempt')
+  if (JSON.stringify(retryProbe.keys) !== JSON.stringify(['p_attempt_id', 'p_code', 'p_outcome', 'p_question_number'])) throw new Error('The retried written-answer payload included unexpected fields')
+  const writtenHubTotals = await evaluate(`document.querySelectorAll('.learning-mode-total')[1]?.innerText||''`)
+  if (!writtenHubTotals.includes('2 correct') || !writtenHubTotals.includes('2 incorrect') || !writtenHubTotals.includes('2 skipped') || !writtenHubTotals.includes('6 presentations')) throw new Error(`Written-mode totals did not update separately: ${writtenHubTotals}`)
+  await assertViewport(320, 740)
+  await assertViewport(390, 844)
+  await assertViewport(820, 1180)
+  await assertViewport(1440, 1000)
+  await cdp('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true })
   await clickText('Study Flash Cards')
   await waitFor(`!!document.querySelector('.flash-settings .flash-help')`, 'flash-card settings ready')
   if (settingsShot) {
@@ -318,9 +513,10 @@ try {
   await cdp('Input.insertText', { text: recoveryCode })
   await clickText('Continue to my hub')
   await waitFor(`!!document.querySelector('.hub-layout')`, 'resumed hub', 20000)
-  const resumed = await evaluate(`({score:document.querySelector('.score-card strong')?.textContent.replace(/\\s+/g,' ').trim(),cards:document.querySelectorAll('.stat-card strong')[2]?.textContent.trim(),practice:document.querySelectorAll('.stat-card')[1]?.innerText})`)
+  const resumed = await evaluate(`({score:document.querySelector('.score-card strong')?.textContent.replace(/\\s+/g,' ').trim(),cards:document.querySelectorAll('.stat-card strong')[2]?.textContent.trim(),practice:document.querySelectorAll('.stat-card')[1]?.innerText,written:document.querySelectorAll('.learning-mode-total')[1]?.innerText||''})`)
   if (!resumed.score?.replace(/\s+/g,'').includes('1/1') || resumed.cards !== cardCount) throw new Error(`Resume lost aggregate progress: ${JSON.stringify({ ...resumed, expectedCards: cardCount })}`)
   if (!resumed.practice.includes('3 presentations') || !resumed.practice.includes('2 unique questions') || !resumed.practice.includes('1 incorrect')) throw new Error(`Resume lost flash-test outcomes: ${resumed.practice}`)
+  if (!resumed.written.includes('2 correct') || !resumed.written.includes('2 incorrect') || !resumed.written.includes('2 skipped') || !resumed.written.includes('6 presentations')) throw new Error(`Resume lost written outcomes: ${resumed.written}`)
   verifierList.push(createHash('sha256').update(recoveryCode, 'utf8').digest('hex'))
 
   // Exercise the second cohort and sole nonvoting/at-large district in the UI.
@@ -339,6 +535,14 @@ try {
   await waitFor(`!!document.querySelector('.hub-layout')`, '2008 at-large hub')
   const atLarge = await evaluate(`({edition:document.querySelector('.stat-place')?.textContent, questions:document.querySelector('.activity-grid')?.textContent, district:document.querySelector('.session-dates')?.textContent})`)
   if (!atLarge.edition?.includes('2008') || !atLarge.edition.includes('Samoa')) throw new Error(`2008 at-large hub failed: ${JSON.stringify(atLarge)}`)
+  await waitQuickQuestionReady('2008 reviewed Quick Question')
+  await assertViewport(320, 740)
+  await assertViewport(390, 844)
+  await assertViewport(820, 1180)
+  await assertViewport(1440, 1000)
+  await cdp('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true })
+  await skipQuickQuestion()
+  await anotherQuickQuestion()
   await clickText('Study Flash Cards')
   await waitFor(`!!document.querySelector('.flash-settings h1')`, '2008 flash-card settings ready')
   const atLargeBank = await evaluate(`document.querySelector('.flash-settings-footer')?.innerText.includes('100 official questions')`)
@@ -363,11 +567,15 @@ try {
   const timedHistory = await evaluate(`document.querySelectorAll('.stat-card')[1]?.innerText`)
   if (!timedHistory.includes('1 skipped') || !timedHistory.includes('1 presentation') || !timedHistory.includes('1 unique question')) throw new Error(`Persisted timeout totals missing from the 2008 hub: ${timedHistory}`)
   verifierList.push(createHash('sha256').update(recoveryCode, 'utf8').digest('hex'))
-  console.log(JSON.stringify({ ok: true, checks: ['touch-driven new session and study/test actions + real Supabase hub', 'settings help by tap, flash-card flip/source/date, and rolling cumulative rounds', 'known correct and incorrect outcomes + actual 15-second timeout persisted as skipped', 'quiz single self-check + aggregate score', 'five-second question bubble/fade', '320/390/820/1440px overflow and privacy', 'reload + manual code resume with scores restored', 'keyboard focus managed by view headings', 'second 2008 cohort + Samoa at-large session'], verifiers: verifierList, screenshots: { phone: phoneShot ?? null, desktop: desktopShot ?? null, notice: noticeShot ?? null, settings: settingsShot ?? null, card: cardShot ?? null } }))
+  console.log(JSON.stringify({ ok: true, checks: ['touch-driven new session and study/test actions + real Supabase hub', 'Quick Question: no impression writes, >15-second untimed response, correct/incorrect/skipped feedback, sparse partial multi-answer, reordered concepts, no immediate repeat, double-submit guard, transient retry reuses attempt UUID, minimal outcome-only payload', 'Quick Question long accepted-answer layout at 320px and 320/390/820/1440px in both cohorts', 'settings help by tap, flash-card flip/source/date, and rolling cumulative rounds', 'known correct and incorrect outcomes + actual 15-second timeout persisted as skipped', 'quiz single self-check + aggregate score', 'five-second question bubble/fade', '320/390/820/1440px overflow and privacy', 'reload + manual code resume with scores restored', 'keyboard focus managed by view headings', 'second 2008 cohort + Samoa at-large session'], verifiers: verifierList, screenshots: { phone: phoneShot ?? null, desktop: desktopShot ?? null, notice: noticeShot ?? null, settings: settingsShot ?? null, card: cardShot ?? null } }))
 } catch (error) {
   if (recoveryCode) verifierList.push(createHash('sha256').update(recoveryCode, 'utf8').digest('hex'))
-  console.log(JSON.stringify({ ok: false, message: error instanceof Error ? error.message : 'browser flow failed', verifiers: [...new Set(verifierList)], screenshots: { phone: phoneShot ?? null, desktop: desktopShot ?? null, notice: noticeShot ?? null, settings: settingsShot ?? null, card: cardShot ?? null } }))
-  process.exitCode = 1
+  if (error instanceof Error && error.message === 'QUICK_QUESTION_DIAGNOSTIC_COMPLETE') {
+    console.log(JSON.stringify({ ok: true, diagnostic: quickDiagnostic, verifiers: [...new Set(verifierList)], screenshots: { phone: phoneShot ?? null, desktop: desktopShot ?? null, notice: noticeShot ?? null } }))
+  } else {
+    console.log(JSON.stringify({ ok: false, message: error instanceof Error ? error.message : 'browser flow failed', verifiers: [...new Set(verifierList)], screenshots: { phone: phoneShot ?? null, desktop: desktopShot ?? null, notice: noticeShot ?? null, settings: settingsShot ?? null, card: cardShot ?? null } }))
+    process.exitCode = 1
+  }
 } finally {
   socket.close()
   await fetch(`http://127.0.0.1:9223/json/close/${tab.id}`)

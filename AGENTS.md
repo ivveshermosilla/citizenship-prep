@@ -2,6 +2,13 @@
 
 ## Scope and workflow
 
+- Latest owner authorization: implement and publish the untimed written
+  **Quick Question** directly in the hub, accepted answers/reviewed variants,
+  per-concept fields, feedback flips and random next question. Also populate
+  Supabase with reviewed plausible distractors for every question, replacing
+  provisional unrelated options. Read docs/QUICK_QUESTION_IMPLEMENTATION_BRIEF.md.
+  Keep raw typed text local; store only minimal mode-specific outcomes. Luna
+  implements; root reviews content, migrations, checks and publication.
 - Latest owner authorization: implement and publish Study Flash Cards, selection
   settings including inclusive ranges, configurable cumulative rolling review,
   optional timed multiple-choice practice and minimal per-question progress.

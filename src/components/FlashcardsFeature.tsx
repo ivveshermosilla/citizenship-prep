@@ -1,19 +1,21 @@
 import { type FocusEvent, useEffect, useMemo, useRef, useState } from 'react'
 import type { Question, Session } from '../lib/domain'
 import {
-  appendSubmittedOutcome, buildTestOptionSets, cumulativeRoundSizes, displayFlashcardAnswers,
+  appendSubmittedOutcome, buildReviewedTestOptionSets, cumulativeRoundSizes, displayFlashcardAnswers,
   listTopics, makeFlashcardDeck, outcomeAtDeadline, shuffle, summarizeOutcomes, totalTestPresentations,
-  type FlashcardMethod, type FlashcardOutcome, type FlashcardProgress, type FlashcardSelection, type OptionSetResult,
+  type FlashcardMethod, type FlashcardOutcome, type FlashcardSelection, type OptionSetResult,
   type SubmittedFlashcardOutcome, type TestOption,
 } from '../lib/flashcards'
-import { getFlashcardProgress, recordFlashcardRound } from '../lib/supabase'
+import type { LearningProgress, LearningQuestionProgress, PracticeMetadata } from '../lib/quick-question'
+import { getLearningProgress, recordFlashcardRound } from '../lib/supabase'
 
 type Props = {
   code: string
   questions: Question[]
+  practiceMetadata: PracticeMetadata[]
   session: Session
   onExit: () => void
-  onProgressChange: (progress: FlashcardProgress[]) => void
+  onProgressChange: (learning: LearningProgress) => void
   onReviewCard: (questionNumber: number) => Promise<void>
 }
 type View = 'settings' | 'study' | 'test' | 'results'
@@ -57,9 +59,9 @@ function SafeSources({ question }: { question: Question }) {
   return <div className="source-links">{question.source_urls.map(url => <a key={url} href={url} target="_blank" rel="noreferrer">Official source ↗</a>)}</div>
 }
 
-export function FlashcardsFeature({ code, questions, session, onExit, onProgressChange, onReviewCard }: Props) {
+export function FlashcardsFeature({ code, questions, practiceMetadata, session, onExit, onProgressChange, onReviewCard }: Props) {
   const [view, setView] = useState<View>('settings')
-  const [progress, setProgress] = useState<FlashcardProgress[]>([])
+  const [progress, setProgress] = useState<LearningQuestionProgress[]>([])
   const [progressLoading, setProgressLoading] = useState(true)
   const [method, setMethod] = useState<FlashcardMethod>('random')
   const [count, setCount] = useState(Math.min(20, questions.length))
@@ -124,7 +126,7 @@ export function FlashcardsFeature({ code, questions, session, onExit, onProgress
 
   useEffect(() => {
     let live = true
-    void getFlashcardProgress(code).then(items => { if (live) { setProgress(items); onProgressChange(items) } }).catch(e => {
+    void getLearningProgress(code).then(learning => { if (live) { setProgress(learning.progress); onProgressChange(learning) } }).catch(e => {
       if (live) setError(e instanceof Error ? e.message : 'Could not load question history. You can still study without prioritization.')
     }).finally(() => { if (live) setProgressLoading(false) })
     return () => { live = false }
@@ -205,11 +207,12 @@ export function FlashcardsFeature({ code, questions, session, onExit, onProgress
     const selectionResult = makeFlashcardDeck(questions, selection(), progress)
     if (selectionResult.error || selectionResult.deck.length === 0) { setError(selectionResult.error ?? 'No questions match this selection.'); setPreparing(false); return }
     const sizes = includeTest ? cumulativeRoundSizes(selectionResult.deck.length, rolling ? step : selectionResult.deck.length, rolling) : []
-    const allOptions: Map<number, OptionSetResult> = includeTest ? buildTestOptionSets(selectionResult.deck, session.edition, Math.random, questions) : new Map<number, OptionSetResult>()
+    const allOptions: Map<number, OptionSetResult> = includeTest ? buildReviewedTestOptionSets(selectionResult.deck, practiceMetadata, Math.random) : new Map<number, OptionSetResult>()
     if (includeTest) {
       const unavailable = selectionResult.deck.find(question => !(allOptions.get(question.question_number)?.options.length))
       if (unavailable) {
-        setError(`A safe four-option practice question is not available for Question ${unavailable.question_number}. You can study the cards without a test, or choose a smaller range.`)
+        const reason = allOptions.get(unavailable.question_number)?.reason ?? 'Reviewed practice content is not available'
+        setError(`${reason} (Question ${unavailable.question_number}). You can study the cards without a test or retry after content loads.`)
         setPreparing(false)
         return
       }
@@ -251,7 +254,7 @@ export function FlashcardsFeature({ code, questions, session, onExit, onProgress
     setSending(true); setError('')
     try {
       const saved = await recordFlashcardRound(code, roundIdRef.current, nextPrefix)
-      outcomesRef.current = nextPrefix; setTestOutcomes(nextPrefix); setProgress(saved.progress); onProgressChange(saved.progress)
+      outcomesRef.current = nextPrefix; setTestOutcomes(nextPrefix); setProgress(saved.learning.progress); onProgressChange(saved.learning)
       pendingRef.current = null; setPending(null); setAcknowledged(submission.outcome); setSelectedOption(null)
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Your answer was not saved. Retry to continue.')

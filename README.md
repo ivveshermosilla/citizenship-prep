@@ -10,15 +10,23 @@ The [first publication record](docs/FIRST_PUBLICATION.md) remains historical.
 
 **Study Flash Cards is published:** configurable question selections, cumulative
 rolling review and timed practice tests. See the [feature review](docs/FLASHCARDS_REVIEW.md)
-for verification and the boundaries of provisional distractors.
+for the published release record.
+
+**Quick Question:** an untimed written activity in
+the hub that grades only exact reviewed answers and variants, keeps entered text
+in memory, and records only the question and outcome. Multiple-choice practice
+uses reviewed distractors for all 228 edition-specific questions. See the
+[release review](docs/QUICK_QUESTION_REVIEW.md) for verification and publication.
 
 ## Project status
 
 The React/TypeScript/Vite app supports anonymous recovery-code sessions,
 both filing cohorts, all jurisdictions and congressional districts, Study Flash
 Cards with an optional rolling timed practice test, and Quick Quiz self-checks
-backed by the dedicated Supabase project. All
-user-facing app content is English. The approved name and canonical hostname are
+backed by the dedicated Supabase project. Quick Question adds written practice
+and separate written/multiple-choice totals with shared missed-question review.
+All user-facing app content is English.
+The approved name and canonical hostname are
 published; see the [implementation checklist](docs/IMPLEMENTATION_CHECKLIST.md)
 for Luna's implementation evidence and the coordinator's completed checks.
 Licensing remains unselected.
@@ -54,14 +62,19 @@ npm run build
 npm test
 npm run test:english
 npm run test:api:flashcards
+npm run test:api:quick-question
 npm run test:browser
 npm run test:browser-flow
 ```
 
 The unit tests cover the 168-hour boundary, code format/entropy, English vacancy
 display, cohorts, district selection, flashcard selection and ranges, cumulative
-rolling rounds, complete-answer distractors, deadlines, and outcome summaries.
+rolling rounds, strict Quick Question normalization/concepts, reviewed metadata
+options, deadlines, and outcome summaries.
 The flashcard API verifier checks live RPC retry/idempotency behavior and emits
+only one-way verifier hashes for synthetic-session cleanup. The Quick Question
+API verifier checks mode-separated written/MC progress, written-attempt
+idempotency, legacy response compatibility and session isolation; it also emits
 only one-way verifier hashes for synthetic-session cleanup.
 [The SQL verifier](supabase/tests/verify_app_mvp.sql)
 checks all 441 districts in both cohorts and all 56 jurisdictions, allowlisted
@@ -121,8 +134,10 @@ The MVP does not use accounts or collect personal identifiers. It has no
 analytics, advertising, geolocation, fingerprinting, session replay, or
 third-party font/asset requests. Supabase stores a one-way recovery-code
 verifier, creation and last-activity timestamps, aggregate Quick Quiz/card
-counters, minimal per-question practice-test outcome counts and last outcomes,
-and the cohort/coarse jurisdiction needed to restore the right bank. The usable
+counters, minimal per-question written and multiple-choice outcome counts and
+last outcomes, and the cohort/coarse jurisdiction needed to restore the right
+bank. Entered written responses, selected options, and text-derived hashes are
+not stored. The usable
 code stays in app memory and is never stored in browser storage or the database.
 Direct table access is denied; narrow anonymous RPCs validate the code and
 return only necessary fields.

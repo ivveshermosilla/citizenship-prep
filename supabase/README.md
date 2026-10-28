@@ -91,9 +91,39 @@ it does not translate or grade free-form answers.
 - [Flashcard verification](tests/verify_flashcards.sql): checks payload
   validation, prefix idempotency, session isolation, counter/receipt caps,
   immediate expiry, grants, and cascade cleanup in a rollback transaction.
+- [Quick Question learning migration](migrations/20261028151527_quick_question_learning.sql):
+  adds a private, root-approved versioned learning catalogue, freshness-guards
+  static accepted-answer groups against their canonical source options, keeps
+  dynamic current answers bound to the selected official geography row, and
+  separates written from existing multiple-choice progress.
+- [Single-answer distractor fast path](migrations/20261028151954_quick_question_distractor_fastpath.sql):
+  preserves full-set matching for multi-answer questions and speeds single-
+  answer accepted-alias checks by comparing one normalized candidate to the
+  pre-expanded accepted alias list.
+- [Current officeholder candidate filter](migrations/20261028152907_current_officeholder_candidate_filter.sql):
+  removes office-status/instruction sentences from current-person distractors,
+  adds concise aliases for official no-office answers, and accepts common
+  Washington, D.C. typed variants from its current canonical answer.
+- [Mode regression verification](tests/verify_quick_question_modes.sql): tests
+  legacy multiple-choice compatibility, written retries/cross-mode UUID reuse,
+  progress isolation, expiry, private grants, and cascade cleanup in rollback.
+- [Practice metadata fixture verification](tests/verify_practice_metadata.sql):
+  uses temporary synthetic catalog fixtures in rollback for representative
+  static, current-name, vacancy, and stale-answer cases.
+- [Approved metadata read-only batch verification](tests/verify_practice_metadata_readonly_batch.sql):
+  verifies actual approved question/geography rows and distractors in batches
+  of at most 60. Set `app.practice_edition` to `2008`/`2025` and
+  `app.practice_offset` to `0, 60, ...` per read-only execution; each statement
+  has a 45-second timeout. The public RPC selector contract is also sampled by
+  the API verifier for UT, DC, and AS in both editions.
 - The real API check is `npm run test:api:flashcards`; it uses two synthetic
   sessions, exercises concurrent duplicate-prefix and suffix requests, and
   prints only one-way recovery-code verifier hashes for targeted cleanup.
+- The Quick Question API check is `npm run test:api:quick-question`; it covers
+  concurrent written attempts, MC/written mode isolation, legacy MC response
+  compatibility, invalid retries, and two-session isolation. Run it after the
+  reviewed catalog is imported and approved; it prints only synthetic verifier
+  hashes for exact cleanup.
 - [MVP verification](tests/verify_app_mvp.sql): tests both cohorts across all 441
   districts and 56 jurisdictions, allowlist and role boundaries, isolation,
   aggregate limits, exact expiry, and cleanup. Session probes roll back.
@@ -168,3 +198,27 @@ returned zero lints; performance reports only the new TTL index as unused while
 the session table is nearly empty. A publishable URL/key is configured only in
 ignored local `.env.local`; no service/secret key was retrieved or committed.
 Local files remain uncommitted/unpublished; Vercel remains untouched.
+
+## Quick Question backend draft
+
+The Quick Question migration adds private, versioned metadata and separate
+written/multiple-choice progress projections. Its rollback SQL checks are
+`tests/verify_quick_question_modes.sql` and
+`tests/verify_practice_metadata.sql`. The metadata verifier uses transaction
+fixtures and rolls back all catalog/question changes. The public metadata RPC
+returns only the browser contract; catalog rationales, sources, review state,
+and reference-answer snapshots remain private.
+
+Build a candidate catalog seed only after review, passing the exact catalog
+SHA-256 that root approved:
+
+```sh
+python3 scripts/build-practice-seed.py --root-approved-sha256 <approved-catalog-sha256>
+```
+
+The builder writes `supabase/practice-seed.sql` with a version/count/hash
+manifest and draft-only rows. It refuses a mismatched hash, approved/retired
+versions, and approved question rows. Root reviews and executes the generated
+SQL separately, then approves the version only after the full 228-question
+catalog review. The builder never changes official question facts, aliases,
+fingerprints, or review dates.

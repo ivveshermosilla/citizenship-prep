@@ -1,4 +1,5 @@
-import { formatAnswers, type Edition, type Question } from './domain.ts'
+import { formatAnswers, type Question } from './domain.ts'
+import { normalizeWrittenAnswer, type PracticeMetadata } from './quick-question.ts'
 
 export type FlashcardMethod = 'random' | 'in-order' | 'topic' | 'range'
 export type FlashcardOutcome = 'correct' | 'incorrect' | 'skipped'
@@ -154,210 +155,84 @@ export function totalTestPresentations(roundSizes: number[]): number {
   return roundSizes.reduce((sum, count) => sum + count, 0)
 }
 
-export function requestedAnswerItemCount(questionText: string): number {
-  const match = questionText.match(/\b(?:name|identify|list|give)\s+(?:the\s+)?(two|2|three|3)\b|\bwhat\s+are\s+(two|2|three|3)\b|\bwhich\s+are\s+(two|2|three|3)\b/iu)
-  const cardinality = match?.[1] ?? match?.[2] ?? match?.[3]
-  if (!cardinality) return 1
-  return cardinality.toLowerCase() === 'three' || cardinality === '3' ? 3 : 2
-}
-
-const MULTI_ITEM_COUNTS: Record<Edition, Record<number, number>> = {
-  '2008': { 9: 2, 17: 2, 36: 2, 45: 2, 51: 2, 55: 2, 64: 3, 100: 2 },
-  '2025': { 10: 2, 16: 3, 19: 2, 48: 2, 65: 3, 67: 2, 69: 2, 126: 3 },
-}
-
-function requiredItems(question: Question, edition: Edition): number {
-  return MULTI_ITEM_COUNTS[edition][question.question_number] ?? requestedAnswerItemCount(question.question_text)
-}
-
-const normalizedCache = new Map<string, string>()
-function normalizedAnswer(value: string): string {
-  const cached = normalizedCache.get(value)
-  if (cached !== undefined) return cached
-  const normalized = value
-    .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/gu, '')
-    .toLocaleLowerCase('en-US')
-    .replace(/\b(?:a|an|the)\b/gu, ' ')
-    .replace(/[^a-z0-9]+/gu, ' ')
-    .trim()
-    .replace(/\s+/gu, ' ')
-  normalizedCache.set(value, normalized)
-  return normalized
-}
-
-const canonicalCache = new Map<string, string>()
-function canonicalAnswer(value: string): string {
-  const cached = canonicalCache.get(value)
-  if (cached !== undefined) return cached
-  const canonical = normalizedAnswer(value)
-    .replace(/\b(?:freedom of speech|freedom of expression|right to free speech|free speech|speech|expression)\b/gu, 'speech_expression')
-    .replace(/\b(?:the right to vote|right to vote|voting|vote)\b/gu, 'voting_right')
-    .replace(/\b(?:right to bear arms|keep and bear arms|bear arms)\b/gu, 'bear_arms_right')
-  canonicalCache.set(value, canonical)
-  return canonical
-}
-
-function equivalentAnswer(left: string, right: string): boolean {
-  const a = canonicalAnswer(left)
-  const b = canonicalAnswer(right)
-  if (!a || !b) return true
-  if (a === b) return true
-  const shorter = a.length <= b.length ? a : b
-  const longer = a.length > b.length ? a : b
-  return shorter.length >= 5 && (` ${longer} `).includes(` ${shorter} `)
-}
-
-const numericKeyCache = new Map<string, string | null>()
-function numericAnswerKey(answer: string): string | null {
-  if (numericKeyCache.has(answer)) return numericKeyCache.get(answer) ?? null
-  const parenthetical = answer.match(/\((\d{1,4})\)/u)?.[1]
-  if (parenthetical) {
-    const key = String(Number(parenthetical)); numericKeyCache.set(answer, key); return key
-  }
-  const onlyNumber = answer.match(/^\s*(\d{1,4})\s*$/u)?.[1]
-  const key = onlyNumber ? String(Number(onlyNumber)) : null
-  numericKeyCache.set(answer, key)
-  return key
-}
-
-function isNumericCountSource(question: Question): boolean {
-  return /\bhow many\b|\bhow much\b|\bnumber of\b/iu.test(question.question_text)
-    && rawAcceptedAnswers(question).some(answer => numericAnswerKey(answer) !== null)
-}
-
-function isNumericTarget(question: Question): boolean {
-  if (/\bhow many\b|\bhow much\b|\bhow long\b|\bhow old\b|\bwhat year\b|\bwhat date\b|\bwhat month\b|\bwhat day\b|\bwhen (?:was|were|did|is)\b/iu.test(question.question_text)) return true
-  const answers = rawAcceptedAnswers(question)
-  return answers.length > 0 && answers.every(answer => numericAnswerKey(answer) !== null)
-}
-
-function isHistoricalPersonSource(question: Question, answer: string): boolean {
-  if (question.is_geography_dependent || question.is_time_dependent) return false
-  if (!/\bwho\s+(?:wrote|was|is|became|led|served|founded|created)\b|\bname one of the writers\b/iu.test(question.question_text)) return false
-  const cleaned = answer.replace(/[()]/gu, '').replace(/\s+/gu, ' ').trim()
-  if (/\bpublius\b/iu.test(cleaned)) return false
-  return /^[A-Z][A-Za-z.'-]+(?: [A-Z][A-Za-z.'-]+){1,4}$/u.test(cleaned)
-}
-
-const acceptedAnswerCache = new WeakMap<Question, string[]>()
-function rawAcceptedAnswers(question: Question): string[] {
-  const cached = acceptedAnswerCache.get(question)
-  if (cached) return cached
-  if (question.answer_display.startsWith('Vacant')) return ['Vacant']
-  const answers = [...new Set(question.answers.map(answer => answer.trim()).filter(Boolean))]
-  acceptedAnswerCache.set(question, answers)
-  return answers
-}
-
-function isSafeAnswer(targetAnswers: string[], answer: string): boolean {
-  if (!answer.trim() || answer.length > 110 || /\b(?:vacant|unknown|not available)\b/iu.test(answer)) return false
-  if (targetAnswers.some(targetAnswer => equivalentAnswer(targetAnswer, answer))) return false
-  return true
-}
-
-type DistractorAtom = { answer: string; source: Question }
-
-const FULL_SET_QUESTIONS: Record<Edition, Set<number>> = {
-  '2008': new Set([17, 45]),
-  '2025': new Set([16, 19]),
-}
-
-function uniqueAcceptedItems(answers: string[]): string[] {
-  const unique: string[] = []
-  for (const answer of answers) {
-    if (unique.some(existing => equivalentAnswer(existing, answer))) continue
-    unique.push(answer)
-  }
-  return unique
-}
-
-function combineCorrectItems(answers: string[], itemCount: number, allowBundledFullAnswer: boolean, random: () => number): string | null {
-  if (answers.length === 0) return null
-  if (itemCount === 1) return answers[randomIndex(random, answers.length)]
-  // These official questions publish bundled complete answers. For all other
-  // cards, treat each accepted string as one atomic acceptable response; do
-  // not split words such as "and" or punctuation inside names and holidays.
-  const complete = allowBundledFullAnswer ? answers : []
-  if (complete.length > 0) return complete[randomIndex(random, complete.length)]
-  const items = shuffle(uniqueAcceptedItems(answers), random).slice(0, itemCount)
-  if (items.length !== itemCount) return null
-  if (items.some(item => !item.trim())) return null
-  return items.join('; ')
-}
-
-function allDistinctDistractorSets(atoms: DistractorAtom[], itemCount: number, random: () => number): string[] {
-  const results: string[] = []
-  const resultKeys = new Set<string>()
-  const atomKeys = new Set<string>()
-  const uniqueAtoms = shuffle(atoms.filter(item => {
-    const key = canonicalAnswer(item.answer)
-    if (!key || atomKeys.has(key)) return false
-    atomKeys.add(key)
-    return true
-  }), random)
-  const chosen: DistractorAtom[] = []
-  function visit(start: number) {
-    if (results.length >= 32) return
-    if (chosen.length === itemCount) {
-      const label = chosen.map(item => item.answer).join('; ')
-      const key = chosen.map(item => canonicalAnswer(item.answer)).sort().join(';')
-      if (!resultKeys.has(key)) { resultKeys.add(key); results.push(label) }
-      return
-    }
-    for (let index = start; index < uniqueAtoms.length && results.length < 32; index += 1) {
-      const candidate = uniqueAtoms[index]
-      if (chosen.some(item => item.source.question_number === candidate.source.question_number || equivalentAnswer(item.answer, candidate.answer))) continue
-      chosen.push(candidate)
-      visit(index + 1)
-      chosen.pop()
+function reviewedAliasIndex(metadata: PracticeMetadata): Map<string, Set<string>> {
+  const aliases = new Map<string, Set<string>>()
+  for (const group of metadata.answer_groups) {
+    for (const value of [group.display, ...group.aliases]) {
+      const normalized = normalizeWrittenAnswer(value)
+      if (!normalized) continue
+      const keys = aliases.get(normalized) ?? new Set<string>()
+      keys.add(group.key)
+      aliases.set(normalized, keys)
     }
   }
-  visit(0)
-  return results
+  return aliases
 }
 
-export function createTestOptions(
-  target: Question,
-  questionPool: Question[],
-  edition: Edition,
+function mapsToCompleteAcceptedSet(values: string[], requiredCount: number, aliases: Map<string, Set<string>>): boolean {
+  if (values.length !== requiredCount) return false
+  const keys: string[] = []
+  for (const value of values) {
+    const matching = aliases.get(normalizeWrittenAnswer(value))
+    if (!matching || matching.size !== 1) return false
+    const key = [...matching][0]
+    if (keys.includes(key)) return false
+    keys.push(key)
+  }
+  return keys.length === requiredCount
+}
+
+function repeatsAcceptedConcept(values: string[], aliases: Map<string, Set<string>>): boolean {
+  const keys = new Set<string>()
+  for (const value of values) {
+    const matching = aliases.get(normalizeWrittenAnswer(value))
+    if (matching?.size !== 1) continue
+    const key = [...matching][0]
+    if (keys.has(key)) return true
+    keys.add(key)
+  }
+  return false
+}
+
+export function buildReviewedTestOptionSets(
+  targetQuestions: Question[],
+  catalog: PracticeMetadata[],
   random: () => number = Math.random,
-): OptionSetResult {
-  const answers = rawAcceptedAnswers(target)
-  const itemCount = requiredItems(target, edition)
-  const correct = combineCorrectItems(answers, itemCount, FULL_SET_QUESTIONS[edition].has(target.question_number), random)
-  if (!correct) return { options: [], reason: `This question does not have ${itemCount} complete accepted answer${itemCount === 1 ? '' : 's'} for a safe practice option.` }
-
-  const atoms: DistractorAtom[] = []
-  const targetUsesNumbers = !isNumericTarget(target)
-  for (const source of questionPool) {
-    if (source.question_number === target.question_number || source.answer_display.startsWith('Vacant') || source.is_geography_dependent) continue
-    const sourceAnswers = rawAcceptedAnswers(source)
-    for (const answer of sourceAnswers) {
-      const sameAnswerType = targetUsesNumbers
-        ? isNumericCountSource(source) && numericAnswerKey(answer) !== null
-        : isHistoricalPersonSource(source, answer)
-      if (sameAnswerType && isSafeAnswer(answers, answer)) atoms.push({ source, answer })
+): Map<number, OptionSetResult> {
+  const byQuestion = new Map(catalog.map(item => [item.question_number, item]))
+  return new Map(targetQuestions.map(question => {
+    const metadata = byQuestion.get(question.question_number)
+    if (!metadata) return [question.question_number, { options: [], reason: 'Reviewed practice content is not available for this question.' }]
+    const count = metadata.required_count
+    const groups = metadata.answer_groups
+    const groupKeys = new Set(groups.map(group => group.key))
+    if (!Number.isSafeInteger(count) || count < 1 || groups.length < count || groupKeys.size !== groups.length || groups.some(group => !group.key || !group.display)) {
+      return [question.question_number, { options: [], reason: 'Reviewed answer groups are incomplete for this question.' }]
     }
-  }
-
-  const pool = itemCount === 1 ? [...new Set(atoms.map(item => item.answer))] : allDistinctDistractorSets(atoms, itemCount, random)
-  const candidates = [...pool]
-    .filter(value => !equivalentAnswer(correct, value))
-    .filter((value, index, all) => all.findIndex(other => equivalentAnswer(other, value)) === index)
-  const distractors = shuffle(candidates, random).slice(0, 3)
-  if (distractors.length !== 3) {
-    return { options: [], reason: 'There are not enough clearly unrelated accepted answers to create four safe options for this question.' }
-  }
-  const options = shuffle([
-    { id: 'correct', label: correct, correct: true },
-    ...distractors.map((label, index) => ({ id: `distractor-${index + 1}`, label, correct: false })),
-  ], random)
-  return { options }
-}
-
-export function buildTestOptionSets(targetQuestions: Question[], edition: Edition, random: () => number = Math.random, sourcePool: Question[] = targetQuestions): Map<number, OptionSetResult> {
-  return new Map(targetQuestions.map(question => [question.question_number, createTestOptions(question, sourcePool, edition, random)]))
+    const acceptedAliases = reviewedAliasIndex(metadata)
+    if ([...acceptedAliases.values()].some(keys => keys.size > 1)) return [question.question_number, { options: [], reason: 'Reviewed answer aliases overlap separate concepts for this question.' }]
+    const correctGroups = shuffle(groups, random).slice(0, count)
+    const correctKeys = new Set(correctGroups.map(group => group.key))
+    if (correctKeys.size !== count) return [question.question_number, { options: [], reason: 'Reviewed answer groups are duplicated for this question.' }]
+    const correct = correctGroups.map(group => group.display).join('; ')
+    const seenSets = new Set<string>()
+    const distractors = metadata.distractor_sets.flatMap(set => {
+      if (set.length !== count) return []
+      const normalized = set.map(normalizeWrittenAnswer)
+      if (normalized.some(value => !value) || new Set(normalized).size !== count) return []
+      const setKey = [...normalized].sort().join('\u0000')
+      if (seenSets.has(setKey) || mapsToCompleteAcceptedSet(set, count, acceptedAliases) || repeatsAcceptedConcept(set, acceptedAliases)) return []
+      seenSets.add(setKey)
+      return [set.join('; ')]
+    })
+    if (distractors.length < 3) return [question.question_number, { options: [], reason: 'Three reviewed, complete distractor sets are not available for this question.' }]
+    const selected = shuffle(distractors, random).slice(0, 3)
+    const options = shuffle([
+      { id: 'correct', label: correct, correct: true },
+      ...selected.map((label, index) => ({ id: `distractor-${index + 1}`, label, correct: false })),
+    ], random)
+    return [question.question_number, { options }]
+  }))
 }
 
 export function outcomeAtDeadline(

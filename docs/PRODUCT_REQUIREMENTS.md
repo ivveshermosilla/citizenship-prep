@@ -210,6 +210,41 @@ saved. This practice percentage is not an official test score, pass/fail result,
 or competition result. Voice input, microphone permission, speech evaluation,
 prerecorded narration, and an official 20-question simulation remain future work.
 
+## Quick Question
+
+The owner separately approved an untimed written question directly in the hub.
+Use the session's edition and jurisdiction projection, choose a random question
+and avoid immediate repetition when the user requests Another question. Render
+one text field per required concept; accept fields in any order only when each
+exactly matches a reviewed canonical answer or reviewed variant and the concepts
+are distinct. Normalize case, diacritic variants in names, optional hyphens,
+extra spacing and immaterial punctuation. Do not use substring, fuzzy,
+bag-of-words or AI paraphrase grading.
+
+Check and Skip both reveal feedback with the existing flash-card rotation.
+Show the canonical official answer display (including former-officeholder
+context for a vacancy), not parser-only grading aliases, with the actual answer
+date, official source links and dependent-answer notice. Preserve one attempt
+UUID through safe retries and wait for durable save before Another question.
+All-empty Check is Skipped;
+partial or invalid content is Incorrect. Leaving without submission records
+nothing. Keep typed text in memory only and send only question ID, outcome and
+attempt UUID in the written-result RPC.
+
+The written activity remains separate from the old self-assessed Quick Quiz.
+Written and multiple-choice counts appear separately in the hub, while the
+aggregate per-question error count feeds missed-question prioritization. The
+written UI and reviewed-metadata frontend have passed the local browser flow
+against the approved catalog and RPCs. Root verified all 1,438 geographic rows;
+the [release review](QUICK_QUESTION_REVIEW.md) records publication checks. See
+[the Quick Question implementation brief](QUICK_QUESTION_IMPLEMENTATION_BRIEF.md).
+
+Written answers stay in component memory only. The submission sends the
+question number, outcome and one attempt UUID; it does not send the typed
+strings or a derived hash. Written outcomes and multiple-choice outcomes have
+separate progress projections, with a combined projection used only for review
+priority. Quick Quiz remains a separate self-assessed total.
+
 ## Internal change expectations
 
 Keep optional expected-change dates/windows alongside the corresponding question

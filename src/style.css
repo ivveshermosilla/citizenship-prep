@@ -300,6 +300,49 @@ a { color: #175db6; text-decoration-thickness: 1px; text-underline-offset: 3px; 
 .activity-link { display: block; margin-top: 15px; color: #1767a5; font-size: 12px; font-weight: 780; }
 .activity-dark .activity-link { color: #d0f5ec; }
 .hub-note { margin-top: 20px; color: #596d80; font-size: 11px; line-height: 1.6; }
+.learning-summary-card { min-height: 180px; }
+.learning-mode-total { display: grid; gap: 3px; padding-top: 7px; border-top: 1px solid #e5edf3; }
+.learning-mode-total > span { color: #42647d; font-size: 10px; font-weight: 780; }
+.learning-mode-total > strong { color: #192d44; font-size: 18px; letter-spacing: -.02em; }
+.learning-mode-total > small { color: #5d6e81; font-size: 10px; line-height: 1.4; }
+
+.quick-question { position: relative; margin: 24px 0 20px; padding: clamp(19px, 3vw, 30px); border: 1px solid #d8e5ee; border-radius: 23px; background: linear-gradient(145deg, rgba(255,255,255,.94), rgba(245,250,253,.9)); box-shadow: var(--shadow-soft); }
+.quick-question-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 16px; }
+.quick-question-heading h2 { margin: 5px 0 6px; color: #1a2d43; font-size: clamp(25px, 3.5vw, 34px); letter-spacing: -.04em; }
+.quick-question-heading p { margin: 0; color: #566e83; font-size: 13px; line-height: 1.5; }
+.quick-question-edition { flex: 0 0 auto; padding: 8px 10px; border: 1px solid #cee3ed; border-radius: 999px; color: #286b8a; background: #f0f8fc; font-size: 9px; font-weight: 820; letter-spacing: .06em; }
+.quick-question-help { justify-content: flex-start; gap: 7px; }
+.quick-question-help .question-warning-label { max-width: none; }
+.quick-question-info { top: 150px; right: 28px; }
+.quick-info-dismiss { position: absolute; top: 4px; right: 5px; width: 36px; height: 36px; border: 0; border-radius: 50%; color: #f8fcff; background: transparent; font-size: 21px; line-height: 1; }
+.quick-info-dismiss:focus-visible { outline: 2px solid #f8fcff; }
+.quick-question-unavailable { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 16px; border: 1px solid #dbe6ed; border-radius: 15px; color: #516b7e; background: #f7fbfd; }
+.quick-question-unavailable p { margin: 0; font-size: 13px; }
+.quick-card-scene { perspective: 1200px; }
+.quick-card-rotator { position: relative; display: grid; transform-style: preserve-3d; transition: transform .42s ease; }
+.quick-card-rotator.is-flipped { transform: rotateY(180deg); }
+.quick-card-face { grid-area: 1 / 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 15px; padding: clamp(22px, 4vw, 38px); border: 1px solid #d1e0eb; border-radius: 22px; color: #1b2a3c; background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(239,249,253,.88)); box-shadow: 0 16px 36px rgba(30,66,98,.09); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.quick-card-front { position: relative; min-height: 390px; }
+.quick-card-back { position: absolute; inset: 0; overflow: hidden; }
+.quick-card-rotator.is-flipped .quick-card-front { position: absolute; inset: 0; }
+.quick-card-rotator.is-flipped .quick-card-back { position: relative; overflow: visible; }
+.quick-card-front { transform: rotateY(0); }
+.quick-card-back { transform: rotateY(180deg); background: linear-gradient(145deg, #f5fbff, #e8f7f3); }
+.quick-card-face h3 { max-width: 850px; margin: 0; color: #1b2a3c; font-size: clamp(23px, 3.2vw, 34px); font-weight: 740; letter-spacing: -.03em; line-height: 1.25; }
+.quick-answer-fields { width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.quick-answer-fields .field { margin: 0; }
+.quick-answer-fields .field input { min-height: 48px; }
+.quick-question-actions { width: 100%; display: flex; justify-content: flex-end; gap: 10px; }
+.quick-question-outcome { color: #1e765f; font-size: 23px; }
+.quick-question-outcome.incorrect, .quick-question-outcome.skipped { color: #7a4e16; }
+.quick-accepted-groups { display: grid; gap: 12px; margin: 0; padding-left: 22px; font-size: clamp(16px, 2.1vw, 20px); line-height: 1.4; }
+.quick-accepted-groups li > strong { display: block; }
+.quick-accepted-groups small { display: block; margin-top: 3px; color: #546c7f; font-size: 11px; }
+.quick-question-warning { color: #75551a; font-size: 11px; line-height: 1.5; }
+.quick-save-error { color: #7b382f; font-size: 11px; line-height: 1.5; }
+.quick-question-meta { align-items: flex-start; flex-wrap: wrap; }
+.quick-question-meta .source-links { margin: 0; }
+.quick-question-next { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; color: #426477; font-size: 12px; }
 
 .study-layout { width: min(820px, 100%); flex: 1; margin: 30px auto 45px; }
 .study-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
@@ -376,6 +419,16 @@ a { color: #175db6; text-decoration-thickness: 1px; text-underline-offset: 3px; 
   .stat-card strong { font-size: 28px; }
   .stat-card .stat-place { font-size: 13px; }
   .stat-card > span:last-child { font-size: 10px; }
+  .learning-summary-card { min-height: 180px; }
+  .quick-question { margin: 17px 0 14px; padding: 17px; border-radius: 19px; }
+  .quick-question-heading { flex-direction: column; gap: 8px; }
+  .quick-question-edition { align-self: flex-start; }
+  .quick-question-unavailable, .quick-question-next { align-items: stretch; flex-direction: column; }
+  .quick-question-unavailable .button, .quick-question-next .button { width: 100%; }
+  .quick-card-front { min-height: 430px; }
+  .quick-card-face { gap: 12px; padding: 20px 17px; border-radius: 18px; }
+  .quick-answer-fields { grid-template-columns: 1fr; gap: 8px; }
+  .quick-question-actions .button { min-height: 48px; flex: 1; padding-inline: 10px; font-size: 12px; }
   .activity-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
   .activity-card { min-height: 190px; padding: 20px; border-radius: 16px; }
   .activity-card h2 { margin-top: 14px; font-size: 22px; }
@@ -414,6 +467,7 @@ a { color: #175db6; text-decoration-thickness: 1px; text-underline-offset: 3px; 
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .quick-card-rotator { transition: none; }
 }
 
 /* Flash-card study and checkpointed practice test */

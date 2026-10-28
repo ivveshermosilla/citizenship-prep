@@ -1,16 +1,15 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import type { Question } from './domain.ts'
+import type { PracticeMetadata } from './quick-question.ts'
 import {
   appendSubmittedOutcome,
-  buildTestOptionSets,
+  buildReviewedTestOptionSets,
   clampSelectionCount,
-  createTestOptions,
   cumulativeRoundSizes,
   makeFlashcardDeck,
   outcomeAtDeadline,
   questionCount,
-  requestedAnswerItemCount,
   summarizeOutcomes,
   totalTestPresentations,
 } from './flashcards.ts'
@@ -30,15 +29,6 @@ function q(number: number, text: string, answers: string[], subsection: string):
     is_time_dependent: false,
   }
 }
-function numericSources() {
-  return [
-    q(110, 'How many amendments does the Constitution have?', ['Twenty-seven (27)'], 'Counts'),
-    q(111, 'How many senators are there?', ['One hundred (100)'], 'Counts'),
-    q(112, 'How many voting members are in the House?', ['Four hundred thirty-five (435)'], 'Counts'),
-    q(113, 'How many justices are on the Supreme Court?', ['Nine (9)'], 'Counts'),
-  ]
-}
-
 const rng = () => 0.41
 
 test('question count, synchronized-input clamping, and inclusive ranges use real question IDs', () => {
@@ -96,77 +86,6 @@ test('cumulative rounds are rolling prefixes and presentation counts include rep
   assert.deepEqual(cumulativeRoundSizes(8, 3, false), [8])
 })
 
-test('multi-item cardinality is explicit and does not treat unrelated numbers as requested answer counts', () => {
-  assert.equal(requestedAnswerItemCount('Name two national holidays.'), 2)
-  assert.equal(requestedAnswerItemCount('What are three reasons to study?'), 3)
-  assert.equal(requestedAnswerItemCount('The first three words are “We the People.” What are they?'), 1)
-  assert.equal(requestedAnswerItemCount('Why do we have three branches of government?'), 1)
-  assert.equal(requestedAnswerItemCount('Name one of the two longest rivers.'), 1)
-})
-
-test('multiple-choice options contain exactly one complete correct set and filter aliases', () => {
-  const target = q(9, 'What are two rights in the Declaration of Independence?', ['Life', 'Liberty', 'Pursuit of happiness'], 'Declaration')
-  const pool = [
-    target,
-    ...numericSources(),
-    q(13, 'What is one right from the First Amendment?', ['Speech'], 'Amendments'),
-    q(14, 'What is a freedom of speech example?', ['Freedom of speech'], 'Examples'),
-  ]
-  const options = createTestOptions(target, pool, '2008', rng)
-  assert.equal(options.options.length, 4)
-  assert.equal(options.options.filter(option => option.correct).length, 1)
-  assert.ok(options.options.every(option => option.label.includes('; ')), 'every option for a two-item question must include two answer items')
-  assert.ok(options.options.filter(option => !option.correct).every(option => !/speech/iu.test(option.label)), 'accepted/alias rights must not become distractors')
-  assert.equal(new Set(options.options.map(option => option.label.toLocaleLowerCase('en-US'))).size, 4)
-})
-
-test('official full multi-item answer strings stay intact; one bundled answer remains one item', () => {
-  const branches = q(16, 'Name the three branches of government.', ['Legislative, executive, and judicial branches'], 'Government')
-  const pool = [branches,
-    ...numericSources(),
-  ]
-  const result = createTestOptions(branches, pool, '2025', rng)
-  assert.equal(result.options.filter(option => option.correct).length, 1)
-  assert.equal(result.options.find(option => option.correct)?.label, 'Legislative, executive, and judicial branches')
-  assert.equal(requestedAnswerItemCount('The idea of self-government is in the first three words. What are they?'), 1)
-})
-
-test('accepted names and holidays stay atomic; they are not split into fake complete answer sets', () => {
-  const target = q(17, 'What are the two parts of the U.S. Congress?', ['Senate and House of Representatives'], 'Congress')
-  const pool = [target,
-    q(36, 'Name two positions in the Cabinet.', ['Secretary of Health and Human Services', 'Secretary of the Treasury'], 'Cabinet'),
-    q(100, 'Name two national U.S. holidays.', ['Martin Luther King, Jr. Day', 'Independence Day'], 'Holidays'),
-    ...numericSources(),
-  ]
-  const options = createTestOptions(target, pool, '2008', rng)
-  assert.equal(options.options.filter(option => option.correct).length, 1)
-  assert.equal(options.options.find(option => option.correct)?.label, 'Senate and House of Representatives')
-  assert.ok(!options.options.some(option => option.label === 'Secretary of Health and Human Services'))
-  assert.ok(!options.options.some(option => option.label === 'Martin Luther King, Jr. Day'))
-})
-
-test('semantic synonyms are not used as distractors for accepted First Amendment answers', () => {
-  const target = q(51, 'What are two rights of everyone in the United States?', ['Freedom of speech', 'Freedom of religion'], 'Rights')
-  const pool = [target,
-    q(1, 'What is an example of freedom of speech?', ['Speech'], 'Speech examples'),
-    q(2, 'What freedom does the First Amendment protect?', ['Expression'], 'Speech examples 2'),
-    ...numericSources(),
-  ]
-  const options = createTestOptions(target, pool, '2008', rng)
-  assert.equal(options.options.length, 4)
-  assert.ok(options.options.filter(option => !option.correct).every(option => !/\b(?:speech|expression)\b/iu.test(option.label)))
-})
-
-test('edition mappings and safe fallback never return an incomplete one-item distractor set', () => {
-  const target = q(65, 'What are three rights of people living in the United States?', ['Life', 'Liberty', 'Security', 'Equality'], 'Rights')
-  const pool = [target,
-    ...numericSources(),
-  ]
-  const result = createTestOptions(target, pool, '2025', rng)
-  assert.equal(result.options.length, 4)
-  assert.ok(result.options.every(option => option.label.split('; ').length === 3))
-})
-
 test('deadline resolution and idempotent client prefixes preserve submitted outcomes', () => {
   assert.equal(outcomeAtDeadline(true, 15_000, 15_000), 'skipped')
   assert.equal(outcomeAtDeadline(false, 15_000, 14_999), 'incorrect')
@@ -178,33 +97,42 @@ test('deadline resolution and idempotent client prefixes preserve submitted outc
   assert.deepEqual(summarizeOutcomes(complete), { answered: 2, correct: 1, incorrect: 0, skipped: 1, percent: 50 })
 })
 
-test('option-set preflight reports questions without enough safe official-answer distractors', () => {
-  const question = q(1, 'Name one thing?', ['Only answer'], 'One topic')
-  const sets = buildTestOptionSets([question], '2025', rng)
-  assert.equal(sets.get(1)?.options.length, 0)
-  assert.match(sets.get(1)?.reason ?? '', /not enough clearly unrelated/u)
+test('reviewed distractor sets produce four options and exclude aliases of complete correct assignments', () => {
+  const target = q(17, 'Name the two parts of Congress.', ['The Senate; The House of Representatives'], 'Congress')
+  const metadata: PracticeMetadata[] = [{
+    question_number: 17, required_count: 2, content_version: 'reviewed-1',
+    answer_groups: [
+      { key: 'senate', display: 'The Senate', aliases: ['Senate'] },
+      { key: 'house', display: 'The House of Representatives', aliases: ['House'] },
+      { key: 'congress', display: 'Congress', aliases: [] },
+    ],
+    distractor_sets: [
+      ['Senate', 'House'],
+      ['The Cabinet', 'The Judiciary'],
+      ['The President', 'Federal agencies'],
+      ['State legislatures', 'The military'],
+      ['Senate', 'The Senate'],
+      ['Senate'],
+      ['The Cabinet', 'The Cabinet'],
+    ],
+  }]
+  const options = buildReviewedTestOptionSets([target], metadata, rng).get(17)?.options ?? []
+  assert.equal(options.length, 4)
+  assert.equal(options.filter(option => option.correct).length, 1)
+  assert.equal(options.filter(option => !option.correct).length, 3)
+  assert.ok(!options.some(option => option.label === 'Senate; House'))
+  assert.ok(options.every(option => option.label.split('; ').length === 2))
 })
 
-test('one-card practice can source clearly unrelated distractors from the full edition pool', () => {
-  const target = q(1, 'What is the supreme law of the land?', ['The Constitution'], 'Principles')
-  const sourcePool = [target, ...numericSources()]
-  const isolated = buildTestOptionSets([target], '2025', rng)
-  const fullPool = buildTestOptionSets([target], '2025', rng, sourcePool)
-  assert.equal(isolated.get(1)?.options.length, 0)
-  assert.equal(fullPool.get(1)?.options.length, 4)
-  assert.equal(fullPool.get(1)?.options.filter(option => option.correct).length, 1)
-})
-
-test('numeric targets use historical people as clearly unrelated answer-type distractors', () => {
-  const target = q(2, 'How many U.S. senators are there?', ['One hundred (100)'], 'Congress')
-  const sourcePool = [target,
-    q(10, 'Who wrote the Declaration of Independence?', ['(Thomas) Jefferson'], 'History'),
-    q(11, 'Who was the Father of Our Country?', ['(George) Washington'], 'History'),
-    q(12, 'Name one of the writers of the Federalist Papers.', ['(James) Madison', '(Alexander) Hamilton', '(John) Jay', 'Publius'], 'History'),
-  ]
-  const options = createTestOptions(target, sourcePool, '2025', rng)
-  assert.equal(options.options.length, 4)
-  assert.equal(options.options.filter(option => option.correct).length, 1)
-  assert.ok(options.options.filter(option => !option.correct).every(option => !/\d/u.test(option.label)))
-  assert.ok(!options.options.some(option => option.label === 'Publius'))
+test('reviewed practice sets fail closed when metadata is missing or has fewer than three complete distractors', () => {
+  const target = q(1, 'Name one branch.', ['Congress'], 'Government')
+  const missing = buildReviewedTestOptionSets([target], [], rng).get(1)
+  assert.equal(missing?.options.length, 0)
+  assert.match(missing?.reason ?? '', /not available/u)
+  const thin: PracticeMetadata[] = [{
+    question_number: 1, required_count: 1, content_version: 'reviewed-1',
+    answer_groups: [{ key: 'congress', display: 'Congress', aliases: [] }],
+    distractor_sets: [['The Cabinet'], ['Senate']],
+  }]
+  assert.equal(buildReviewedTestOptionSets([target], thin, rng).get(1)?.options.length, 0)
 })

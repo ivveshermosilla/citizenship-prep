@@ -1,11 +1,12 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 
-const surfaces = ['src/main.tsx', 'src/components/FlashcardsFeature.tsx', 'src/lib/domain.ts', 'src/lib/supabase.ts', 'index.html']
+const surfaces = ['src/main.tsx', 'src/components/FlashcardsFeature.tsx', 'src/components/QuickQuestionFeature.tsx', 'src/lib/domain.ts', 'src/lib/quick-question.ts', 'src/lib/supabase.ts', 'index.html']
 const source = surfaces.map(path => [path, readFileSync(path, 'utf8')])
 const html = readFileSync('index.html', 'utf8')
 const app = readFileSync('src/main.tsx', 'utf8')
 const flashcards = readFileSync('src/components/FlashcardsFeature.tsx', 'utf8')
+const quickQuestion = readFileSync('src/components/QuickQuestionFeature.tsx', 'utf8')
 const logo = readFileSync('public/us-map-flag.svg', 'utf8')
 assert.match(html, /<html lang="en">/u, 'document language must be English')
 assert.match(html, /<title>Naturalization Preparation App \(NPA\) · Interactive U\.S\. Naturalization Test Prep<\/title>/u, 'approved English product title must be present')
@@ -35,6 +36,14 @@ assert.match(flashcards, /Test yourself/u)
 assert.match(flashcards, /Cards added per round/u)
 assert.match(flashcards, /IMPORTANT NOTICE FOR THIS QUESTION/u)
 assert.match(flashcards, /aria-label=.*About/u, 'selection help controls need accessible labels')
+assert.match(quickQuestion, /Quick Question/u, 'the written activity must be named in the hub')
+assert.match(quickQuestion, /Check answer/u)
+assert.match(quickQuestion, /Another question/u)
+assert.match(quickQuestion, /IMPORTANT NOTICE FOR THIS QUESTION/u)
+assert.match(quickQuestion, /aria-hidden=\{flipped\}/u, 'inactive card faces must be hidden from assistive technology')
+assert.doesNotMatch(quickQuestion, /localStorage|sessionStorage/u, 'written responses must remain in component memory only')
+assert.match(app, /Multiple-choice practice/u)
+assert.match(app, /Written Quick Question/u, 'written and multiple-choice totals must stay separate')
 assert.match(ui, /Naturalization Preparation App \(NPA\)/u)
 assert.match(ui, /IMPORTANT NOTICE FOR THIS QUESTION/u)
 assert.match(ui, /Hosting and database providers may retain technical request\/security logs under their own policies\./u)
