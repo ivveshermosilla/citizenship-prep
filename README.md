@@ -12,7 +12,7 @@ The [first publication record](docs/FIRST_PUBLICATION.md) remains historical.
 rolling review and timed practice tests. See the [feature review](docs/FLASHCARDS_REVIEW.md)
 for the published release record.
 
-**Quick Question:** an untimed written activity in
+**Quick Question is published:** an untimed written activity in
 the hub that grades only exact reviewed answers and variants, keeps entered text
 in memory, and records only the question and outcome. Multiple-choice practice
 uses reviewed distractors for all 228 edition-specific questions. See the

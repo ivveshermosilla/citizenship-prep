@@ -114,8 +114,9 @@ it does not translate or grade free-form answers.
   verifies actual approved question/geography rows and distractors in batches
   of at most 60. Set `app.practice_edition` to `2008`/`2025` and
   `app.practice_offset` to `0, 60, ...` per read-only execution; each statement
-  has a 45-second timeout. The public RPC selector contract is also sampled by
-  the API verifier for UT, DC, and AS in both editions.
+  has a 45-second timeout. Change the local settings near the top of the test
+  for each batch. Release verification also sampled the public metadata RPC
+  for UT, DC and AS in both editions.
 - The real API check is `npm run test:api:flashcards`; it uses two synthetic
   sessions, exercises concurrent duplicate-prefix and suffix requests, and
   prints only one-way recovery-code verifier hashes for targeted cleanup.
@@ -144,8 +145,10 @@ Any future remote import requires the authorized target and fresh source review.
 
 RLS is enabled on both question tables and the private session table. All direct
 question-table privileges are revoked from `PUBLIC`, `anon`, and
-`authenticated`. Only the five exact anonymous public RPCs are executable by
-`anon`; authenticated execution is revoked. The session table also has an
+`authenticated`. Only the explicitly granted study/session RPCs are executable
+by `anon`; authenticated execution is revoked. These include the original five
+MVP RPCs, the two flashcard-progress RPCs and the three Quick Question/learning
+RPCs listed in the migrations. The session table also has an
 explicit `USING (false)` / `WITH CHECK (false)` policy. The unexposed
 `game_private` schema grants `anon` usage and execute only on capability helpers
 called by the invoker wrappers; it grants no direct session-table access.
@@ -197,9 +200,11 @@ probe sessions. Core fingerprints remain `2c79ad56f1b2df4ad1be60e32fd5e405`
 returned zero lints; performance reports only the new TTL index as unused while
 the session table is nearly empty. A publishable URL/key is configured only in
 ignored local `.env.local`; no service/secret key was retrieved or committed.
-Local files remain uncommitted/unpublished; Vercel remains untouched.
+The application is published on the canonical NPA Vercel hostname. The preceding
+verification notes describe the original database/session foundation; current
+release evidence is in [Quick Question review](../docs/QUICK_QUESTION_REVIEW.md).
 
-## Quick Question backend draft
+## Quick Question backend
 
 The Quick Question migration adds private, versioned metadata and separate
 written/multiple-choice progress projections. Its rollback SQL checks are

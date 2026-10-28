@@ -1,6 +1,6 @@
 # Quick Question release review
 
-Status: local review complete; public deployment verification pending.
+Status: published and verified on October 28, 2026.
 Implementation is by GPT-6 Luna; independent review, database
 operations and publication are by Codex (`/root`).
 
@@ -56,9 +56,25 @@ Existing anonymous sessions, geography selection and seven-day retention apply.
   `311e7773cbc7c818de0470cf344ad796` (2008) and
   `260b0e00ea315afe6222ffd4b5db7126` (2025). Security advisors returned no lints.
 
-Pending: staged/history secret scans, production deployment, public browser
-verification and GitHub CI. Publication evidence will be recorded here after
-the deployed site has been checked.
+## Publication
+
+- Public URL: [Naturalization Preparation App](https://naturalization-preparation-app.vercel.app/).
+- Published source: `0872c54f25733870d220ff851a5299a1b5bb73c5`.
+- Vercel deployment `dpl_6wN5Xsfopk71zyzFLacSgGjKcQB4` reached READY.
+- [GitHub Security CI](https://github.com/ivveshermosilla/citizenship-prep/actions/runs/40717781498)
+  passed. Local staged and complete-history secret scans passed with hooks enabled.
+- Root's complete HTTPS browser flow passed both editions at all four widths,
+  including written feedback, reordering/partial answers, untimed waiting,
+  retries, score recovery, legacy modes and the actual timed MC timeout.
+  The harness records POST requests only and waits for card animations to settle
+  before testing touch coordinates.
+- The public JS/CSS bytes match the reviewed build. HTTPS/security headers were
+  present, and environment, Git, source, seed and authoring-catalogue paths
+  returned 404. The final two public probe sessions were deleted by exact
+  verifier hashes; the follow-up query returned zero matches.
+
+A documentation/test-harness follow-up records this evidence. Its deployment
+must retain the same reviewed application asset bytes.
 
 The official facts remain dated October 27, 2026. Editorial review of aliases or
 distractors is not a new verification of current officeholders. Monthly content

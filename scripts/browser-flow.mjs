@@ -34,12 +34,12 @@ socket.addEventListener('message', event => {
   }
   if (msg.method === 'Network.requestWillBeSent') {
     const request = msg.params.request
-    if (request.url.endsWith('/rpc/get_practice_metadata')) {
+    if (request.method === 'POST' && request.url.endsWith('/rpc/get_practice_metadata')) {
       metadataRequestIds.add(msg.params.requestId)
       practiceMetadataByQuestion.clear()
     }
-    if (request.url.endsWith('/rpc/get_practice_questions')) questionRequestIds.add(msg.params.requestId)
-    if (request.url.endsWith('/rpc/record_written_answer')) {
+    if (request.method === 'POST' && request.url.endsWith('/rpc/get_practice_questions')) questionRequestIds.add(msg.params.requestId)
+    if (request.method === 'POST' && request.url.endsWith('/rpc/record_written_answer')) {
       try {
         const payload = JSON.parse(request.postData ?? '{}')
         writtenRpcCalls.push({
@@ -118,7 +118,7 @@ function uniqueWrittenCalls() {
   return [...new Map(writtenRpcCalls.map(call => [call.requestId, call])).values()]
 }
 async function clickText(text) {
-  const point = await evaluate(`(async()=>{const e=[...document.querySelectorAll('button')].find(x=>x.textContent.includes(${JSON.stringify(text)}));if(!e) return null;e.scrollIntoView({behavior:'instant',block:'center',inline:'center'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));const r=e.getBoundingClientRect(),hit=document.elementFromPoint(r.left+r.width/2,r.top+r.height/2);if(!hit||!(hit===e||e.contains(hit)))return {blocked:true,hit:hit?.textContent?.trim().slice(0,80)||null};window.__codexTouchHit=false;document.addEventListener('touchstart',event=>{if(event.target===e||e.contains(event.target))window.__codexTouchHit=true},{capture:true,once:true});return {x:r.left+r.width/2,y:r.top+r.height/2}})()`)
+  const point = await evaluate(`(async()=>{const flip=document.querySelector('.quick-card-rotator');const animations=flip?[...flip.getAnimations()].filter(animation=>animation.playState==='running'&&Number.isFinite(animation.effect?.getTiming().duration)):[];if(animations.length)await Promise.race([Promise.allSettled(animations.map(animation=>animation.finished)),new Promise(resolve=>setTimeout(resolve,1000))]);await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));const e=[...document.querySelectorAll('button')].find(x=>x.textContent.includes(${JSON.stringify(text)}));if(!e)return null;e.scrollIntoView({behavior:'instant',block:'center',inline:'center'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));const r=e.getBoundingClientRect(),hit=document.elementFromPoint(r.left+r.width/2,r.top+r.height/2);if(!hit||!(hit===e||e.contains(hit)))return {blocked:true,hit:hit?.textContent?.trim().slice(0,80)||null};window.__codexTouchHit=false;document.addEventListener('touchstart',event=>{if(event.target===e||e.contains(event.target))window.__codexTouchHit=true},{capture:true,once:true});return {x:r.left+r.width/2,y:r.top+r.height/2}})()`)
   if (!point) {
     const route = await evaluate(`({heading:document.querySelector('.shell h1')?.textContent?.trim()||'',buttons:[...document.querySelectorAll('button')].map(button=>button.textContent.trim()).filter(Boolean)})`)
     throw new Error(`Button not found: ${text}; route: ${JSON.stringify(route)}`)
@@ -318,7 +318,7 @@ try {
   const retryTarget = [...practiceMetadataByQuestion.values()].find(item => item.question_number !== currentQuickNumber && item.question_number !== invalidTarget.question_number)
   if (!retryTarget) throw new Error('No question remains for retry coverage')
   await selectQuickQuestion(retryTarget.question_number)
-  await evaluate(`(() => {const original=window.fetch.bind(window);window.__quickRetryProbe={count:0,attemptId:null,questionNumber:null,outcome:null,keys:[]};window.fetch=async(input,init)=>{const url=typeof input==='string'?input:input.url;if(url.endsWith('/rpc/record_written_answer')&&window.__quickRetryProbe.count===0){const p=JSON.parse(init.body);window.__quickRetryProbe={count:1,attemptId:p.p_attempt_id,questionNumber:p.p_question_number,outcome:p.p_outcome,keys:Object.keys(p).sort()};window.fetch=original;throw new TypeError('Synthetic one-time network interruption')}return original(input,init)}})()`)
+  await evaluate(`(() => {const original=window.fetch.bind(window);window.__quickRetryProbe={count:0,attemptId:null,questionNumber:null,outcome:null,keys:[]};window.fetch=async(input,init)=>{const url=typeof input==='string'?input:input.url;const method=String(init?.method|| (input instanceof Request?input.method:'GET')).toUpperCase();if(method==='POST'&&url.endsWith('/rpc/record_written_answer')&&window.__quickRetryProbe.count===0){const p=JSON.parse(init.body);window.__quickRetryProbe={count:1,attemptId:p.p_attempt_id,questionNumber:p.p_question_number,outcome:p.p_outcome,keys:Object.keys(p).sort()};window.fetch=original;throw new TypeError('Synthetic one-time network interruption')}return original(input,init)}})()`)
   await clickText('Skip')
   await waitFor(`!!document.querySelector('.quick-save-error')`, 'retryable written-answer network failure')
   const writeCountBeforeRetry = uniqueWrittenCalls().length
