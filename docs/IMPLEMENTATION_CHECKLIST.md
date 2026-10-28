@@ -16,9 +16,9 @@
 
 ## Refresh de marca e interfaz
 
-**Estado general:** BR01–BR04 revisados; BR05 implementado localmente tras selección explícita del propietario. Nombre/hostname confirmados y añadidos al proyecto Vercel existente por el coordinador; publicación del refresh aún pendiente.
+**Estado general:** BR01–BR05 verificados; renovación NPA publicada en https://naturalization-preparation-app.vercel.app/ — 2026-10-27 20:07 MDT.
 **Codificado por:** GPT-6 Luna (`/root/luna_branding_refresh`).
-**Revisado por:** Codex (/root), 2026-10-27 19:27 MDT; ver [BRANDING_REFRESH_REVIEW.md](BRANDING_REFRESH_REVIEW.md).
+**Revisado por:** Codex (/root), 2026-10-27 20:07 MDT; ver [BRANDING_REFRESH_REVIEW.md](BRANDING_REFRESH_REVIEW.md).
 **Referencias visuales:** MatPro `ff0c2488e412db90ff2bac7db086acb102df12c5` y DivisionPro `257b32b37693fade5dc5dc92c3ce0668f6581ae2`; consultados CSS y HTML mediante GitHub.
 
 | ID | Tarea y criterio de aceptación | Estado | Codificado por | Revisado por | Evidencia / archivos / último avance |
@@ -27,7 +27,7 @@
 | BR02 | Tagline solicitado y terminología visible Question Edition con opciones 2008/2025; mantener idioma, fechas y mecánicas existentes | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | `src/main.tsx`, `index.html`, `scripts/check-english-copy.mjs`; check English, build, typecheck y 4 unit tests aprobados; el texto visible no contiene “bank”. |
 | BR03 | Mapa estadounidense reconocible con estrellas y franjas, cargado localmente y con licencia/procedencia verificable | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | `public/us-map-flag.svg`; geometría de 50 estados adaptada de [Wikimedia Commons: Blank US Map (states only).svg](https://commons.wikimedia.org/wiki/File:Blank_US_Map.svg), atribuida a Heitordp, CC0 1.0 ([licencia](https://creativecommons.org/publicdomain/zero/1.0/)); favicon SVG enlazado en `index.html`. SVG local sin contenido activo ni referencias externas; aspecto comprobado en captura móvil/escritorio. |
 | BR04 | Preservar avisos, fuentes, sesión anónima, reanudación, caducidad a 168 h, tarjetas y autoevaluación; compartir capturas seguras para revisión | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | `npm run test:browser` y `npm run test:browser-flow` aprobados: avisos, recuperación y score, fuentes/fechas, tarjetas, quiz, burbuja de 5 s, dos ediciones y viewports 320/390/820/1440px. Coordinador inspeccionó capturas seguras de hub y avisos. Eliminadas exactamente dos sesiones sintéticas por hash; consulta posterior confirmó cero coincidencias. |
-| BR05 | Aplicar Naturalization Preparation App (NPA) en marca, accesibilidad, metadatos, documentos y pruebas; comprobar nombre completo y NPA en dispositivos apropiados | Implementado | GPT-6 Luna (/root/luna_branding_refresh) | Pendiente | Nombre/hostname seleccionados por el propietario; coordinador confirmó `naturalization-preparation-app.vercel.app` verificado en el proyecto existente. App/docs canónicos actualizados; checks finales aprobaron, incluidos NPA a 320/390 y nombre completo a 820/1440. No se alteró Supabase ni se publicó. |
+| BR05 | Aplicar Naturalization Preparation App (NPA) en marca, accesibilidad, metadatos, documentos y pruebas; comprobar nombre completo y NPA en dispositivos apropiados | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | Nombre/hostname seleccionados por el propietario; coordinador confirmó `naturalization-preparation-app.vercel.app` verificado en el proyecto existente. App/docs canónicos actualizados; checks finales aprobaron, incluidos NPA a 320/390 y nombre completo a 820/1440. Publicado en el hostname aprobado; flujo HTTPS completo pasó ambas ediciones, recuperación/puntuación y cuatro tamaños. Archivos JS/CSS/SVG idénticos a dist revisado; CI Security aprobada. URL anterior redirige 307. Base, hechos y sesiones conservados. |
 
 **Estado del MVP local:** entregable completo y revisado — 2026-10-27 18:28 MDT.
 **Codificación:** GPT-6 Luna (`/root/luna_mvp`).
@@ -136,3 +136,5 @@ Una tarea implementada requiere revisión para pasar a Verificado.
   las dos sesiones sintéticas se eliminaron por hash exacto y se preservaron las demás.
 - Ver [FIRST_PUBLICATION.md](FIRST_PUBLICATION.md) para pruebas, CI, cabeceras
   y límites de privacidad de infraestructura. Ya no hay tareas de publicación pendientes.
+
+- 2026-10-27 20:07 MDT — Codex (/root): BR05 revisado y publicado. Commit fuente `cff4a5215c7b3f0bb9c2afbe93473132099b5988`; Vercel READY, URL NPA HTTP 200 anónimo, cabeceras y rutas privadas comprobadas. Chrome desde HTTPS público aprobó ambos cohorts, cuatro tamaños, recuperación, puntuación y aviso. Las dos sesiones sintéticas de esta ejecución se eliminaron por hashes exactos. Security CI 40618924116 aprobada.

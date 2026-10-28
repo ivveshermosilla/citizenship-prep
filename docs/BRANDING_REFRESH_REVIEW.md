@@ -42,10 +42,29 @@ at all four widths, including the full/compact brand. The coordinator inspected
 safe final mobile/desktop screenshots and target-cleaned the two new synthetic
 sessions, then confirmed zero matching rows remained.
 
-The completed source is ready for the coordinator's Git publication and public
-HTTPS verification. No new deployment is claimed by this local-review record.
-Existing recovery codes and database content must be preserved.
+The selected-name local review completed before the publication checks below.
+Existing recovery codes and database content were preserved.
 
 No schema, answer facts, source-review dates, analytics, session retention rules
 or gameplay changes were introduced. Physical-device and other-browser checks
 remain part of the owner's testing.
+
+## Public release verified — 2026-10-27 20:07 MDT
+
+The reviewed source commit `cff4a5215c7b3f0bb9c2afbe93473132099b5988` was
+pushed to GitHub main. The existing connected Vercel project deployed it with
+READY status at [Naturalization Preparation App (NPA)](https://naturalization-preparation-app.vercel.app/).
+The previous test hostname returns a 307 redirect to this address.
+
+The coordinator verified anonymous HTTPS 200, the approved title and English
+document language, security response headers and the locally served SVG. Public
+JS, CSS and SVG bytes match the reviewed production build. Private environment,
+Git, source, seed and internal research paths return 404. GitHub Security CI
+run 40618924116 succeeded.
+
+Browser smoke and the full real-backend flow passed against the new public
+HTTPS URL at all four widths and both editions, including manual recovery,
+restored score, unchanged activities and the five-second information notice.
+Only the two synthetic sessions from that production run were removed using
+their exact verifier hashes. No real-session deletion, schema migration,
+tracking SDK, provider-security weakening or factual-answer refresh occurred.

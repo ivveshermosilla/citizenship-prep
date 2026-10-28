@@ -2,15 +2,11 @@
 
 English-language web app for interactive U.S. naturalization test preparation.
 
-**Approved app name:** Naturalization Preparation App (NPA)
+**Try the app:** [Naturalization Preparation App (NPA)](https://naturalization-preparation-app.vercel.app/).
 
-**Approved canonical URL:** https://naturalization-preparation-app.vercel.app/
-
-The owner-approved hostname is secured on the existing dedicated Vercel project.
-The refreshed NPA release is still pending coordinator review and publication.
-The currently published test build uses the rejected provisional Civic Compass
-name and old `citizenship-prep-sandy.vercel.app` alias; that release is recorded
-as history in [FIRST_PUBLICATION.md](docs/FIRST_PUBLICATION.md).
+The previous test URL redirects to this canonical address. The approved NPA
+refresh is published and verified; see the [branding release review](docs/BRANDING_REFRESH_REVIEW.md).
+The [first publication record](docs/FIRST_PUBLICATION.md) remains historical.
 
 ## Project status
 
@@ -18,8 +14,8 @@ The React/TypeScript/Vite app supports anonymous recovery-code sessions,
 both filing cohorts, all jurisdictions and congressional districts, Study Cards,
 and Quick Quiz self-checks backed by the dedicated Supabase project. All
 user-facing app content is English. The approved name and canonical hostname are
-now applied locally; see the [implementation checklist](docs/IMPLEMENTATION_CHECKLIST.md)
-for Luna's implementation evidence and pending coordinator release checks.
+published; see the [implementation checklist](docs/IMPLEMENTATION_CHECKLIST.md)
+for Luna's implementation evidence and the coordinator's completed checks.
 Licensing remains unselected.
 
 The [October 27, 2026 research draft](research/2026-10-27/README.md) records the

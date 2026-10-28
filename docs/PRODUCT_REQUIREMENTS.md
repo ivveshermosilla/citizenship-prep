@@ -5,7 +5,7 @@ behavior. The English-only MVP implements the core interface and session flow.
 The initial phone-test release used the provisional Civic Compass name and old
 Vercel alias; the owner has since selected Naturalization Preparation App (NPA) and
 `naturalization-preparation-app.vercel.app` as the canonical name and hostname.
-The refreshed NPA release is pending coordinator review/publication. Provider technical
+The refreshed NPA release is published and verified; see BRANDING_REFRESH_REVIEW.md. Provider technical
 logging is disclosed; infrastructure-wide zero logging or backup erasure is not
 promised. See FIRST_PUBLICATION.md for release checks and remaining limits.
 
