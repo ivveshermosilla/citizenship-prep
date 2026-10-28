@@ -1,8 +1,11 @@
 # Product requirements
 
 Confirmed by the owner on October 27, 2026. This records product acceptance
-behavior. The English-only MVP implements the core interface and session flow
-and its first reviewed version is published for phone testing. Provider technical
+behavior. The English-only MVP implements the core interface and session flow.
+The initial phone-test release used the provisional Civic Compass name and old
+Vercel alias; the owner has since selected Naturalization Preparation App (NPA) and
+`naturalization-preparation-app.vercel.app` as the canonical name and hostname.
+The refreshed NPA release is pending coordinator review/publication. Provider technical
 logging is disclosed; infrastructure-wide zero logging or backup erasure is not
 promised. See FIRST_PUBLICATION.md for release checks and remaining limits.
 
@@ -19,16 +22,20 @@ of service. Some answers can change between monthly updates.
 
 Required English notice:
 
-> IMPORTANT NOTICE: Civic Compass is an unofficial study aid and does not
-> replace official sources. Some answers depend on the applicable residence or
-> jurisdiction and may change by geography or by an official's term of service.
+> IMPORTANT NOTICE: Naturalization Preparation App (NPA) is an unofficial study
+> aid and does not replace official sources. Some answers depend on the
+> applicable residence or jurisdiction and may change by geography or by an
+> official's term of service.
 > Always study with official sources and verify that the information presented
 > and learned is correct and current.
 
 All user-facing application text, errors, accessibility labels, metadata and
-document title must be English. Use the provisional product name **Civic
-Compass**, `lang="en"`, and `en-US` date formatting. Preserve official English
-questions and accepted answer options exactly.
+document title must be English. Use **Naturalization Preparation App (NPA)** as
+the product name, displaying NPA on compact phone headers when needed while
+keeping the full name accessible. The approved canonical hostname is
+`naturalization-preparation-app.vercel.app`; use `lang="en"` and `en-US` date
+formatting. Preserve official English questions and accepted answer options
+exactly.
 
 Link to USCIS study/test-update pages and the relevant official source for each
 changing local answer. Product copy must not expose database or account details.
@@ -233,8 +240,10 @@ relevant; do not remove the underlying source links in a game mode.
 ## Current implementation scope
 
 The two Supabase question banks and internal change guidance are already loaded.
-The owner has now authorized the minimum local implementation, delegated to
-GPT-6 Luna with coordinator review. This supersedes the earlier requirements-only
+The owner authorized the minimum local implementation, delegated to GPT-6 Luna
+with coordinator review. The approved product name and canonical hostname are
+Naturalization Preparation App (NPA) and `naturalization-preparation-app.vercel.app`;
+the earlier Civic Compass name and test alias are historical only. This supersedes the earlier requirements-only
 gate for the scope in [MVP_IMPLEMENTATION_BRIEF.md](MVP_IMPLEMENTATION_BRIEF.md).
 Track authorship and review in [IMPLEMENTATION_CHECKLIST.md](IMPLEMENTATION_CHECKLIST.md).
 The coordinator does not write application, SQL or test implementation. The

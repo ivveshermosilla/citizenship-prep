@@ -18,9 +18,12 @@ versions and a lockfile. Inspect existing installed tooling before adding any.
 Do not scaffold over or remove the existing research, hooks, documentation,
 migrations, seed, context references or uncommitted work.
 
-English-only interface and notices branded **Civic Compass**; set `lang="en"`
-and format dates with `en-US`. Preserve official English questions and accepted
-answer options exactly. Do not invent translated official answers. Use the
+Use the owner-approved name **Naturalization Preparation App (NPA)** for the
+English-only interface and notices. The approved canonical host is
+`naturalization-preparation-app.vercel.app`; the coordinator checks/configures
+Vercel and publishes. Civic Compass and its old test alias are historical only.
+Set `lang="en"` and format dates with `en-US`. Preserve official English
+questions and accepted answer options exactly. Do not invent translated official answers. Use the
 heading `IMPORTANT NOTICE FOR THIS QUESTION` and display vacancies as
 `Vacant (previously: NAME)` while preserving canonical answers.
 

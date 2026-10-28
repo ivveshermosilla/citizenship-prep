@@ -14,6 +14,21 @@
 | EN02 | Requisitos, brief, README y tests alineados con la publicación English-only, sin alterar hechos/fingerprints | Verificado | GPT-6 Luna (/root/luna_english_release), 2026-10-27 18:38 MDT | Codex (/root) | Actualizados `docs/PRODUCT_REQUIREMENTS.md`, `docs/MVP_IMPLEMENTATION_BRIEF.md`, `README.md`, `supabase/README.md`, pruebas unitarias y browser scripts. Browser probó cohorts 2008/2025, aviso/privacy, respuesta revisada y flujo real. |
 | EN03 | Build estático y cabeceras mínimas compatibles con Vercel; sin telemetría ni secretos de servicio | Verificado | GPT-6 Luna (/root/luna_english_release), 2026-10-27 18:38 MDT | Codex (/root) | Producción READY; HTTP 200 anónimo, CSP/HTTPS y cabeceras presentes, archivos privados/fuentes no servidos (404). Flujo real en URL pública pasó ambos cohorts y viewports320/390/820/1440. |
 
+## Refresh de marca e interfaz
+
+**Estado general:** BR01–BR04 revisados; BR05 implementado localmente tras selección explícita del propietario. Nombre/hostname confirmados y añadidos al proyecto Vercel existente por el coordinador; publicación del refresh aún pendiente.
+**Codificado por:** GPT-6 Luna (`/root/luna_branding_refresh`).
+**Revisado por:** Codex (/root), 2026-10-27 19:27 MDT; ver [BRANDING_REFRESH_REVIEW.md](BRANDING_REFRESH_REVIEW.md).
+**Referencias visuales:** MatPro `ff0c2488e412db90ff2bac7db086acb102df12c5` y DivisionPro `257b32b37693fade5dc5dc92c3ce0668f6581ae2`; consultados CSS y HTML mediante GitHub.
+
+| ID | Tarea y criterio de aceptación | Estado | Codificado por | Revisado por | Evidencia / archivos / último avance |
+| --- | --- | --- | --- | --- | --- |
+| BR01 | Restyle profesional, responsive y móvil primero, con fondos fríos, superficies blancas, jerarquía sans, controles accesibles y foco visible | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | `src/style.css`; revisión en Chrome a 320/390/820/1440px, sin overflow. Capturas seguras de hub móvil y escritorio listas para el coordinador. La comprobación del nombre largo final corresponde a BR05. |
+| BR02 | Tagline solicitado y terminología visible Question Edition con opciones 2008/2025; mantener idioma, fechas y mecánicas existentes | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | `src/main.tsx`, `index.html`, `scripts/check-english-copy.mjs`; check English, build, typecheck y 4 unit tests aprobados; el texto visible no contiene “bank”. |
+| BR03 | Mapa estadounidense reconocible con estrellas y franjas, cargado localmente y con licencia/procedencia verificable | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | `public/us-map-flag.svg`; geometría de 50 estados adaptada de [Wikimedia Commons: Blank US Map (states only).svg](https://commons.wikimedia.org/wiki/File:Blank_US_Map.svg), atribuida a Heitordp, CC0 1.0 ([licencia](https://creativecommons.org/publicdomain/zero/1.0/)); favicon SVG enlazado en `index.html`. SVG local sin contenido activo ni referencias externas; aspecto comprobado en captura móvil/escritorio. |
+| BR04 | Preservar avisos, fuentes, sesión anónima, reanudación, caducidad a 168 h, tarjetas y autoevaluación; compartir capturas seguras para revisión | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | `npm run test:browser` y `npm run test:browser-flow` aprobados: avisos, recuperación y score, fuentes/fechas, tarjetas, quiz, burbuja de 5 s, dos ediciones y viewports 320/390/820/1440px. Coordinador inspeccionó capturas seguras de hub y avisos. Eliminadas exactamente dos sesiones sintéticas por hash; consulta posterior confirmó cero coincidencias. |
+| BR05 | Aplicar Naturalization Preparation App (NPA) en marca, accesibilidad, metadatos, documentos y pruebas; comprobar nombre completo y NPA en dispositivos apropiados | Implementado | GPT-6 Luna (/root/luna_branding_refresh) | Pendiente | Nombre/hostname seleccionados por el propietario; coordinador confirmó `naturalization-preparation-app.vercel.app` verificado en el proyecto existente. App/docs canónicos actualizados; checks finales aprobaron, incluidos NPA a 320/390 y nombre completo a 820/1440. No se alteró Supabase ni se publicó. |
+
 **Estado del MVP local:** entregable completo y revisado — 2026-10-27 18:28 MDT.
 **Codificación:** GPT-6 Luna (`/root/luna_mvp`).
 **Revisión:** Codex, coordinador (`/root`).
@@ -41,6 +56,23 @@ Una tarea implementada requiere revisión para pasar a Verificado.
 | M12 | Instrucciones de uso y pruebas, servidor local disponible y límites documentados | Verificado | GPT-6 Luna (/root/luna_mvp), 2026-10-27 14:16 MDT | Codex (/root) | README revisado: arranque reproducible en puerto 4173, Chrome en terminal separada y .env.local existente preservado. Servidor reiniciado y comprobado por coordinador; límites de publicación documentados. |
 
 ## Registro de avances
+
+- 2026-10-27 20:04 MDT — GPT-6 Luna completó BR05 con el nombre aprobado
+  Naturalization Preparation App (NPA) y el hostname
+  `naturalization-preparation-app.vercel.app`, confirmado por el coordinador en
+  el proyecto existente. Marca compacta accesible, notice, footer, metadata,
+  pruebas y README/requisitos/briefs canónicos actualizados. Typecheck, build,
+  `npm test` (4/4), English, Chrome smoke y full flow aprobaron. NPA aparece en
+  320/390px; el nombre completo aparece en 820/1440px. Capturas seguras de aviso
+  y hub compartidas para revisión; dos verifiers sintéticos enviados para
+  limpieza dirigida. Sin publicación ni cambios en Supabase.
+
+- 2026-10-27 19:35 MDT — GPT-6 Luna implementó BR01–BR04. `npm run typecheck`,
+  `npm run build`, `npm test` (4/4), `npm run test:english`,
+  `npm run test:browser` y `npm run test:browser-flow` aprobaron. Se guardaron
+  capturas seguras del hub para móvil y escritorio; no se fotografió la pantalla
+  del código. Dos sesiones sintéticas siguen pendientes de limpieza exacta por
+  el coordinador. BR05 espera el nombre y slug elegidos por el propietario.
 
 - 2026-10-27 14:02 MDT — Luna: creado esqueleto React/TypeScript/Vite con versiones
   exactas, catálogo local de 56 jurisdicciones/441 distritos, flujo inicial y

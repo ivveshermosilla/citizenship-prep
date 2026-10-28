@@ -1,17 +1,26 @@
-# Civic Compass
+# Naturalization Preparation App (NPA)
 
-English-language web app for practicing U.S. naturalization civics questions.
+English-language web app for interactive U.S. naturalization test preparation.
 
-**Try the app:** [Civic Compass](https://citizenship-prep-sandy.vercel.app/).
+**Approved app name:** Naturalization Preparation App (NPA)
+
+**Approved canonical URL:** https://naturalization-preparation-app.vercel.app/
+
+The owner-approved hostname is secured on the existing dedicated Vercel project.
+The refreshed NPA release is still pending coordinator review and publication.
+The currently published test build uses the rejected provisional Civic Compass
+name and old `citizenship-prep-sandy.vercel.app` alias; that release is recorded
+as history in [FIRST_PUBLICATION.md](docs/FIRST_PUBLICATION.md).
 
 ## Project status
 
 The React/TypeScript/Vite app supports anonymous recovery-code sessions,
-both filing cohorts, all jurisdictions and congressional districts, study cards,
-and self-check quizzes backed by the dedicated Supabase project. All user-facing
-app content is English. The first reviewed version is published on GitHub and
-Vercel for phone testing. See the [publication record](docs/FIRST_PUBLICATION.md)
-for verification and privacy boundaries. Licensing remains unselected.
+both filing cohorts, all jurisdictions and congressional districts, Study Cards,
+and Quick Quiz self-checks backed by the dedicated Supabase project. All
+user-facing app content is English. The approved name and canonical hostname are
+now applied locally; see the [implementation checklist](docs/IMPLEMENTATION_CHECKLIST.md)
+for Luna's implementation evidence and pending coordinator release checks.
+Licensing remains unselected.
 
 The [October 27, 2026 research draft](research/2026-10-27/README.md) records the
 128-question 2025 bank and the separately applicable 100-question 2008 bank.

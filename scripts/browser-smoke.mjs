@@ -1,6 +1,8 @@
 // Small Chrome DevTools Protocol smoke test; uses the system Chrome and Node's
 // built-in WebSocket so no browser automation package or screenshots are kept.
 const base = process.env.APP_URL ?? 'http://127.0.0.1:4173/'
+const noticePhoneShot = process.env.BROWSER_REVIEW_SHOT_NOTICE_PHONE
+const noticeDesktopShot = process.env.BROWSER_REVIEW_SHOT_NOTICE_DESKTOP
 const response = await fetch(`http://127.0.0.1:9223/json/new?${encodeURIComponent(base)}`, { method: 'PUT' })
 if (!response.ok) throw new Error(`Chrome tab creation failed: ${response.status}`)
 const tab = await response.json()
@@ -38,8 +40,17 @@ try {
     await command('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: width < 600 })
     await command('Page.navigate', { url: base })
     await new Promise(resolve => setTimeout(resolve, 500))
-    const state = await evaluate(`(() => ({title:document.title, language:document.documentElement.lang, spanish:/[áéíóúñ¿¡]/i.test(document.body.innerText), width:innerWidth, scroll:document.documentElement.scrollWidth, heading:document.querySelector('h1')?.textContent?.trim(), resume:[...document.querySelectorAll('button')].some(b=>b.textContent.includes('Resume previous session')), storage:localStorage.length+sessionStorage.length, external:[...performance.getEntriesByType('resource')].filter(r=>new URL(r.name).origin!==location.origin).length}))()`)
-    if (!state.title.includes('Civic Compass') || state.language !== 'en' || state.spanish || state.width !== width || state.scroll > width || !state.heading || !state.resume || state.storage !== 0 || state.external !== 0) throw new Error(`${label} language/layout/privacy check failed: ${JSON.stringify(state)}`)
+    const state = await evaluate(`(() => ({title:document.title, language:document.documentElement.lang, spanish:/[áéíóúñ¿¡]/i.test(document.body.innerText), width:innerWidth, scroll:document.documentElement.scrollWidth, heading:document.querySelector('h1')?.textContent?.trim(), resume:[...document.querySelectorAll('button')].some(b=>b.textContent.includes('Resume previous session')), storage:localStorage.length+sessionStorage.length, external:[...performance.getEntriesByType('resource')].filter(r=>new URL(r.name).origin!==location.origin).length, brandLabel:document.querySelector('.brand')?.getAttribute('aria-label'), fullBrandVisible:!!document.querySelector('.brand-name-full')&&getComputedStyle(document.querySelector('.brand-name-full')).display!=='none', compactBrandVisible:!!document.querySelector('.brand-name-compact')&&getComputedStyle(document.querySelector('.brand-name-compact')).display!=='none'}))()`)
+    const compactWidth = width <= 620
+    if (!state.title.includes('Naturalization Preparation App (NPA)') || state.language !== 'en' || state.spanish || state.width !== width || state.scroll > width || !state.heading || !state.resume || state.storage !== 0 || state.external !== 0 || !state.brandLabel?.includes('Naturalization Preparation App (NPA)') || state.compactBrandVisible !== compactWidth || state.fullBrandVisible === compactWidth) throw new Error(`${label} language/layout/privacy/brand check failed: ${JSON.stringify(state)}`)
+    const noticeShot = width === 390 ? noticePhoneShot : width === 1440 ? noticeDesktopShot : undefined
+    if (noticeShot) {
+      const safeNotice = await evaluate(`!!document.querySelector('.notice-layout') && !document.querySelector('.secret-code')`)
+      if (!safeNotice) throw new Error(`Refusing notice screenshot outside the safe entry screen at ${width}px`)
+      const shot = await command('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false })
+      const { writeFileSync } = await import('node:fs')
+      writeFileSync(noticeShot, Buffer.from(shot.data, 'base64'))
+    }
     console.log(`${label}: width=${state.width}, scrollWidth=${state.scroll}, resume present, browser storage empty, no third-party requests`)
   }
   await command('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true })

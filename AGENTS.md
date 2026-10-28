@@ -2,6 +2,14 @@
 
 ## Scope and workflow
 
+- Latest owner feedback rejects the provisional Civic Compass brand and
+  generated public alias. The owner explicitly selected **Naturalization
+  Preparation App (NPA)** and `naturalization-preparation-app.vercel.app`.
+  Read docs/BRANDING_REFRESH_BRIEF.md. Apply that approved name consistently;
+  coordinator verifies URL availability and publishes the reviewed refresh.
+  Use MatPro/DivisionPro styling as references, a U.S.-map/flag SVG logo,
+  clearer interactive-naturalization tagline and Question Edition vocabulary.
+  Preserve current Study Cards/Quick Quiz mechanics as explicitly requested.
 - Current owner update: user-facing content is ENGLISH ONLY. GPT-6 Luna must
   implement all app/test/config corrections. Read docs/ENGLISH_RELEASE_BRIEF.md.
   The owner now authorizes the first reviewed GitHub source publication and
@@ -9,8 +17,9 @@
   publication deferrals for that release. Coordinator reviews and operates
   Git/hosting; never publish credentials or private context.
 - The October 27, 2026 English-only release update supersedes the older Spanish
-  interface requirement below. English-only copy, Civic Compass branding,
-  `lang="en"`, and `en-US` dates are required for the first release. The
+  interface requirement below. English-only copy, `lang="en"`, and `en-US`
+  dates remain required. That release used the provisional Civic Compass name;
+  the owner's branding decision above supersedes that name. The
   coordinator performs the authorized first GitHub publication and Vercel
   deployment after implementation review; Luna does not publish or deploy.
 - Current owner authorization: implement the local MVP through GPT-6 Luna only.

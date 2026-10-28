@@ -10,8 +10,11 @@ Spanish UI copy and earlier publication deferrals for this first release.
 - Translate every user-facing string: onboarding, controls, setup, recovery,
   dates, statuses, errors, accessibility labels, notices, clipboard feedback,
   minigames, counters, footer, HTML metadata and document title.
-- Use the provisional English product name **Civic Compass**. Keep repository
-  and service identifiers unchanged. Use `lang="en"` and `en-US` date formatting.
+- Use the approved English product name **Naturalization Preparation App (NPA)**.
+  Keep repository and service identifiers unchanged. The approved canonical host
+  is `naturalization-preparation-app.vercel.app`; coordinator operates Vercel.
+  Use `lang="en"` and `en-US` date formatting. The initial release used Civic
+  Compass; that name and its old test alias are historical only.
 - The question notice becomes **IMPORTANT NOTICE FOR THIS QUESTION**. Preserve
   its circled-i interaction, five-second duration, fade and actual recorded dates.
 - Display **Vacant (previously: NAME)** without translating canonical/source
