@@ -3,7 +3,8 @@
 The dedicated project contains exactly two public-schema question tables. They
 remain inaccessible to direct `anon`/`authenticated` table queries. The local
 MVP exposes questions through a narrow allowlisted RPC and stores minimal
-anonymous progress in one private `game_private.sessions` table.
+anonymous session data, flashcard progress, and retry receipts in private
+`game_private` tables.
 
 | Table | Filing cohort | Questions | Geography-resolved rows |
 | --- | --- | ---: | ---: |
@@ -84,6 +85,15 @@ it does not translate or grade free-form answers.
   hourly cleanup job.
 - [Explicit session row-denial migration](migrations/20261027200722_secure_anonymous_session_rls.sql):
   adds a deny-all client RLS policy to the private session table.
+- [Flashcard progress migration](migrations/20261028031842_flashcard_progress.sql):
+  adds private per-question correct/incorrect/skipped counts, bounded round
+  retry receipts, and only the official `subsection` field to the question RPC.
+- [Flashcard verification](tests/verify_flashcards.sql): checks payload
+  validation, prefix idempotency, session isolation, counter/receipt caps,
+  immediate expiry, grants, and cascade cleanup in a rollback transaction.
+- The real API check is `npm run test:api:flashcards`; it uses two synthetic
+  sessions, exercises concurrent duplicate-prefix and suffix requests, and
+  prints only one-way recovery-code verifier hashes for targeted cleanup.
 - [MVP verification](tests/verify_app_mvp.sql): tests both cohorts across all 441
   districts and 56 jurisdictions, allowlist and role boundaries, isolation,
   aggregate limits, exact expiry, and cleanup. Session probes roll back.
@@ -110,7 +120,7 @@ explicit `USING (false)` / `WITH CHECK (false)` policy. The unexposed
 `game_private` schema grants `anon` usage and execute only on capability helpers
 called by the invoker wrappers; it grants no direct session-table access.
 
-`get_practice_questions` returns only question number/text/section, official
+`get_practice_questions` returns only question number/text/section/subsection, official
 answers and display, answer review/next-review dates, source URLs, and two
 geography/time dependency flags. It does not expose `change_guidance`, expected
 change windows, review flags, notes, or session identifiers. Internal
@@ -123,6 +133,19 @@ updates validate that capability and the 168-hour boundary atomically; wrong
 codes do not update activity. The RPC returns no UUID or verifier. Progress
 contains only cumulative attempts/correct answers/cards reviewed and the cohort
 and jurisdiction selector needed to restore the correct question bank.
+
+`get_flashcard_progress(p_code)` returns only sorted per-question correct,
+incorrect, and skipped counts plus the last outcome. `record_flashcard_round`
+accepts a cumulative ordered prefix for one client-generated round UUID. It
+persists only question numbers, outcome counters, and the last outcome; its
+bounded receipt stores a SHA-256 prefix hash, length, and aggregate counts, not
+the submitted outcomes or answer text. Exact retries do not increment counters
+or extend activity; a valid new suffix increments only its own questions.
+Changed/shrunk prefixes, duplicates, malformed payloads, wrong-edition question
+numbers, expired sessions, and bounded-counter overflow are rejected. Progress
+and receipts are private and cascade-delete with their parent session at expiry
+cleanup. The returned round totals count presentations and are client-evaluated
+practice data, not exam results.
 
 The scheduled job `citizenship-prep-expired-sessions` is active at minute 17 of
 each hour. Access is rejected exactly at 168 hours; physical active-row deletion

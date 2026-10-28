@@ -7,7 +7,7 @@ do $$
 declare
   d record; j record; edition_id text; expected_count integer; q jsonb;
   code_a text; code_b text; a jsonb; b jsonb; got jsonb;
-  allowed_keys text[] := array['question_number','question_text','section','answers','answer_display','answer_updated_on','next_update_on','source_urls','is_geography_dependent','is_time_dependent'];
+  allowed_keys text[] := array['question_number','question_text','section','subsection','answers','answer_display','answer_updated_on','next_update_on','source_urls','is_geography_dependent','is_time_dependent'];
 begin
   -- Verify all 441 canonical district inputs against both complete banks.
   for d in select * from (values

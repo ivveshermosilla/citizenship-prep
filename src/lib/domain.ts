@@ -3,6 +3,7 @@ export type Question = {
   question_number: number
   question_text: string
   section?: string
+  subsection?: string
   answers: string[]
   answer_display: string
   answer_updated_on: string

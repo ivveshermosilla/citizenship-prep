@@ -11,8 +11,9 @@ The [first publication record](docs/FIRST_PUBLICATION.md) remains historical.
 ## Project status
 
 The React/TypeScript/Vite app supports anonymous recovery-code sessions,
-both filing cohorts, all jurisdictions and congressional districts, Study Cards,
-and Quick Quiz self-checks backed by the dedicated Supabase project. All
+both filing cohorts, all jurisdictions and congressional districts, Study Flash
+Cards with an optional rolling timed practice test, and Quick Quiz self-checks
+backed by the dedicated Supabase project. All
 user-facing app content is English. The approved name and canonical hostname are
 published; see the [implementation checklist](docs/IMPLEMENTATION_CHECKLIST.md)
 for Luna's implementation evidence and the coordinator's completed checks.
@@ -48,11 +49,17 @@ npm run typecheck
 npm run build
 npm test
 npm run test:english
+npm run test:api:flashcards
 npm run test:browser
+npm run test:browser-flow
 ```
 
-The unit tests cover the 168-hour boundary, code format/entropy, English vacancy display,
-cohorts, and district selection. [The SQL verifier](supabase/tests/verify_app_mvp.sql)
+The unit tests cover the 168-hour boundary, code format/entropy, English vacancy
+display, cohorts, district selection, flashcard selection and ranges, cumulative
+rolling rounds, complete-answer distractors, deadlines, and outcome summaries.
+The flashcard API verifier checks live RPC retry/idempotency behavior and emits
+only one-way verifier hashes for synthetic-session cleanup.
+[The SQL verifier](supabase/tests/verify_app_mvp.sql)
 checks all 441 districts in both cohorts and all 56 jurisdictions, allowlisted
 fields, role denials, isolation, aggregate limits, expiry, and cleanup in a
 rollback transaction. The API and full browser scripts use the real project and
@@ -80,13 +87,18 @@ Then run the checks in a third terminal:
 npm run test:browser
 BROWSER_REVIEW_SHOT_PHONE=/tmp/citizenship-prep-hub-phone.png \
 BROWSER_REVIEW_SHOT_DESKTOP=/tmp/citizenship-prep-hub-desktop.png \
+BROWSER_REVIEW_SHOT_NOTICE=/tmp/citizenship-prep-notice.png \
+BROWSER_REVIEW_SHOT_SETTINGS=/tmp/citizenship-prep-settings.png \
+BROWSER_REVIEW_SHOT_CARD=/tmp/citizenship-prep-card.png \
   npm run test:browser-flow
 ```
 
 Chrome emulation covers 320, 390, 820, and 1440 CSS-pixel widths. It does not
-replace testing other browser engines or physical devices. The browser flow only
-saves screenshots after verifying it is on the hub with no recovery code visible.
-Never capture the save-code screen.
+replace testing other browser engines or physical devices. The browser flow
+checks the new settings, keyboard-edited count/slider synchronization, card
+sources/dates, rolling cumulative test, and recovery of saved outcomes. It only
+saves screenshots on safe notice, settings, card, and hub screens with no
+recovery code visible. Never capture the save-code screen.
 
 For static hosting, Vercel builds `dist` with `npm run build`. `vercel.json`
 sets the output directory and security response headers, including a CSP that
@@ -104,7 +116,8 @@ for completed checks and remaining release limitations.
 The MVP does not use accounts or collect personal identifiers. It has no
 analytics, advertising, geolocation, fingerprinting, session replay, or
 third-party font/asset requests. Supabase stores a one-way recovery-code
-verifier, creation and last-activity timestamps, aggregate quiz/card counters,
+verifier, creation and last-activity timestamps, aggregate Quick Quiz/card
+counters, minimal per-question practice-test outcome counts and last outcomes,
 and the cohort/coarse jurisdiction needed to restore the right bank. The usable
 code stays in app memory and is never stored in browser storage or the database.
 Direct table access is denied; narrow anonymous RPCs validate the code and

@@ -29,6 +29,27 @@
 | BR04 | Preservar avisos, fuentes, sesión anónima, reanudación, caducidad a 168 h, tarjetas y autoevaluación; compartir capturas seguras para revisión | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | `npm run test:browser` y `npm run test:browser-flow` aprobados: avisos, recuperación y score, fuentes/fechas, tarjetas, quiz, burbuja de 5 s, dos ediciones y viewports 320/390/820/1440px. Coordinador inspeccionó capturas seguras de hub y avisos. Eliminadas exactamente dos sesiones sintéticas por hash; consulta posterior confirmó cero coincidencias. |
 | BR05 | Aplicar Naturalization Preparation App (NPA) en marca, accesibilidad, metadatos, documentos y pruebas; comprobar nombre completo y NPA en dispositivos apropiados | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | Nombre/hostname seleccionados por el propietario; coordinador confirmó `naturalization-preparation-app.vercel.app` verificado en el proyecto existente. App/docs canónicos actualizados; checks finales aprobaron, incluidos NPA a 320/390 y nombre completo a 820/1440. Publicado en el hostname aprobado; flujo HTTPS completo pasó ambas ediciones, recuperación/puntuación y cuatro tamaños. Archivos JS/CSS/SVG idénticos a dist revisado; CI Security aprobada. URL anterior redirige 307. Base, hechos y sesiones conservados. |
 
+## Study Flash Cards y practice tests
+
+**Estado general:** FC01–FC10 revisados y verificados localmente; publicación y comprobación HTTPS pública en curso — 2026-10-28 00:21 MDT.
+**Codificado por:** GPT-6 Luna (`/root/luna_branding_refresh`, frontend).
+**Revisado por:** Codex (/root), 2026-10-28 00:21 MDT; ver [FLASHCARDS_REVIEW.md](FLASHCARDS_REVIEW.md).
+**Contrato frontend/backend:** [Flashcard implementation brief](FLASHCARDS_IMPLEMENTATION_BRIEF.md).
+
+| ID | Tarea y criterio de aceptación | Estado | Codificado por | Revisado por | Evidencia / archivos / último avance |
+| --- | --- | --- | --- | --- | --- |
+| FC01 | Entrada a Study Flash Cards desde el hub, Back en notices 2/3 y SVG open-book semántico | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | Hub/settings implementados en `src/main.tsx` y `src/components/FlashcardsFeature.tsx`; conservar marca NPA y Quick Quiz. |
+| FC02 | Settings: cantidad sincronizada, Random, In order, By topic, rango inclusivo y límite real por pregunta | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | Selector usa pregunta oficial/sección/subsección; límites, conteo/rango inclusivo y pruebas unitarias listos. |
+| FC03 | Ayudas accesibles por método, touch/teclado, foco, reduced motion y controles mobile-first | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | Ayudas por método con tap/hover/foco/Escape/dismiss/fade; controles numéricos editables y foco interno. |
+| FC04 | Include practice test, Test yourself explícito, rolling rounds acumulativos y estimación de presentaciones | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | Round UUID CSPRNG; tamaños acumulativos, totales 210 para 20/1 y protección ante step inválido cubiertos por unit tests. |
+| FC05 | Flashcard animada con pregunta/respuestas completas, fuentes, fechas, warning y progreso | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | Card translúcida con fallback, flip tap/teclado, reduced motion, fuentes/fechas, warning y bubble con fade de 5 segundos. |
+| FC06 | Practice test con exactamente cuatro opciones completas y una correcta, sin answer key antes de confirmar | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | Distractores seguros usan la edición completa; 100/100 y 128/128 sets factibles en benchmark local, con cardinalidad explícita para respuestas múltiples. |
+| FC07 | Temporizador real de 15 segundos, Skip/timeout, sin navegación anterior y envío idempotente checkpoint por pregunta | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | Confirmación usa `Date.now()`; RPC guarda cada prefijo y reintenta mismo resultado/UUID sin almacenar texto de opciones. |
+| FC08 | Resultados Correct/Incorrect/Skipped, porcentaje por presentaciones y priorización de errores previos | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | Resultados separan intentos repetidos y únicas; hub recupera totales persistidos de test separadamente del Quick Quiz. |
+| FC09 | Unit/English/browser regression, README y capturas seguras notice/settings/card/hub | Verificado | GPT-6 Luna (/root/luna_branding_refresh) | Codex (/root) | `npm run typecheck`, `npm run build`, `npm test` (18/18), `npm run test:english`, `node --check scripts/browser-flow.mjs`, `git diff --check` y flujo Chrome/Supabase completo pasaron; capturas seguras de aviso, settings, tarjeta y hub móvil/escritorio. Ver avance 2026-10-28. |
+| FC10 | Persistencia privada, aislamiento por sesión, expiración, cascade y deduplicación RPC/SQL | Verificado | GPT-6 Luna (/root/luna_flashcard_backend) | Codex (/root) | Migration `20261028031842_flashcard_progress.sql` aplicada por root; SQL regression, advisors y reintentos/concurrencia HTTP pasaron. Contract: [flashcards brief](FLASHCARDS_IMPLEMENTATION_BRIEF.md). |
+
+
 **Estado del MVP local:** entregable completo y revisado — 2026-10-27 18:28 MDT.
 **Codificación:** GPT-6 Luna (`/root/luna_mvp`).
 **Revisión:** Codex, coordinador (`/root`).
@@ -56,6 +77,19 @@ Una tarea implementada requiere revisión para pasar a Verificado.
 | M12 | Instrucciones de uso y pruebas, servidor local disponible y límites documentados | Verificado | GPT-6 Luna (/root/luna_mvp), 2026-10-27 14:16 MDT | Codex (/root) | README revisado: arranque reproducible en puerto 4173, Chrome en terminal separada y .env.local existente preservado. Servidor reiniciado y comprobado por coordinador; límites de publicación documentados. |
 
 ## Registro de avances
+
+- 2026-10-28 — GPT-6 Luna completó FC01–FC09 en frontend y documentación; FC10
+  de backend escrito por GPT-6 Luna (/root/luna_flashcard_backend). Build,
+  typecheck, 18 unit tests, English check, browser flow Chrome/Supabase y
+  `git diff --check` pasaron. El navegador comprobó topic/count y rolling
+  step/range synchronization, test táctil, respuestas correctas e incorrectas,
+  timeout real de 15 segundos guardado como skipped en un test de una pregunta
+  de la cohorte 2008, recuperación de progreso y Samoa at-large. Capturas
+  seguras: `/tmp/npa-flashcards-notice.png`, `/tmp/npa-flashcards-settings.png`,
+  `/tmp/npa-flashcards-card.png`, `/tmp/npa-flashcards-hub-phone.png` y
+  `/tmp/npa-flashcards-hub-desktop.png`. Verifiers de las dos sesiones
+  sintéticas se enviaron a Codex (/root) para limpieza exacta. Cambios locales
+  sin commit/push/deploy; revisión y publicación corresponden al coordinador.
 
 - 2026-10-27 20:04 MDT — GPT-6 Luna completó BR05 con el nombre aprobado
   Naturalization Preparation App (NPA) y el hostname

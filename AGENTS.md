@@ -2,6 +2,13 @@
 
 ## Scope and workflow
 
+- Latest owner authorization: implement and publish Study Flash Cards, selection
+  settings including inclusive ranges, configurable cumulative rolling review,
+  optional timed multiple-choice practice and minimal per-question progress.
+  Read docs/FLASHCARDS_IMPLEMENTATION_BRIEF.md. This supersedes the earlier
+  Study Cards mechanics freeze and aggregate-only history restriction for this
+  scope. No raw selected answers, voice features or official exam simulation.
+  GPT-6 Luna implements; root reviews migrations and operates Supabase/Git/Vercel.
 - Latest owner feedback rejects the provisional Civic Compass brand and
   generated public alias. The owner explicitly selected **Naturalization
   Preparation App (NPA)** and `naturalization-preparation-app.vercel.app`.

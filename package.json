@@ -7,11 +7,12 @@
     "dev": "vite --host 127.0.0.1",
     "build": "tsc -b && vite build",
     "typecheck": "tsc -b --pretty",
-    "test": "node --test src/lib/domain.test.ts",
+    "test": "node --experimental-strip-types --test src/lib/*.test.ts",
     "test:english": "node scripts/check-english-copy.mjs",
     "test:browser": "node scripts/browser-smoke.mjs",
     "test:browser-flow": "node scripts/browser-flow.mjs",
-    "test:api": "node scripts/api-smoke.mjs"
+    "test:api": "node scripts/api-smoke.mjs",
+    "test:api:flashcards": "node scripts/api-flashcards.mjs"
   },
   "dependencies": {
     "react": "19.3.1",

@@ -83,9 +83,13 @@ identifier and progress as private, even without a named account.
 
 Retain only the score/progress needed to continue, session creation time, last
 meaningful activity time, and the minimum protected recovery-code reference.
-Do not keep detailed behavior, individual response histories or additional
-session metadata by default. Any need to persist the chosen question cohort or
-coarse state/district settings must be justified in the later minimal design.
+For the owner-approved timed practice test, persist only question IDs, bounded
+correct/incorrect/skipped counts, last outcome, and bounded retry receipts for
+the current round prefix. Do not persist answer text, selected options, detailed
+navigation history, or raw individual response histories. This minimal
+per-question outcome projection supersedes the earlier default prohibition on
+question-level outcomes. The selected edition and coarse jurisdiction remain
+necessary to restore the correct official question set.
 Ask only for the before/on-or-after cohort, rather than the actual N-400 filing
 date; do not ask for an address to resolve the district.
 
@@ -188,6 +192,23 @@ retention behavior before publishing it.
 - Term ends and elections remain informative metadata, not extra scheduled
   updates or automatic answer expiration dates.
 - No cron job, autonomous updater or reminder is requested by this requirement.
+
+## Study Flash Cards and timed practice test
+
+The current local implementation follows [the approved feature brief](FLASHCARDS_IMPLEMENTATION_BRIEF.md).
+Study Flash Cards opens setup first and supports random, in-order, official
+section/subsection, and inclusive question-range selections. An optional test
+uses four complete answer sets, one correct, with a 15-second elapsed deadline.
+Skip and timeout are recorded separately from incorrect answers. With rolling
+review enabled, each round studies and tests the cumulative prefix of the same
+deck; repeated question presentations are counted in the displayed percentage.
+
+Only per-question IDs, outcome counts and last outcome are stored. Quick Quiz
+continues to use its separate self-assessed aggregate. Leaving or reloading
+abandons the in-memory deck and unfinished test, while confirmed outcomes stay
+saved. This practice percentage is not an official test score, pass/fail result,
+or competition result. Voice input, microphone permission, speech evaluation,
+prerecorded narration, and an official 20-question simulation remain future work.
 
 ## Internal change expectations
 

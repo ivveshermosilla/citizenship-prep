@@ -1,5 +1,6 @@
 import type { Edition, Question, Session } from './domain'
 import { validRecoveryCode } from './domain'
+import type { FlashcardProgress, SubmittedFlashcardOutcome } from './flashcards'
 
 const projectUrl = import.meta.env.VITE_SUPABASE_URL?.replace(/\/$/u, '')
 const publishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
@@ -48,4 +49,23 @@ export async function loadQuestions(session: Session): Promise<Question[]> {
   return rpc('get_practice_questions', {
     p_edition: session.edition, p_state_code: session.state_code, p_district_code: session.district_code,
   })
+}
+
+export type FlashcardRoundResult = {
+  answered: number
+  correct: number
+  incorrect: number
+  skipped: number
+}
+
+export async function getFlashcardProgress(code: string): Promise<FlashcardProgress[]> {
+  return rpc('get_flashcard_progress', { p_code: code })
+}
+
+export async function recordFlashcardRound(
+  code: string,
+  roundId: string,
+  results: SubmittedFlashcardOutcome[],
+): Promise<{ progress: FlashcardProgress[]; round: FlashcardRoundResult }> {
+  return rpc('record_flashcard_round', { p_code: code, p_round_id: roundId, p_results: results })
 }

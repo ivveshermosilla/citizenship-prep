@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 
-const surfaces = ['src/main.tsx', 'src/lib/domain.ts', 'src/lib/supabase.ts', 'index.html']
+const surfaces = ['src/main.tsx', 'src/components/FlashcardsFeature.tsx', 'src/lib/domain.ts', 'src/lib/supabase.ts', 'index.html']
 const source = surfaces.map(path => [path, readFileSync(path, 'utf8')])
 const html = readFileSync('index.html', 'utf8')
 const app = readFileSync('src/main.tsx', 'utf8')
+const flashcards = readFileSync('src/components/FlashcardsFeature.tsx', 'utf8')
 const logo = readFileSync('public/us-map-flag.svg', 'utf8')
 assert.match(html, /<html lang="en">/u, 'document language must be English')
 assert.match(html, /<title>Naturalization Preparation App \(NPA\) · Interactive U\.S\. Naturalization Test Prep<\/title>/u, 'approved English product title must be present')
@@ -14,6 +15,10 @@ assert.match(app, /Interactive U\.S\. Naturalization Test Prep/u, 'requested tag
 assert.match(app, /Naturalization Preparation App \(NPA\)/u, 'approved product name must be present')
 assert.match(app, /aria-label="Naturalization Preparation App \(NPA\), return to home"/u, 'brand control must expose the full accessible name')
 assert.match(app, /Question Edition/u, 'visible edition vocabulary must be present')
+assert.match(app, /Study Flash Cards/u, 'the hub must use the approved flash-card activity name')
+assert.doesNotMatch(app, /Study cards/u, 'the old card activity label must not remain in the hub')
+assert.match(app, /notice-book-icon/u, 'the notice illustration must use the open-book icon')
+assert.doesNotMatch(app, /notice-illustration|art-spark">✳/u, 'the old asterisk illustration must not remain')
 assert.match(app, /2008 edition · 100 questions/u)
 assert.match(app, /2025 edition · 128 questions/u)
 assert.doesNotMatch(app, /\bbank\b/iu, 'user-facing UI must say Question Edition, not bank')
@@ -25,6 +30,11 @@ assert.equal((logo.match(/<rect x="0" y=/gu) ?? []).length, 13, 'flag must show 
 assert.match(logo, /creativecommons\.org\/publicdomain\/zero\/1\.0/u, 'logo must retain map license provenance')
 assert.doesNotMatch(logo, /<script|<foreignObject|\bon[a-z]+\s*=|href="https?:/iu, 'SVG must have no active or external content')
 const ui = source.map(([, content]) => content).join('\n')
+assert.match(flashcards, /Start studying/u)
+assert.match(flashcards, /Test yourself/u)
+assert.match(flashcards, /Cards added per round/u)
+assert.match(flashcards, /IMPORTANT NOTICE FOR THIS QUESTION/u)
+assert.match(flashcards, /aria-label=.*About/u, 'selection help controls need accessible labels')
 assert.match(ui, /Naturalization Preparation App \(NPA\)/u)
 assert.match(ui, /IMPORTANT NOTICE FOR THIS QUESTION/u)
 assert.match(ui, /Hosting and database providers may retain technical request\/security logs under their own policies\./u)
