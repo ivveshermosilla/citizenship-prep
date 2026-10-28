@@ -2,17 +2,17 @@
 
 ## Publicación inicial en inglés
 
-**Estado general:** En curso — 2026-10-27 18:38 MDT.
+**Estado general:** primera publicación en inglés completada y verificada — 2026-10-27 18:47 MDT.
 **Codificado por:** GPT-6 Luna (`/root/luna_english_release`).
-**Revisado por:** pendiente — solo coordinador.
-**Verificado por:** pendiente — solo coordinador.
+**Revisado por:** Codex (`/root`).
+**Verificado por:** Codex (`/root`), pruebas desde la URL pública.
 **Alcance:** interfaz, documentos canónicos, pruebas y configuración estática Vite/Vercel; publicación a cargo del coordinador.
 
 | ID | Tarea y criterio de aceptación | Estado | Codificado por | Revisado por | Evidencia / archivos / último avance |
 | --- | --- | --- | --- | --- | --- |
 | EN01 | Todas las superficies de usuario en inglés; Civic Compass, `lang="en"`, fechas `en-US`, avisos y vacantes según el brief | Verificado | GPT-6 Luna (/root/luna_english_release), 2026-10-27 18:38 MDT | Codex (/root) | `src/main.tsx`, `src/lib/domain.ts`, `src/lib/supabase.ts`, `index.html`; aviso exacto, privacidad honesta sobre logs del proveedor y plantilla Vacant. Typecheck, build, test English y Chrome confirmaron UI/idioma/fechas. |
 | EN02 | Requisitos, brief, README y tests alineados con la publicación English-only, sin alterar hechos/fingerprints | Verificado | GPT-6 Luna (/root/luna_english_release), 2026-10-27 18:38 MDT | Codex (/root) | Actualizados `docs/PRODUCT_REQUIREMENTS.md`, `docs/MVP_IMPLEMENTATION_BRIEF.md`, `README.md`, `supabase/README.md`, pruebas unitarias y browser scripts. Browser probó cohorts 2008/2025, aviso/privacy, respuesta revisada y flujo real. |
-| EN03 | Build estático y cabeceras mínimas compatibles con Vercel; sin telemetría ni secretos de servicio | En revisión | GPT-6 Luna (/root/luna_english_release), 2026-10-27 18:38 MDT | Codex (/root), pendiente de HTTP/CSP remoto | `vercel.json` configura Vite/dist, CSP y cabeceras; `.vercelignore` filtra uploads por CLI. El source de Git se usa como build input en deploys Git-linked; solo `dist` es static output. Build y JSON pasan. |
+| EN03 | Build estático y cabeceras mínimas compatibles con Vercel; sin telemetría ni secretos de servicio | Verificado | GPT-6 Luna (/root/luna_english_release), 2026-10-27 18:38 MDT | Codex (/root) | Producción READY; HTTP 200 anónimo, CSP/HTTPS y cabeceras presentes, archivos privados/fuentes no servidos (404). Flujo real en URL pública pasó ambos cohorts y viewports320/390/820/1440. |
 
 **Estado del MVP local:** entregable completo y revisado — 2026-10-27 18:28 MDT.
 **Codificación:** GPT-6 Luna (`/root/luna_mvp`).
@@ -95,3 +95,12 @@ Una tarea implementada requiere revisión para pasar a Verificado.
 - 2026-10-27 18:38 MDT — Confirmado en documentación oficial: `.vercelignore`
   filtra deploys de Vercel CLI; los deploys Git-linked usan Git como build input.
   En ambos casos, `outputDirectory: dist` limita el contenido estático servido.
+
+## Publicación verificada
+
+- 2026-10-27 18:47 MDT — [Civic Compass](https://citizenship-prep-sandy.vercel.app/) publicado
+  en Vercel y GitHub; fuente inicial `8024438`. Código y configuración por Luna,
+  revisión/publicación por coordinador. Pruebas reales en la URL pública pasaron;
+  las dos sesiones sintéticas se eliminaron por hash exacto y se preservaron las demás.
+- Ver [FIRST_PUBLICATION.md](FIRST_PUBLICATION.md) para pruebas, CI, cabeceras
+  y límites de privacidad de infraestructura. Ya no hay tareas de publicación pendientes.

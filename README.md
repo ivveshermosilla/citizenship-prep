@@ -1,15 +1,17 @@
 # Civic Compass
 
-Local web app for practicing U.S. naturalization civics questions.
+English-language web app for practicing U.S. naturalization civics questions.
+
+**Try the app:** [Civic Compass](https://citizenship-prep-sandy.vercel.app/).
 
 ## Project status
 
 The React/TypeScript/Vite app supports anonymous recovery-code sessions,
 both filing cohorts, all jurisdictions and congressional districts, study cards,
 and self-check quizzes backed by the dedicated Supabase project. All user-facing
-app content is English. The coordinator is preparing a reviewed first GitHub
-publication and a dedicated Vercel deployment for phone testing; neither has
-been published yet. Licensing remains unselected.
+app content is English. The first reviewed version is published on GitHub and
+Vercel for phone testing. See the [publication record](docs/FIRST_PUBLICATION.md)
+for verification and privacy boundaries. Licensing remains unselected.
 
 The [October 27, 2026 research draft](research/2026-10-27/README.md) records the
 128-question 2025 bank and the separately applicable 100-question 2008 bank.

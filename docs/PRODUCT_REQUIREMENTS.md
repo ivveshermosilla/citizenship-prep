@@ -1,9 +1,10 @@
 # Product requirements
 
 Confirmed by the owner on October 27, 2026. This records product acceptance
-behavior. The local MVP now implements the core interface and session flow;
-the first English-only publication is in preparation, with hosting and
-provider-retention review still pending.
+behavior. The English-only MVP implements the core interface and session flow
+and its first reviewed version is published for phone testing. Provider technical
+logging is disclosed; infrastructure-wide zero logging or backup erasure is not
+promised. See FIRST_PUBLICATION.md for release checks and remaining limits.
 
 ## Purpose and official sources
 
