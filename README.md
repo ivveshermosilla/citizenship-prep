@@ -18,9 +18,9 @@ in memory, and records only the question and outcome. Multiple-choice practice
 uses reviewed distractors for all 228 edition-specific questions. See the
 [release review](docs/QUICK_QUESTION_REVIEW.md) for verification and publication.
 
-**Match & Learn**
-builds safe question-and-answer rounds from reviewed content, supports timed or
-untimed play, and keeps detailed answer review on the results page only. The
+**Match & Learn is published:** safe question-and-answer rounds from reviewed
+content support timed or untimed play and keep detailed answer review on the
+results page only. The
 round RPC persists per-question outcomes without answer text or tile IDs. See
 the [release review](docs/MATCHING_REVIEW.md), [implementation brief](docs/MATCHING_IMPLEMENTATION_BRIEF.md) and active
 [implementation checklist](docs/IMPLEMENTATION_CHECKLIST.md) for current status.

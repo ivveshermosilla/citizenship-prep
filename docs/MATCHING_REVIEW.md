@@ -1,6 +1,6 @@
 # Match & Learn release review
 
-Status: local verification complete; public deployment verification pending.
+Status: published; the complete matching browser flow passed over public HTTPS.
 GPT-6 Luna implemented the frontend, backend and browser
 verification. Codex (`/root`) reviews, operates Supabase and publishes.
 
@@ -57,9 +57,34 @@ only question/outcome counts and bounded idempotent receipts are stored.
   remain `311e7773cbc7c818de0470cf344ad796` (2008) and
   `260b0e00ea315afe6222ffd4b5db7126` (2025).
 
-Pending: staged/history secret scans, Git publication, public browser flow and
-production deployment/CI. The reviewed application assets will be compared with
-the public deployment before declaring the release complete.
+## Publication
+
+- Live: https://naturalization-preparation-app.vercel.app/ — **Match & Learn**
+  in the hub.
+- Source commit: `12d10be4021e67558708b9a0e4d8b7c098fd3f19`.
+- Vercel source deployment: `dpl_Aa9BrE7VpEsRjA7wvr6kbBLe8QYd`, READY for
+  that exact commit. The canonical URL returned HTTP 200.
+- [Source Security CI](https://github.com/ivveshermosilla/citizenship-prep/actions/runs/40815623366)
+  succeeded. Staged and full-history secret scans passed, including Git hooks.
+- Root reran the complete matching browser flow on the canonical HTTPS URL:
+  both editions, UT03/American Samoa/D.C., four responsive widths, keyboard and
+  touch, multi-concept counters, editable assignments, all scoring outcomes,
+  final selected/accepted review, recovery and minimal outcome-only payloads.
+  A dropped successful response retried the same immutable round and counted
+  once. Real expiry, background-tab elapsed time and Untimed play passed.
+- All three public matching probe sessions were removed by exact verifier
+  hashes; the follow-up returned zero matches.
+- The complete existing-game browser flow also passed on public HTTPS: written
+  Quick Question and its retries, flashcards and rolling tests, actual 15-second
+  timeout, self-check Quiz, question notices, recovery, both cohorts and four
+  responsive widths. Its two probe sessions were target-cleaned as well.
+- Public JavaScript/CSS bytes match the reviewed local build. SHA-256:
+  `20edb2950ff9ec86403d369e5b058e0234ef746ea0d61e88e53683c61ed9cd3c`
+  (JS) and
+  `d6092154880c5a1295623286d04ba2ea6b08b91310a6a644d285bd72c7ab421f`
+  (CSS). HTTPS security headers passed; environment, Git, source, SQL and
+  catalogue paths returned 404. Root inspected public mobile board/results
+  captures; Supabase security advisors returned no lints.
 
 ## Limits
 
