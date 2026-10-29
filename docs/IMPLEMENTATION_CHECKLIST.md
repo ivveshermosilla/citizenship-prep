@@ -85,9 +85,9 @@
 
 | ID | Task | Status | Coded by | Reviewed by | Evidence |
 | --- | --- | --- | --- | --- | --- |
-| MD01 | Real mouse/touch/pen dragging, preview and valid drop targets; placed-answer moves and tap/keyboard alternatives | Verified locally | GPT-6 Luna (frontend) | Codex (/root) | Real CDP mouse/touch paths passed; root inspected active phone preview. Scope: `docs/MATCHING_DRAG_BRIEF.md`. |
-| MD02 | Cancel/invalid/full-target safety, scrolling, pointer lifecycle and absolute-deadline guards | Verified locally | GPT-6 Luna (frontend) | Codex (/root) | Outside/full drops, delayed Escape, touch cancel, measured edge scrolling and actual held-drag timeout passed. No backend changes. |
-| MD03 | Real browser mouse/touch drag verification, matching regressions and public publication | In progress | GPT-6 Luna (QA) | Codex (/root) | Build/30 unit tests/English pass; focused local drag and full matching flow passed. Final-source regression and public HTTPS verification pending. |
+| MD01 | Real mouse/touch/pen dragging, preview and valid drop targets; placed-answer moves and tap/keyboard alternatives | Verified | GPT-6 Luna (frontend) | Codex (/root) | Real CDP mouse/touch paths passed; root inspected active phone preview. Scope: `docs/MATCHING_DRAG_BRIEF.md`. |
+| MD02 | Cancel/invalid/full-target safety, scrolling, pointer lifecycle and absolute-deadline guards | Verified | GPT-6 Luna (frontend) | Codex (/root) | Outside/full drops, delayed Escape, touch cancel, measured edge scrolling and actual held-drag timeout passed. No backend changes. |
+| MD03 | Real browser mouse/touch drag verification, matching regressions and public publication | Verified | GPT-6 Luna (QA) | Codex (/root) | Build/30 unit tests/English pass; focused local drag and full matching flow passed. Final-source matching regression and full focused public HTTPS drag flow passed; actual held-drag timeout froze results, assets match, Vercel READY and Security CI passed. See `docs/MATCHING_DRAG_REVIEW.md`. |
 
 ## Hub game colors
 
