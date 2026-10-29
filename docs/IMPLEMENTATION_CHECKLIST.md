@@ -81,6 +81,12 @@
 | MM07 | Entrada del hub y totales separados Matching, escrito y multiple-choice; prioridad de falladas agregada | Verificado | GPT-6 Luna (frontend) | Codex (/root) | `src/main.tsx`; nuevo SVG matching nativo, total matching separado, prioridad desde proyección agregada multi-modo. |
 | MM08 | README/requisitos/check English, unit/browser/API y regresión existente; revisión antes de publicar | Verificado | GPT-6 Luna (frontend) | Codex (/root) | Typecheck/build, 30 unit tests, English y `git diff --check` pasan. Root ejecutó API, contenido real (486 planes), browser matching completo y regresión de juegos anteriores; todo aprobado. Publicado en la URL canónica: browser matching completo y regresión pública aprobaron; assets idénticos, Vercel READY y CI Security exitosa. Ver `docs/MATCHING_REVIEW.md`. |
 
+## Hub game colors
+
+| ID | Task | Status | Coded by | Reviewed by | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| HC01 | Distinct hub gradients: purple/indigo Study Flash Cards, orange/terracotta Match & Learn, existing blue/turquoise Quick Quiz | Verified | GPT-6 Luna (frontend) | Codex (/root) | `src/main.tsx`, `src/style.css`; build, English and whitespace checks passed. New-card text contrast minima: 7.52:1 and 4.92:1. Real hub checked at 320/390/820/1440; root inspected phone/desktop card captures. Names, icons, focus and game behavior preserved. |
+
 ### Avance
 
 - 2026-10-28 08:57 MDT — GPT-6 Luna integró el primer frontend: Quick Question usa

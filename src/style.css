@@ -289,17 +289,29 @@ a { color: #175db6; text-decoration-thickness: 1px; text-underline-offset: 3px; 
 }
 .activity-card:hover { transform: translateY(-2px); border-color: #b8d2e3; box-shadow: 0 14px 28px rgba(38, 68, 99, .1); }
 .activity-dark { color: #f4fbff; border-color: #1d5d8c; background: linear-gradient(135deg, #1b568d, #117ba1 72%, #168c94); }
+.activity-flashcards, .activity-matching { color: #fff; }
+.activity-flashcards { border-color: #352067; background: linear-gradient(135deg, #432078, #333c8b); }
+.activity-matching { border-color: #762b15; background: linear-gradient(135deg, #8b2f15, #a54420); }
 .activity-number { position: absolute; top: 19px; right: 20px; color: #91a4b6; font-size: 14px; font-weight: 760; }
 .activity-dark .activity-number { color: #b8e8ee; }
 .activity-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 14px; color: #176a9a; background: #e8f5fb; font-size: 20px; }
 .activity-icon svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .activity-dark .activity-icon { color: #e5fbfa; background: rgba(255,255,255,.17); }
+.activity-flashcards .activity-number { color: #e9ddff; }
+.activity-flashcards .activity-icon, .activity-matching .activity-icon { color: #fff; background: rgba(255,255,255,.16); }
+.activity-matching .activity-number { color: #ffe2c6; }
 .activity-card h2 { margin: 18px 0 7px; font-size: 23px; font-weight: 760; letter-spacing: -.035em; }
 .activity-card p { max-width: 410px; margin: 0; color: #596d80; font-size: 13px; line-height: 1.55; }
 .activity-dark p { color: #e0f1f5; }
+.activity-flashcards p { color: #f1e9ff; }
+.activity-matching p { color: #fff0e6; }
 .activity-link { display: block; margin-top: 15px; color: #1767a5; font-size: 12px; font-weight: 780; }
 .activity-dark .activity-link { color: #d0f5ec; }
-.activity-matching .activity-icon { color: #7b4eb5; background: #f2edfb; }
+.activity-flashcards .activity-link { color: #e9ddff; }
+.activity-matching .activity-link { color: #ffe2c6; }
+.activity-flashcards:hover, .activity-matching:hover { border-color: rgba(255,255,255,.7); box-shadow: 0 16px 32px rgba(25, 21, 54, .24); }
+.activity-flashcards:focus-visible { outline-color: #6d37b5; outline-offset: 4px; }
+.activity-matching:focus-visible { outline-color: #9f3c1c; outline-offset: 4px; }
 .hub-note { margin-top: 20px; color: #596d80; font-size: 11px; line-height: 1.6; }
 .learning-summary-card { min-height: 180px; }
 .learning-mode-total { display: grid; gap: 3px; padding-top: 7px; border-top: 1px solid #e5edf3; }

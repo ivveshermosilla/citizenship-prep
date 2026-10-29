@@ -62,6 +62,10 @@ framework, component library or visual identity is selected by this policy.
 - Include readable contrast, visible keyboard focus, meaningful control labels
   and reduced-motion support in the design. Visual effects must not obstruct
   learning or navigation.
+- Owner update: give each game a distinct gradient on its hub card. Study Flash
+  Cards uses purple/indigo, Match & Learn uses orange/terracotta, and Quick Quiz
+  retains its blue/turquoise gradient. Keep names and icons alongside color so
+  users can distinguish games without relying on color alone.
 - Keep loading and interactions lightweight for mobile devices and connections.
   Validate the complete flow on representative phones, tablets and desktop
   browsers before release; define the browser/device test matrix during
