@@ -2,6 +2,7 @@ import type { Edition, Question, Session } from './domain'
 import { validRecoveryCode } from './domain'
 import type { FlashcardProgress, SubmittedFlashcardOutcome } from './flashcards'
 import type { LearningProgress, PracticeMetadata, QuickQuestionOutcome } from './quick-question'
+import type { SubmittedMatchingOutcome } from './matching'
 
 const projectUrl = import.meta.env.VITE_SUPABASE_URL?.replace(/\/$/u, '')
 const publishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
@@ -71,6 +72,14 @@ export async function recordWrittenAnswer(
   return rpc('record_written_answer', {
     p_code: code, p_attempt_id: attemptId, p_question_number: questionNumber, p_outcome: outcome,
   })
+}
+
+export async function recordMatchingRound(
+  code: string,
+  roundId: string,
+  results: SubmittedMatchingOutcome[],
+): Promise<{ learning: LearningProgress; round: FlashcardRoundResult }> {
+  return rpc('record_matching_round', { p_code: code, p_round_id: roundId, p_results: results })
 }
 
 export type FlashcardRoundResult = {

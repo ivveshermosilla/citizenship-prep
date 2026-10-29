@@ -104,6 +104,12 @@ it does not translate or grade free-form answers.
   removes office-status/instruction sentences from current-person distractors,
   adds concise aliases for official no-office answers, and accepts common
   Washington, D.C. typed variants from its current canonical answer.
+- [Match & Learn progress migration](migrations/20261029032833_matching_round_progress.sql):
+  adds the private matching outcome mode and `matching` progress projection,
+  plus a complete-round idempotent RPC using bounded outcome-only receipts.
+- [Match & Learn SQL verification](tests/verify_matching_round.sql): checks
+  aggregate/mode invariants, payload validation, retries, expiry, caps, grants,
+  and cascade cleanup in a rollback transaction.
 - [Mode regression verification](tests/verify_quick_question_modes.sql): tests
   legacy multiple-choice compatibility, written retries/cross-mode UUID reuse,
   progress isolation, expiry, private grants, and cascade cleanup in rollback.
@@ -147,8 +153,8 @@ RLS is enabled on both question tables and the private session table. All direct
 question-table privileges are revoked from `PUBLIC`, `anon`, and
 `authenticated`. Only the explicitly granted study/session RPCs are executable
 by `anon`; authenticated execution is revoked. These include the original five
-MVP RPCs, the two flashcard-progress RPCs and the three Quick Question/learning
-RPCs listed in the migrations. The session table also has an
+MVP RPCs, the two flashcard-progress RPCs, the Quick Question/learning RPCs,
+and the Match & Learn round RPC. The session table also has an
 explicit `USING (false)` / `WITH CHECK (false)` policy. The unexposed
 `game_private` schema grants `anon` usage and execute only on capability helpers
 called by the invoker wrappers; it grants no direct session-table access.
@@ -179,6 +185,28 @@ numbers, expired sessions, and bounded-counter overflow are rejected. Progress
 and receipts are private and cascade-delete with their parent session at expiry
 cleanup. The returned round totals count presentations and are client-evaluated
 practice data, not exam results.
+
+`get_learning_progress(p_code)` adds a `matching` array with per-question
+correct, incorrect, and skipped counts plus the last outcome; its existing
+`progress`, `multiple_choice`, and `written` fields remain. The legacy
+`get_flashcard_progress` view and the flashcard round response's top-level
+`progress` field continue to contain multiple-choice progress only. Its additive
+`learning` field includes the separate mode projections. `record_matching_round(p_code, p_round_id,
+p_results)` accepts one complete immutable set of 1–5 distinct question
+outcomes. Its bounded receipt stores only a SHA-256 digest, length, and outcome
+totals. Exact retries do not increment counts or refresh activity; reusing an
+identifier with changed data or from another mode is rejected. The matching
+request does not store selected answer text, tile labels, or detailed review.
+Matching outcomes update both the aggregate question counters and the separate
+matching counters atomically. They use the existing 1,024-receipt and 100,000
+outcome limits, 168-hour inactivity expiry, and cascading session cleanup.
+
+The rollback verifier `supabase/tests/verify_matching_round.sql` checks the
+aggregate counter invariant across all learning modes, matching isolation,
+payload validation, idempotency, grants, limits, expiry, and cascade deletion.
+`scripts/api-matching.mjs` checks concurrent duplicate submissions and the
+public RPC contract using synthetic sessions; it prints only one-way verifier
+hashes for exact cleanup.
 
 The scheduled job `citizenship-prep-expired-sessions` is active at minute 17 of
 each hour. Access is rejected exactly at 168 hours; physical active-row deletion

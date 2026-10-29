@@ -26,6 +26,7 @@ export type LearningProgress = {
   progress: LearningQuestionProgress[]
   multiple_choice: LearningQuestionProgress[]
   written: LearningQuestionProgress[]
+  matching: LearningQuestionProgress[]
 }
 
 /**

@@ -245,6 +245,43 @@ strings or a derived hash. Written outcomes and multiple-choice outcomes have
 separate progress projections, with a combined projection used only for review
 priority. Quick Quiz remains a separate self-assessed total.
 
+## Match & Learn
+
+Match & Learn opens from the hub and uses only the current session's edition,
+jurisdiction, and reviewed `PracticeMetadata`. Settings default to 12 distinct
+questions, four per round, and Standard pace. Users may select 4 or 5 questions
+per round, 4–30 questions bounded by reviewed availability, Relaxed (30 seconds
+per question), Standard (22.5 seconds), Challenge (15 seconds), or Untimed.
+Each additional required answer adds 10 seconds to the question's allowance.
+The app shows the generated round count and actual allowance before play.
+Prioritize missed uses saved aggregate question outcomes when present and stays
+within the active edition and jurisdiction.
+
+Each board contains one tile for each selected reviewed answer concept, with
+at most ten tiles. The builder rejects overlapping normalized aliases across
+questions and packs all selected questions into safely compatible rounds,
+including smaller rounds when needed. Players tap or keyboard-activate a
+question and a tile in either order; they can remove assignments until submit.
+Progress shows placed answer slots and does not reveal correctness. Submission
+locks the round, grades by question against reviewed aliases, and saves only
+one `{question_number, outcome}` per question with a round UUID. The absolute
+wall-clock timer continues when the tab is hidden. Identical retries reuse the
+same UUID and outcomes. Leaving an unfinished round requires confirmation and
+does not create attempts for it.
+
+Correct requires the required number of distinct valid concepts. An incorrect
+assigned concept makes the question Incorrect. An unanswered or incomplete
+question with only valid assignments is Skipped. Skipped counts as unsuccessful
+in the practice percentage. After the last round, the page shows Correct,
+Incorrect and Skipped totals plus page-local match detail: placed answers,
+missing slots, one example accepted set, all accepted answers, answer date and
+official source links. Navigating away or reloading clears this detail; the
+anonymous session retains only aggregate per-question matching outcome counts.
+Matching totals are separate from written and multiple-choice totals, while the
+aggregate history remains available for missed-question priority. There are no
+raw answer strings, tile IDs, answer labels, detailed review payloads, or
+answer-text hashes in remote storage or browser storage.
+
 ## Internal change expectations
 
 Keep optional expected-change dates/windows alongside the corresponding question

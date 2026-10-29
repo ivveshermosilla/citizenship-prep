@@ -2,6 +2,11 @@
 
 ## Scope and workflow
 
+- Latest owner authorization: develop and publish **Match & Learn** end to end
+  using GPT-6 Luna. Read docs/MATCHING_IMPLEMENTATION_BRIEF.md for settings,
+  unambiguous multi-concept boards, timed/untimed rounds, page-local answer
+  review and private mode-separated outcomes. Root reviews and operates the
+  database/Git/Vercel release; no further owner confirmation is needed.
 - Latest owner authorization: implement and publish the untimed written
   **Quick Question** directly in the hub, accepted answers/reviewed variants,
   per-concept fields, feedback flips and random next question. Also populate

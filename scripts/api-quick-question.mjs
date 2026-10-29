@@ -56,7 +56,7 @@ try {
     'Session RPC exposed private credential material')
 
   step = 'empty progress projection'
-  const empty = { progress: [], multiple_choice: [], written: [] }
+  const empty = { progress: [], multiple_choice: [], written: [], matching: [] }
   assert(same(await request('get_learning_progress', { p_code: codeA }), empty),
     'Empty learning projection is incorrect')
   const writtenId = randomUUID()

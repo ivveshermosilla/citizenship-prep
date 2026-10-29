@@ -74,7 +74,7 @@ begin
   perform public.create_game_session(expired_code,'2025','UT','UT03');
   if created ? 'session_id' or created ? 'code_verifier' or created ? 'recovery_code' then raise exception 'session credential exposed'; end if;
   learning := public.get_learning_progress(a);
-  if learning <> '{"progress":[],"multiple_choice":[],"written":[]}'::jsonb then raise exception 'empty learning projection is wrong'; end if;
+  if learning <> '{"progress":[],"multiple_choice":[],"written":[],"matching":[]}'::jsonb then raise exception 'empty learning projection is wrong'; end if;
 
   mc := public.record_flashcard_round(a,mc_id,'[{"question_number":1,"outcome":"correct"},{"question_number":2,"outcome":"skipped"}]');
   if not (mc ? 'progress' and mc ? 'round' and mc ? 'learning') then raise exception 'legacy round response fields changed'; end if;
@@ -98,7 +98,7 @@ begin
   begin perform public.record_written_answer(a, 'c9fbb6a2-64e3-40da-b130-795e122ac3d4',1,'answer text'); raise exception using errcode='P0001',message='raw/invalid outcome accepted'; exception when sqlstate '22023' then null; end;
   begin perform public.record_written_answer(a, 'c9fbb6a2-64e3-40da-b130-795e122ac3d5',129,'correct'); raise exception using errcode='P0001',message='out-of-edition question accepted'; exception when sqlstate '22023' then null; end;
   if public.get_flashcard_progress(a) <> mc->'progress' then raise exception 'written result leaked into legacy multiple-choice view'; end if;
-  if public.get_learning_progress(b) <> '{"progress":[],"multiple_choice":[],"written":[]}'::jsonb then raise exception 'session learning isolation failed'; end if;
+  if public.get_learning_progress(b) <> '{"progress":[],"multiple_choice":[],"written":[],"matching":[]}'::jsonb then raise exception 'session learning isolation failed'; end if;
   perform public.record_written_answer(b, 'f2dbf32d-0299-4a5a-9dfd-5d6e5a76fcd1',1,'skipped');
   if public.get_learning_progress(a)->'progress' <> written->'learning'->'progress' then raise exception 'second session changed first session learning'; end if;
 

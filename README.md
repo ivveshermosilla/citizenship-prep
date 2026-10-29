@@ -18,11 +18,18 @@ in memory, and records only the question and outcome. Multiple-choice practice
 uses reviewed distractors for all 228 edition-specific questions. See the
 [release review](docs/QUICK_QUESTION_REVIEW.md) for verification and publication.
 
+**Match & Learn**
+builds safe question-and-answer rounds from reviewed content, supports timed or
+untimed play, and keeps detailed answer review on the results page only. The
+round RPC persists per-question outcomes without answer text or tile IDs. See
+the [release review](docs/MATCHING_REVIEW.md), [implementation brief](docs/MATCHING_IMPLEMENTATION_BRIEF.md) and active
+[implementation checklist](docs/IMPLEMENTATION_CHECKLIST.md) for current status.
+
 ## Project status
 
 The React/TypeScript/Vite app supports anonymous recovery-code sessions,
 both filing cohorts, all jurisdictions and congressional districts, Study Flash
-Cards with an optional rolling timed practice test, and Quick Quiz self-checks
+Cards with an optional rolling timed practice test, Match & Learn, and Quick Quiz self-checks
 backed by the dedicated Supabase project. Quick Question adds written practice
 and separate written/multiple-choice totals with shared missed-question review.
 All user-facing app content is English.
@@ -63,14 +70,23 @@ npm test
 npm run test:english
 npm run test:api:flashcards
 npm run test:api:quick-question
+npm run test:api:matching
+npm run test:matching:content
 npm run test:browser
 npm run test:browser-flow
+npm run test:browser:matching
 ```
 
 The unit tests cover the 168-hour boundary, code format/entropy, English vacancy
 display, cohorts, district selection, flashcard selection and ranges, cumulative
 rolling rounds, strict Quick Question normalization/concepts, reviewed metadata
 options, deadlines, and outcome summaries.
+Match & Learn unit tests cover safe boards, alias collisions, tile caps,
+question de-duplication, accepted-label grading, partial/omitted scoring,
+timer allowances and outcome totals. The matching content verifier reads the
+configured service without writing, walks every question in both editions for
+Utah UT03, D.C. DC00, and American Samoa AS00, and checks rotated 30-question
+windows across both round sizes and multiple deterministic shuffles.
 The flashcard API verifier checks live RPC retry/idempotency behavior and emits
 only one-way verifier hashes for synthetic-session cleanup. The Quick Question
 API verifier checks mode-separated written/MC progress, written-attempt

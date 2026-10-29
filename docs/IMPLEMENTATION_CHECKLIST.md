@@ -65,6 +65,22 @@
 | QQ06 | Tablas/RPC privados, idempotencia por modo/attempt, caducidad, aislamiento, cascade y pruebas SQL/API | Verificado | GPT-6 Luna (/root/luna_flashcard_backend) | Codex (/root) | Root aplicó tres migraciones, activó catálogo y aprobó SQL/API, idempotencia y 25 lotes de lectura sobre 1.438 filas. Advisors sin lints; fingerprints originales intactos. |
 | QQ07 | English/unit/API/browser regression, README/product docs y capturas seguras | Verificado | GPT-6 Luna (frontend) | Codex (/root) | Typecheck/build, 20 unit tests, English, browser flow real completo en ambos cohorts, `git diff --check`; capturas seguras en `/tmp/quick-question-verified-*`. Root revisó build/20 unit tests/English, todas las variantes devueltas y opciones completas; publicación READY y flujo HTTPS completo aprobados. Assets revisados idénticos; CI Security aprobada; sesiones sintéticas eliminadas por hashes exactos. |
 
+## Match & Learn
+
+**Estado general:** MM01–MM07 verificados localmente; publicación y prueba HTTPS pendientes.
+**Brief autorizado:** [Match & Learn implementation brief](MATCHING_IMPLEMENTATION_BRIEF.md).
+
+| ID | Tarea y criterio de aceptación | Estado | Codificado por | Revisado por | Evidencia / archivos / último avance |
+| --- | --- | --- | --- | --- | --- |
+| MM01 | Constructor de tableros desde metadata revisada: sin preguntas repetidas, alias ambiguos ni conceptos superpuestos; máximo 10 fichas; cobertura completa | Verificado local | GPT-6 Luna (frontend) | Codex (/root) | `src/lib/matching.ts`, `src/lib/matching.test.ts`; deduplica IDs, falla cerrado ante alias superpuestos y difiere preguntas sin perderlas. |
+| MM02 | Ajustes móviles accesibles: cantidad 4–30, 4/5 por ronda, cuatro ritmos, priorizar falladas y resumen real de rondas | Verificado local | GPT-6 Luna (frontend) | Codex (/root) | `src/components/MatchLearnFeature.tsx`, `src/style.css`; defaults 12/4/Standard, conteo y slider sincronizados, vista previa de todas las rondas. |
+| MM03 | Emparejamiento por toque/teclado, edición antes de enviar, contador accesible de respuestas asignadas | Verificado local | GPT-6 Luna (frontend) | Codex (/root) | Botones accesibles con asignación en ambos órdenes, retirada/reasignación, etiquetas de progreso `n/m answers placed`. |
+| MM04 | Deadline absoluto por ronda, autoenvío seguro y modo Untimed; cierre confirma sin inventar intentos | Verificado local | GPT-6 Luna (frontend) | Codex (/root) | Deadline usa hora de pared, sigue al ocultar pestaña, congela outcomes y UUID; confirmación de salida y `beforeunload`; Untimed no instala intervalo. |
+| MM05 | Puntuación por pregunta y review final local con respuestas parciales/slots faltantes, aliases aceptados, fecha/fuentes | Verificado local | GPT-6 Luna (frontend) | Codex (/root) | Puntuación por aliases visibles de metadata; detalle sólo en memoria de componente; disclosure usa respuestas oficiales de `formatAnswers`, fecha y fuentes. |
+| MM06 | Integración RPC `record_matching_round`, reintento idéntico por UUID/outcomes y recuperación únicamente agregada | Verificado local | GPT-6 Luna (frontend); backend GPT-6 Luna | Codex (/root) | Cliente en `src/lib/supabase.ts` envía sólo número/outcome y UUID; retry mantiene resultado y payload congelados. Root aplicó migración 20261029032833 tras revisión; SQL/API, concurrencia, límites, caducidad y cascade aprobaron. |
+| MM07 | Entrada del hub y totales separados Matching, escrito y multiple-choice; prioridad de falladas agregada | Verificado local | GPT-6 Luna (frontend) | Codex (/root) | `src/main.tsx`; nuevo SVG matching nativo, total matching separado, prioridad desde proyección agregada multi-modo. |
+| MM08 | README/requisitos/check English, unit/browser/API y regresión existente; revisión antes de publicar | En revisión | GPT-6 Luna (frontend) | Codex (/root) | Typecheck/build, 30 unit tests, English y `git diff --check` pasan. Root ejecutó API, contenido real (486 planes), browser matching completo y regresión de juegos anteriores; todo aprobado. Falta publicación y prueba HTTPS. |
+
 ### Avance
 
 - 2026-10-28 08:57 MDT — GPT-6 Luna integró el primer frontend: Quick Question usa

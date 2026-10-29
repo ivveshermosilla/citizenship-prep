@@ -1,12 +1,13 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 
-const surfaces = ['src/main.tsx', 'src/components/FlashcardsFeature.tsx', 'src/components/QuickQuestionFeature.tsx', 'src/lib/domain.ts', 'src/lib/quick-question.ts', 'src/lib/supabase.ts', 'index.html']
+const surfaces = ['src/main.tsx', 'src/components/FlashcardsFeature.tsx', 'src/components/QuickQuestionFeature.tsx', 'src/components/MatchLearnFeature.tsx', 'src/lib/domain.ts', 'src/lib/quick-question.ts', 'src/lib/matching.ts', 'src/lib/supabase.ts', 'index.html']
 const source = surfaces.map(path => [path, readFileSync(path, 'utf8')])
 const html = readFileSync('index.html', 'utf8')
 const app = readFileSync('src/main.tsx', 'utf8')
 const flashcards = readFileSync('src/components/FlashcardsFeature.tsx', 'utf8')
 const quickQuestion = readFileSync('src/components/QuickQuestionFeature.tsx', 'utf8')
+const matching = readFileSync('src/components/MatchLearnFeature.tsx', 'utf8')
 const logo = readFileSync('public/us-map-flag.svg', 'utf8')
 assert.match(html, /<html lang="en">/u, 'document language must be English')
 assert.match(html, /<title>Naturalization Preparation App \(NPA\) · Interactive U\.S\. Naturalization Test Prep<\/title>/u, 'approved English product title must be present')
@@ -42,6 +43,15 @@ assert.match(quickQuestion, /Another question/u)
 assert.match(quickQuestion, /IMPORTANT NOTICE FOR THIS QUESTION/u)
 assert.match(quickQuestion, /aria-hidden=\{flipped\}/u, 'inactive card faces must be hidden from assistive technology')
 assert.doesNotMatch(quickQuestion, /localStorage|sessionStorage/u, 'written responses must remain in component memory only')
+assert.match(app, /Match &amp; Learn/u, 'the matching game must be available from the hub')
+assert.match(app, /matchingSummary/u, 'matching outcome totals must appear separately in the hub')
+assert.match(matching, /Prioritize missed questions/u)
+assert.match(matching, /The timer continues while this tab is hidden/u)
+assert.match(matching, /This detailed review is saved only on this page/u)
+assert.match(matching, /All accepted answers/u)
+assert.doesNotMatch(matching, /localStorage|sessionStorage/u, 'matching assignments and answer review must remain in page memory only')
+assert.match(matching, /data-testid="matching-submit"/u)
+assert.match(matching, /matching-remove-/u, 'answer assignments must be removable before submission')
 assert.match(app, /Multiple-choice practice/u)
 assert.match(app, /Written Quick Question/u, 'written and multiple-choice totals must stay separate')
 assert.match(ui, /Naturalization Preparation App \(NPA\)/u)
