@@ -264,8 +264,14 @@ within the active edition and jurisdiction.
 Each board contains one tile for each selected reviewed answer concept, with
 at most ten tiles. The builder rejects overlapping normalized aliases across
 questions and packs all selected questions into safely compatible rounds,
-including smaller rounds when needed. Players tap or keyboard-activate a
-question and a tile in either order; they can remove assignments until submit.
+including smaller rounds when needed. Players can drag an answer tile onto a
+question with mouse, touch or pen, and drag placed answers to another question.
+A following preview and capacity-only drop highlight guide the move; invalid
+drops and cancellation keep the original placement. Edge scrolling makes
+offscreen questions reachable. Players can also tap or keyboard-activate a
+question and a tile in either order, or tap a placed answer to remove it.
+Dragging ends on cancellation, leaving the page, submission or the absolute
+deadline; a late release cannot modify frozen results.
 Progress shows placed answer slots and does not reveal correctness. Submission
 locks the round, grades by question against reviewed aliases, and saves only
 one `{question_number, outcome}` per question with a round UUID. The absolute

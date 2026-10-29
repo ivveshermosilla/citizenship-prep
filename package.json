@@ -16,6 +16,7 @@
     "test:api:quick-question": "node scripts/api-quick-question.mjs",
     "test:api:matching": "node scripts/api-matching.mjs",
     "test:browser:matching": "node scripts/browser-matching.mjs",
+    "test:browser:matching-drag": "node scripts/browser-matching-drag.mjs",
     "test:matching:content": "node --experimental-strip-types scripts/matching-content-check.mjs"
   },
   "dependencies": {

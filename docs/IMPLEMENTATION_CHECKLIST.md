@@ -81,6 +81,14 @@
 | MM07 | Entrada del hub y totales separados Matching, escrito y multiple-choice; prioridad de falladas agregada | Verificado | GPT-6 Luna (frontend) | Codex (/root) | `src/main.tsx`; nuevo SVG matching nativo, total matching separado, prioridad desde proyección agregada multi-modo. |
 | MM08 | README/requisitos/check English, unit/browser/API y regresión existente; revisión antes de publicar | Verificado | GPT-6 Luna (frontend) | Codex (/root) | Typecheck/build, 30 unit tests, English y `git diff --check` pasan. Root ejecutó API, contenido real (486 planes), browser matching completo y regresión de juegos anteriores; todo aprobado. Publicado en la URL canónica: browser matching completo y regresión pública aprobaron; assets idénticos, Vercel READY y CI Security exitosa. Ver `docs/MATCHING_REVIEW.md`. |
 
+## Match & Learn drag interaction
+
+| ID | Task | Status | Coded by | Reviewed by | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| MD01 | Real mouse/touch/pen dragging, preview and valid drop targets; placed-answer moves and tap/keyboard alternatives | Verified locally | GPT-6 Luna (frontend) | Codex (/root) | Real CDP mouse/touch paths passed; root inspected active phone preview. Scope: `docs/MATCHING_DRAG_BRIEF.md`. |
+| MD02 | Cancel/invalid/full-target safety, scrolling, pointer lifecycle and absolute-deadline guards | Verified locally | GPT-6 Luna (frontend) | Codex (/root) | Outside/full drops, delayed Escape, touch cancel, measured edge scrolling and actual held-drag timeout passed. No backend changes. |
+| MD03 | Real browser mouse/touch drag verification, matching regressions and public publication | In progress | GPT-6 Luna (QA) | Codex (/root) | Build/30 unit tests/English pass; focused local drag and full matching flow passed. Final-source regression and public HTTPS verification pending. |
+
 ## Hub game colors
 
 | ID | Task | Status | Coded by | Reviewed by | Evidence |

@@ -20,8 +20,10 @@ uses reviewed distractors for all 228 edition-specific questions. See the
 
 **Match & Learn is published:** safe question-and-answer rounds from reviewed
 content support timed or untimed play and keep detailed answer review on the
-results page only. The
-round RPC persists per-question outcomes without answer text or tile IDs. See
+results page only. Drag answer tiles onto questions or move placed answers;
+tap and keyboard alternatives remain available. The round RPC persists
+per-question outcomes without answer text or tile IDs. See the
+[drag interaction review](docs/MATCHING_DRAG_REVIEW.md),
 the [release review](docs/MATCHING_REVIEW.md), [implementation brief](docs/MATCHING_IMPLEMENTATION_BRIEF.md) and active
 [implementation checklist](docs/IMPLEMENTATION_CHECKLIST.md) for current status.
 

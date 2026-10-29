@@ -23,6 +23,19 @@ type Props = {
 
 type SavedRound = { board: MatchingBoard; assignments: Record<number, string[]>; outcomes: SubmittedMatchingOutcome[] }
 type FrozenSubmission = { id: string; outcomes: SubmittedMatchingOutcome[]; assignments: Record<number, string[]> }
+type PointerDrag = {
+  pointerId: number
+  tileId: string
+  label: string
+  sourceQuestion: number | null
+  source: HTMLElement
+  startX: number
+  startY: number
+  x: number
+  y: number
+  dragging: boolean
+}
+type DragVisual = { tileId: string; label: string; x: number; y: number; target: number | null; valid: boolean }
 
 function uuid(): string {
   if (typeof crypto.randomUUID === 'function') return crypto.randomUUID()
@@ -60,11 +73,22 @@ export function MatchLearnFeature({ code, questions, metadata, metadataLoading, 
   const [noticeOpen, setNoticeOpen] = useState<number | null>(null)
   const [noticeFading, setNoticeFading] = useState(false)
   const [noticeCycle, setNoticeCycle] = useState(0)
+  const [dragVisual, setDragVisual] = useState<DragVisual | null>(null)
+  const [dragAnnouncement, setDragAnnouncement] = useState('')
   const deadlineRef = useRef<number | null>(null)
   const frozenRef = useRef<FrozenSubmission | null>(null)
   const submitLockRef = useRef(false)
   const saveInFlightRef = useRef(false)
   const assignmentRef = useRef(assignments)
+  const pointerDragRef = useRef<PointerDrag | null>(null)
+  const dragFrameRef = useRef<number | null>(null)
+  const previewAnimationRef = useRef<Animation | null>(null)
+  const dragPreviewElementRef = useRef<HTMLDivElement | null>(null)
+  const dragCancelRef = useRef<() => void>(() => {})
+  const pointerMoveHandlerRef = useRef<(event: PointerEvent) => void>(() => {})
+  const pointerEndHandlerRef = useRef<(event: PointerEvent) => void>(() => {})
+  const pointerCancelHandlerRef = useRef<(event: PointerEvent) => void>(() => {})
+  const suppressSourceClickRef = useRef<{ source: HTMLElement; pointerId: number; awaitingRelease: boolean; until: number } | null>(null)
   const countTouchedRef = useRef(false)
   const minimumCount = Math.min(4, available.length)
   const maximumCount = Math.min(30, available.length)
@@ -76,6 +100,221 @@ export function MatchLearnFeature({ code, questions, metadata, metadataLoading, 
   const finalSummary = summarizeMatchingOutcomes(finalOutcomes)
   const allReviews = savedRounds.flatMap(round => round.board.questions.map(item => ({ item, round, outcome: round.outcomes.find(outcome => outcome.question_number === item.question.question_number)?.outcome ?? 'skipped' as MatchingOutcome })))
   const displayedReviews = allReviews.filter(entry => filter === 'all' ? entry.outcome !== 'correct' : entry.outcome === filter)
+
+  function matchingDropTarget(x: number, y: number): number | null {
+    const target = document.elementFromPoint(x, y)?.closest<HTMLElement>('[data-matching-question-number]')
+    if (!target || !currentBoard) return null
+    const number = Number(target.dataset.matchingQuestionNumber)
+    const item = currentBoard.questions.find(entry => entry.question.question_number === number)
+    return item ? number : null
+  }
+
+  function canDropTile(tileId: string, sourceQuestion: number | null, targetQuestion: number): boolean {
+    if (!currentBoard || stage !== 'board' || submitLockRef.current || !isBeforeDeadline(deadlineRef.current, Date.now())) return false
+    const item = currentBoard.questions.find(entry => entry.question.question_number === targetQuestion)
+    if (!item) return false
+    const current = assignmentRef.current
+    const owner = Object.entries(current).find(([, ids]) => ids.includes(tileId))?.[0]
+    const ownerNumber = owner === undefined ? null : Number(owner)
+    if (ownerNumber !== sourceQuestion || !currentBoard.tiles.some(tile => tile.id === tileId)) return false
+    if (sourceQuestion === targetQuestion && (current[targetQuestion] ?? []).includes(tileId)) return true
+    const targetAssignments = (current[targetQuestion] ?? []).filter(id => id !== tileId)
+    return targetAssignments.length < item.requiredCount
+  }
+
+  function moveTile(tileId: string, questionNumber: number, sourceQuestion: number | null): boolean {
+    if (stage !== 'board' || submitLockRef.current) return false
+    if (!isBeforeDeadline(deadlineRef.current, Date.now())) { void submit(true); return false }
+    const item = currentBoard?.questions.find(entry => entry.question.question_number === questionNumber)
+    if (!item || !currentBoard?.tiles.some(tile => tile.id === tileId)) return false
+    const current = assignmentRef.current
+    const existingQuestion = Object.entries(current).find(([, ids]) => ids.includes(tileId))?.[0]
+    const existingNumber = existingQuestion === undefined ? null : Number(existingQuestion)
+    if (existingNumber !== sourceQuestion) return false
+    if (existingNumber === questionNumber) return true
+    const next = Object.fromEntries(Object.entries(current).map(([key, ids]) => [Number(key), ids.filter(id => id !== tileId)])) as Record<number, string[]>
+    const ids = next[questionNumber] ?? []
+    if (ids.length >= item.requiredCount) return false
+    next[questionNumber] = [...ids, tileId]
+    assignmentRef.current = next
+    setAssignments(next)
+    setSelectedQuestion(null); setSelectedTile(null)
+    return true
+  }
+
+  function clearPointerDrag(announce?: string, updateUI = true, pointerReleased = false) {
+    const active = pointerDragRef.current
+    pointerDragRef.current = null
+    if (active) {
+      try { if (active.source.hasPointerCapture(active.pointerId)) active.source.releasePointerCapture(active.pointerId) } catch { /* The browser may have ended this pointer already. */ }
+    }
+    if (dragFrameRef.current !== null) window.cancelAnimationFrame(dragFrameRef.current)
+    dragFrameRef.current = null
+    if (updateUI) setDragVisual(null)
+    if (updateUI && announce) setDragAnnouncement(announce)
+    // Do not let the browser's post-drag click remove an assigned chip.
+    if (active?.dragging) suppressSourceClickRef.current = { source: active.source, pointerId: active.pointerId, awaitingRelease: !pointerReleased, until: pointerReleased ? Date.now() + 300 : Number.POSITIVE_INFINITY }
+  }
+
+  function cancelPointerDrag(pointerReleased = false) {
+    const active = pointerDragRef.current
+    if (!active) return
+    clearPointerDrag(active.dragging ? 'Drag canceled. Your answer assignments were kept.' : undefined, true, pointerReleased)
+  }
+
+  function runDragFrame() {
+    dragFrameRef.current = null
+    const active = pointerDragRef.current
+    if (!active?.dragging) return
+    const edge = 44
+    const verticalSpeed = active.y < edge ? -Math.ceil((edge - active.y) / 5) : active.y > window.innerHeight - edge ? Math.ceil((active.y - (window.innerHeight - edge)) / 5) : 0
+    if (verticalSpeed) window.scrollTo({ top: window.scrollY + Math.max(-16, Math.min(16, verticalSpeed)), behavior: 'instant' })
+    const answerPanel = document.querySelector<HTMLElement>('.matching-tiles')
+    if (answerPanel) {
+      const rect = answerPanel.getBoundingClientRect()
+      if (active.x >= rect.left && active.x <= rect.right) {
+        const panelSpeed = active.y < rect.top + edge ? -Math.ceil((rect.top + edge - active.y) / 5) : active.y > rect.bottom - edge ? Math.ceil((active.y - (rect.bottom - edge)) / 5) : 0
+        if (panelSpeed) answerPanel.scrollTo({ top: answerPanel.scrollTop + Math.max(-16, Math.min(16, panelSpeed)), behavior: 'instant' })
+      }
+    }
+    const target = matchingDropTarget(active.x, active.y)
+    const valid = target !== null && canDropTile(active.tileId, active.sourceQuestion, target)
+    setDragVisual({ tileId: active.tileId, label: active.label, x: active.x, y: active.y, target: valid ? target : null, valid })
+    dragFrameRef.current = window.requestAnimationFrame(runDragFrame)
+  }
+
+  function startPointerDrag(event: React.PointerEvent<HTMLElement>, tileId: string, label: string, sourceQuestion: number | null) {
+    if (pointerDragRef.current || event.button !== 0 || !event.isPrimary || stage !== 'board' || roundLocked || submitLockRef.current) return
+    if (!isBeforeDeadline(deadlineRef.current, Date.now())) { void submit(true); return }
+    const active: PointerDrag = { pointerId: event.pointerId, tileId, label, sourceQuestion, source: event.currentTarget, startX: event.clientX, startY: event.clientY, x: event.clientX, y: event.clientY, dragging: false }
+    pointerDragRef.current = active
+    try { event.currentTarget.setPointerCapture(event.pointerId) } catch { /* The pointer may already have ended. */ }
+  }
+
+  function movePointerDrag(event: PointerEvent) {
+    const active = pointerDragRef.current
+    if (!active || event.pointerId !== active.pointerId) return
+    active.x = event.clientX; active.y = event.clientY
+    if (!active.dragging && Math.hypot(active.x - active.startX, active.y - active.startY) >= 8) {
+      active.dragging = true
+      setDragAnnouncement('')
+    }
+    if (!active.dragging) return
+    event.preventDefault()
+    if (dragFrameRef.current === null) dragFrameRef.current = window.requestAnimationFrame(runDragFrame)
+  }
+
+  function cancelPointerEvent(event: { pointerId: number }) {
+    const active = pointerDragRef.current
+    if (active?.pointerId === event.pointerId) cancelPointerDrag(true)
+  }
+
+  function lostPointerCapture(event: { pointerId: number }) {
+    const active = pointerDragRef.current
+    if (active?.pointerId === event.pointerId) cancelPointerDrag()
+  }
+
+  function endPointerDrag(event: PointerEvent) {
+    const active = pointerDragRef.current
+    if (!active || event.pointerId !== active.pointerId) return
+    active.x = event.clientX; active.y = event.clientY
+    if (!active.dragging) { clearPointerDrag(); return }
+    event.preventDefault()
+    if (!isBeforeDeadline(deadlineRef.current, Date.now())) {
+      clearPointerDrag('Time expired. The round was submitted without the late drag.', true, true)
+      void submit(true)
+      return
+    }
+    const target = matchingDropTarget(active.x, active.y)
+    const valid = target !== null && canDropTile(active.tileId, active.sourceQuestion, target)
+    let moved = false
+    if (valid && target !== null) moved = moveTile(active.tileId, target, active.sourceQuestion)
+    const message = moved
+      ? target === active.sourceQuestion ? `Answer remains on question ${target}.` : `Answer moved to question ${target}.`
+      : 'Drag canceled. Drop on a question with an open answer slot; your assignments were kept.'
+    clearPointerDrag(message, true, true)
+  }
+
+  function suppressPostDragClick(event: React.MouseEvent<HTMLElement>) {
+    const suppression = suppressSourceClickRef.current
+    if (!suppression) return false
+    if (suppression.awaitingRelease) return false
+    if (Date.now() > suppression.until) { suppressSourceClickRef.current = null; return false }
+    if (event.detail > 0 && (event.currentTarget === suppression.source || suppression.source.contains(event.target as Node))) {
+      suppressSourceClickRef.current = null
+      event.preventDefault()
+      event.stopPropagation()
+      return true
+    }
+    return false
+  }
+
+  useEffect(() => {
+    dragCancelRef.current = cancelPointerDrag
+    pointerMoveHandlerRef.current = movePointerDrag
+    pointerEndHandlerRef.current = endPointerDrag
+    pointerCancelHandlerRef.current = event => cancelPointerEvent(event)
+  })
+  useEffect(() => {
+    const cancel = () => dragCancelRef.current()
+    const keydown = (event: KeyboardEvent) => { if (event.key === 'Escape') cancel() }
+    const visibility = () => { if (document.visibilityState !== 'visible') cancel() }
+    const released = (event: PointerEvent) => {
+      const suppression = suppressSourceClickRef.current
+      if (suppression?.awaitingRelease && suppression.pointerId === event.pointerId) {
+        suppression.awaitingRelease = false
+        suppression.until = Date.now() + 300
+      }
+    }
+    const began = () => {
+      // The compatibility click for a released pointer happens before the next
+      // pointerdown. If it did not occur, clear the old suppression so the next
+      // deliberate tap is always delivered.
+      if (suppressSourceClickRef.current && !suppressSourceClickRef.current.awaitingRelease) suppressSourceClickRef.current = null
+    }
+    const moved = (event: PointerEvent) => pointerMoveHandlerRef.current(event)
+    const ended = (event: PointerEvent) => pointerEndHandlerRef.current(event)
+    const pointerCanceled = (event: PointerEvent) => pointerCancelHandlerRef.current(event)
+    window.addEventListener('blur', cancel)
+    window.addEventListener('keydown', keydown)
+    window.addEventListener('pointerdown', began, true)
+    window.addEventListener('pointermove', moved, { capture: true, passive: false })
+    window.addEventListener('pointerup', released, true)
+    window.addEventListener('pointerup', ended, true)
+    window.addEventListener('pointercancel', released, true)
+    window.addEventListener('pointercancel', pointerCanceled, true)
+    document.addEventListener('visibilitychange', visibility)
+    return () => {
+      window.removeEventListener('blur', cancel)
+      window.removeEventListener('keydown', keydown)
+      window.removeEventListener('pointerdown', began, true)
+      window.removeEventListener('pointermove', moved, true)
+      window.removeEventListener('pointerup', released, true)
+      window.removeEventListener('pointerup', ended, true)
+      window.removeEventListener('pointercancel', released, true)
+      window.removeEventListener('pointercancel', pointerCanceled, true)
+      document.removeEventListener('visibilitychange', visibility)
+      clearPointerDrag(undefined, false)
+      if (dragFrameRef.current !== null) window.cancelAnimationFrame(dragFrameRef.current)
+      dragFrameRef.current = null
+    }
+  }, [])
+
+  useEffect(() => { dragCancelRef.current() }, [stage, boardIndex])
+
+  useEffect(() => {
+    if (!dragVisual || !dragPreviewElementRef.current) {
+      previewAnimationRef.current?.cancel()
+      previewAnimationRef.current = null
+      return
+    }
+    const bounds = dragPreviewElementRef.current.getBoundingClientRect()
+    const x = Math.max(8, Math.min(dragVisual.x + 14, window.innerWidth - bounds.width - 8))
+    const y = Math.max(8, Math.min(dragVisual.y + 14, window.innerHeight - bounds.height - 8))
+    const keyframes = [{ transform: `translate3d(${x}px, ${y}px, 0)` }]
+    if (previewAnimationRef.current?.effect instanceof KeyframeEffect) previewAnimationRef.current.effect.setKeyframes(keyframes)
+    else previewAnimationRef.current = dragPreviewElementRef.current.animate(keyframes, { duration: 0, fill: 'forwards' })
+  }, [dragVisual])
 
   useEffect(() => {
     if (countTouchedRef.current || maximumCount < 1) return
@@ -99,6 +338,7 @@ export function MatchLearnFeature({ code, questions, metadata, metadataLoading, 
   }
 
   function startPlan() {
+    cancelPointerDrag()
     setError(''); setSaveError(''); setSavedRounds([]); setBoardIndex(0); setAssignments({}); assignmentRef.current = {}; setSelectedQuestion(null); setSelectedTile(null); setRoundSummary(null); setSettingMessage(''); setFilter('all')
     const result = buildMatchingPlan(questions, metadata, { questionCount: count, questionsPerRound: roundSize, pace, prioritizeMissed: prioritize }, matchingProgress)
     if (result.error || !result.boards.length) { setError(result.error ?? 'No matching boards are available.'); return }
@@ -153,16 +393,8 @@ export function MatchLearnFeature({ code, questions, metadata, metadataLoading, 
   }, [noticeOpen, noticeCycle])
 
   function assign(questionNumber: number, tileId: string) {
-    if (stage !== 'board' || submitLockRef.current) return
-    if (!isBeforeDeadline(deadlineRef.current, Date.now())) { void submit(true); return }
-    const next = Object.fromEntries(Object.entries(assignmentRef.current).map(([key, ids]) => [Number(key), ids.filter(id => id !== tileId)])) as Record<number, string[]>
-    const item = currentBoard?.questions.find(entry => entry.question.question_number === questionNumber)
-    const ids = next[questionNumber] ?? []
-    if (!item || ids.length >= item.requiredCount) return
-    next[questionNumber] = [...ids, tileId]
-    assignmentRef.current = next
-    setAssignments(next)
-    setSelectedQuestion(null); setSelectedTile(null)
+    if (Object.values(assignmentRef.current).some(ids => ids.includes(tileId))) return
+    moveTile(tileId, questionNumber, null)
   }
 
   function selectQuestion(number: number) {
@@ -186,6 +418,7 @@ export function MatchLearnFeature({ code, questions, metadata, metadataLoading, 
   async function submit(automatic = false) {
     if (!currentBoard || !plan || submitLockRef.current) return
     if (!automatic && !isBeforeDeadline(deadlineRef.current, Date.now())) { void submit(true); return }
+    cancelPointerDrag()
     submitLockRef.current = true
     setRoundLocked(true)
     const timeoutSubmission = automatic && deadlineRef.current !== null && Date.now() >= deadlineRef.current
@@ -228,6 +461,7 @@ export function MatchLearnFeature({ code, questions, metadata, metadataLoading, 
   }
 
   function nextBoard() {
+    cancelPointerDrag()
     if (!plan) return
     if (boardIndex + 1 >= plan.boards.length) { setStage('results'); return }
     setBoardIndex(value => value + 1); setAssignments({}); assignmentRef.current = {}; setSelectedQuestion(null); setSelectedTile(null); setRoundSummary(null); setSettingMessage(''); setStage('board')
@@ -240,15 +474,17 @@ export function MatchLearnFeature({ code, questions, metadata, metadataLoading, 
         : 'Leave this unfinished round? Its assignments will be cleared and will not count as attempts.'
       if (!window.confirm(message)) return
     }
+    cancelPointerDrag()
     deadlineRef.current = null
     setPlan(null); setPlanReady(false); setSavedRounds([]); setAssignments({}); assignmentRef.current = {}; setStage('setup'); onExit()
   }
   function playAgain() {
+    cancelPointerDrag()
     const replay = buildMatchingPlan(questions, metadata, { questionCount: count, questionsPerRound: roundSize, pace, prioritizeMissed: prioritize }, matchingProgress)
     if (replay.error || !replay.boards.length) { setError(replay.error ?? 'No matching boards are available.'); setStage('setup'); return }
     setPlan(replay); setPlanReady(false); setCount(replay.selectedCount); setBoardIndex(0); setSavedRounds([]); setAssignments({}); assignmentRef.current = {}; setSelectedQuestion(null); setSelectedTile(null); setRoundSummary(null); setError(''); setSaveError(''); setSettingMessage(''); setFilter('all'); setNoticeOpen(null); setStage('board')
   }
-  function changeSettings() { setPlan(null); setPlanReady(false); setSavedRounds([]); setAssignments({}); assignmentRef.current = {}; setRoundSummary(null); setFilter('all'); setNoticeOpen(null); setStage('setup'); setError(''); setSaveError('') }
+  function changeSettings() { cancelPointerDrag(); setPlan(null); setPlanReady(false); setSavedRounds([]); setAssignments({}); assignmentRef.current = {}; setRoundSummary(null); setFilter('all'); setNoticeOpen(null); setStage('setup'); setError(''); setSaveError('') }
   function updateCount(value: number) { countTouchedRef.current = true; setCount(value); setCountInput(String(value)); setPlan(null); setPlanReady(false) }
   function updateRoundSize(value: 4 | 5) { setRoundSize(value); setPlan(null); setPlanReady(false) }
   function updatePace(value: MatchingPace) { setPace(value); setPlan(null); setPlanReady(false) }
@@ -269,7 +505,7 @@ export function MatchLearnFeature({ code, questions, metadata, metadataLoading, 
           <div className="field"><label htmlFor="matching-pace">Pace</label><select id="matching-pace" data-testid="matching-pace" value={pace} onChange={event => updatePace(event.target.value as MatchingPace)}><option value="relaxed">Relaxed</option><option value="standard">Standard</option><option value="challenge">Challenge</option><option value="untimed">Untimed</option></select></div>
         </div>
         <label className="matching-priority"><input data-testid="matching-prioritize-missed" type="checkbox" checked={prioritize} onChange={event => updatePriority(event.target.checked)}/> Prioritize missed questions <small>Uses saved question outcomes when available; selected questions stay within this edition and jurisdiction.</small></label>
-        <div className="matching-help"><strong>How rounds work</strong><p>A question with more than one required answer needs one different tile for every answer slot. You can change assignments before submitting. A fully correct question is Correct. Any incorrect placed match makes the question Incorrect. An unanswered or incomplete question is Skipped only when every placed match is valid. Skipped questions count as unsuccessful in the practice percentage.</p><p>The timer continues while this tab is hidden. Detailed answer review stays on this page and clears when you leave; only question outcome counts are saved.</p></div>
+        <div className="matching-help"><strong>How rounds work</strong><p>Drag an answer tile onto a question, or tap either item to make a match. Drag an assigned answer to move it, or tap it to remove it. A question with more than one required answer needs one different tile for every answer slot. You can change assignments before submitting. A fully correct question is Correct. Any incorrect placed match makes the question Incorrect. An unanswered or incomplete question is Skipped only when every placed match is valid. Skipped questions count as unsuccessful in the practice percentage.</p><p>The timer continues while this tab is hidden. Detailed answer review stays on this page and clears when you leave; only question outcome counts are saved.</p></div>
         {planReady && plan && stage === 'setup' && <p data-testid="matching-plan-summary" className="matching-plan-summary">This plan contains {plan.selectedCount} questions in {plan.boards.length} rounds: {plan.boards.map((board, index) => `round ${index + 1}, ${board.questions.length} questions`).join('; ')}.</p>}
         <button className="button button-primary full-button" data-testid="matching-start" disabled={!available.length || !countDraftValid || Boolean(metadataError)} onClick={() => planReady ? setStage('board') : startPlan()}>{planReady ? 'Start round 1 →' : 'Preview rounds →'}</button>
       </>}
@@ -282,12 +518,18 @@ export function MatchLearnFeature({ code, questions, metadata, metadataLoading, 
       <div className="matching-board-columns"><div className="matching-cards">{currentBoard.questions.map(item => {
         const number = item.question.question_number
         const assigned = assignments[number] ?? []
-        return <article className={`matching-question-card${selectedQuestion === number ? ' is-selected' : ''}`} key={number}>
-          <button type="button" className="matching-question-select" data-testid={`matching-question-${number}`} disabled={roundLocked} aria-pressed={selectedQuestion === number} aria-label={`Question ${number}: ${item.question.question_text}. ${assigned.length} of ${item.requiredCount} answers placed`} onClick={() => selectQuestion(number)}><span className="matching-question-number">QUESTION {number}</span><strong>{item.question.question_text}</strong><span className="matching-progress" data-testid={`matching-progress-${number}`}>{assigned.length}/{item.requiredCount} answers placed</span></button>
-          {assigned.length > 0 && <div className="matching-assigned" aria-label={`Answers placed on question ${number}`}>{assigned.map((id, index) => { const tile = currentBoard.tiles.find(value => value.id === id); return <button type="button" key={id} className="matching-assigned-chip" data-testid={`matching-remove-${number}-${index + 1}`} aria-label={`Remove ${tile?.label ?? 'answer'} from question ${number}`} disabled={roundLocked} onClick={() => removeAssignment(number, id)}>{tile?.label ?? 'Answer'} <span aria-hidden="true">×</span></button> })}</div>}
+        const dropEligible = dragVisual ? String(canDropTile(dragVisual.tileId, pointerDragRef.current?.sourceQuestion ?? null, number)) : undefined
+        const dragOver = dragVisual?.target === number ? 'true' : undefined
+        return <article className={`matching-question-card${selectedQuestion === number ? ' is-selected' : ''}`} key={number} data-matching-question-number={number} data-drag-over={dragOver} data-drop-eligible={dropEligible}>
+          <button type="button" className="matching-question-select" data-testid={`matching-question-${number}`} data-matching-question-number={number} data-drag-over={dragOver} data-drop-eligible={dropEligible} disabled={roundLocked} aria-pressed={selectedQuestion === number} aria-label={`Question ${number}: ${item.question.question_text}. ${assigned.length} of ${item.requiredCount} answers placed`} onClick={() => selectQuestion(number)}>
+            <span className="matching-question-number">QUESTION {number}</span><strong>{item.question.question_text}</strong><span className="matching-progress" data-testid={`matching-progress-${number}`}>{assigned.length}/{item.requiredCount} answers placed</span>
+          </button>
+          {assigned.length > 0 && <div className="matching-assigned" aria-label={`Answers placed on question ${number}`}>{assigned.map((id, index) => { const tile = currentBoard.tiles.find(value => value.id === id); return <button type="button" key={id} className="matching-assigned-chip" data-testid={`matching-remove-${number}-${index + 1}`} data-matching-draggable="true" aria-label={`Remove ${tile?.label ?? 'answer'} from question ${number}; drag to move`} disabled={roundLocked} onPointerDown={event => startPointerDrag(event, id, tile?.label ?? 'Answer', number)} onLostPointerCapture={lostPointerCapture} onDragStart={event => event.preventDefault()} onClick={event => { if (!suppressPostDragClick(event)) removeAssignment(number, id) }}>{tile?.label ?? 'Answer'} <span aria-hidden="true">×</span></button> })}</div>}
         </article>
       })}</div>
-      <section className="matching-tiles" aria-labelledby="matching-tiles-title"><h2 id="matching-tiles-title">Answer tiles</h2><p>Choose a question, then a tile, or choose a tile first.</p><div className="matching-tile-grid">{currentBoard.tiles.map((tile, index) => { const assigned = Object.values(assignments).some(ids => ids.includes(tile.id)); return <button type="button" key={tile.id} className={`matching-tile${selectedTile === tile.id ? ' is-selected' : ''}${assigned ? ' is-assigned' : ''}`} data-testid={`matching-tile-${index + 1}`} disabled={roundLocked || assigned} aria-pressed={selectedTile === tile.id} onClick={() => selectTile(tile.id)}>{tile.label}{assigned && <span className="sr-only"> assigned</span>}</button> })}</div></section></div>
+      <section className="matching-tiles" aria-labelledby="matching-tiles-title"><h2 id="matching-tiles-title">Answer tiles</h2><p>Drag a tile to a question, or tap either item.</p><div className="matching-tile-grid">{currentBoard.tiles.map((tile, index) => { const assigned = Object.values(assignments).some(ids => ids.includes(tile.id)); return <button type="button" key={tile.id} className={`matching-tile${selectedTile === tile.id ? ' is-selected' : ''}${assigned ? ' is-assigned' : ''}`} data-testid={`matching-tile-${index + 1}`} data-matching-draggable="true" disabled={roundLocked || assigned} aria-pressed={selectedTile === tile.id} onPointerDown={event => startPointerDrag(event, tile.id, tile.label, null)} onLostPointerCapture={lostPointerCapture} onDragStart={event => event.preventDefault()} onClick={event => { if (!suppressPostDragClick(event)) selectTile(tile.id) }}>{tile.label}{assigned && <span className="sr-only"> assigned</span>}</button> })}</div></section></div>
+      <div className="matching-drag-announcement" data-testid="matching-drag-announcement" role="status" aria-live="polite" aria-atomic="true">{dragAnnouncement}</div>
+      {dragVisual && <div ref={dragPreviewElementRef} className={`matching-drag-preview${dragVisual.valid ? ' is-valid' : ' is-invalid'}`} data-testid="matching-drag-preview" data-drop-valid={String(dragVisual.valid)} aria-hidden="true">{dragVisual.label}</div>}
       <div className="matching-submit-area"><button type="button" className="button button-primary" data-testid="matching-submit" disabled={roundLocked || saving} onClick={() => void submit(false)}>{saving ? 'Saving round…' : 'Submit round'}</button><span>{currentBoard.questions.length} questions · {currentBoard.tiles.length} answer tiles · {pace === 'untimed' ? 'Untimed round' : `${allowance} seconds allowed`}</span></div>
       {saveError && <div className="quick-save-error" role="alert">{saveError} <button className="button button-secondary" data-testid="matching-retry" disabled={saving} onClick={retrySave}>{saving ? 'Retrying…' : 'Retry save'}</button></div>}
       {error && <p role="alert" className="error-inline">{error}</p>}

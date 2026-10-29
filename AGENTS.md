@@ -2,6 +2,10 @@
 
 ## Scope and workflow
 
+- Latest owner authorization: implement and publish real mouse/touch/pen dragging
+  for Match & Learn through GPT-6 Luna. Read docs/MATCHING_DRAG_BRIEF.md.
+  Preserve tap/keyboard alternatives, deadline guards and minimal persistence;
+  root reviews and operates publication without another confirmation.
 - Latest owner authorization: develop and publish **Match & Learn** end to end
   using GPT-6 Luna. Read docs/MATCHING_IMPLEMENTATION_BRIEF.md for settings,
   unambiguous multi-concept boards, timed/untimed rounds, page-local answer
