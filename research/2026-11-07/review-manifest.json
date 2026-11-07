@@ -63,7 +63,16 @@
   "application": {
     "supabase": "Applied by Codex root after rollback-only SQL dry run; wrong-fingerprint guard rejected a deliberate mismatch; read-only verifier passed.",
     "public_browser_flow": "Passed by Codex root for both cohorts, touch, practice flows, timeout, recovery and responsive layouts; two synthetic sessions removed by exact verifier hashes.",
-    "git_and_vercel": "Not published by this content refresh."
+    "git_and_vercel": {
+      "source_commit": "cdfdfbbc2c0682024ab85f9f20ddfc910132133a",
+      "security_ci_run": 42400515396,
+      "security_ci_result": "success",
+      "source_deployment_id": "dpl_HuJWHSkj7zrPM5ckTjCHFHvTLvyq",
+      "source_deployment_status": "READY",
+      "production_url": "https://naturalization-preparation-app.vercel.app/",
+      "verification": "Anonymous HTTP 200; production JavaScript/CSS match the local build; responsive browser checks passed at 320/390/820/1440 pixels.",
+      "record_scope": "Verified source release; this manifest is finalized in a documentation follow-up commit."
+    }
   },
   "artifacts": {
     "official_source_checks": {

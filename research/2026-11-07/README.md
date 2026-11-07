@@ -57,4 +57,10 @@ patch after a rollback dry run and a deliberate wrong-fingerprint rejection.
 The root-run public browser flow also passed both cohorts, the study and written
 practice flows, timeout handling, session recovery, touch input, and responsive
 layouts; its two synthetic sessions were removed by exact verifier hashes.
-Git publication and Vercel deployment are still pending.
+Source release: [cdfdfbbc2c0682024ab85f9f20ddfc910132133a](https://github.com/ivveshermosilla/citizenship-prep/commit/cdfdfbbc2c0682024ab85f9f20ddfc910132133a).
+[Security CI 42400515396](https://github.com/ivveshermosilla/citizenship-prep/actions/runs/42400515396)
+passed. Vercel production deployment `dpl_HuJWHSkj7zrPM5ckTjCHFHvTLvyq`
+reached READY at the [canonical NPA URL](https://naturalization-preparation-app.vercel.app/).
+The coordinator verified anonymous HTTP 200, production JavaScript/CSS equality
+with the local build, and browser checks at 320/390/820/1440 pixels. This
+publication record is a documentation follow-up to the verified source release.

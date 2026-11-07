@@ -262,17 +262,20 @@ Una tarea implementada requiere revisión para pasar a Verificado.
 
 - 2026-10-28 00:23 MDT — Codex (/root): publicación Study Flash Cards verificada en https://naturalization-preparation-app.vercel.app/. Fuente `6307dd1d18d001d4c1fd7db433874d7d9e18738f`; Vercel READY y Security CI40643360541 aprobada. Flujo público real pasó ambas ediciones, touch, conteos/rangos/rolling, resultados conocidos, timeout15s, recuperación y cuatro tamaños. Dos sesiones sintéticas eliminadas por hashes exactos; sesiones reales conservadas.
 
-## Revisión de respuestas vigente — 2026-11-07
+## Current-answer review — 2026-11-07
 
-- Implementación de catálogos y parche SQL: GPT-6 Luna (identificador exacto del
-  runtime no verificable). Se revisaron 1,131 filas dependientes del tiempo
-  (566 de 2008 y 565 de 2025); las otras 307 conservan las fechas de octubre.
-  No cambió ninguna respuesta, nombre de titular ni predecesor de vacante.
-- Codex (/root) verificó hashes, aplicó el parche en Supabase tras una prueba
-  transaccional y una prueba negativa del guard, comprobó la proyección pública
-  y confirmó fingerprints completos de respuestas/filas estáticas. El flujo
-  público de navegador pasó ambos cohorts, interacción táctil, ejercicios,
-  timeout, recuperación y tamaños adaptables; se limpiaron solo dos sesiones
-  sintéticas mediante sus hashes exactos.
-- No se ha publicado este cambio en Git ni Vercel. Evidencia, fechas, límites y
-  siguientes pasos: [revisión mensual](../research/2026-11-07/README.md).
+- [x] Implemented by the agent assigned GPT-6 Luna (exact runtime model identity
+  unavailable): synchronized catalogs, guarded SQL and reproducible builders.
+  Reviewed 1,131 time-dependent rows (566/565 by edition); 307 stable rows retain
+  their October dates. Accepted answers, incumbent names and vacancy predecessors
+  remain unchanged.
+- [x] Reviewed by Codex (/root): official sources, exact row scope, reproducible
+  hashes, rollback trial, deliberate wrong-baseline rejection, committed Supabase
+  patch and read-only postconditions. Full public browser flow passed both
+  cohorts, touch, exercises, timeout, recovery and responsive layouts. Only the
+  two identified synthetic sessions were removed.
+- [x] Published by Codex (/root): source commit `cdfdfbbc`, Security CI
+  `42400515396` passed, Vercel source deployment
+  `dpl_HuJWHSkj7zrPM5ckTjCHFHvTLvyq` READY. Anonymous HTTP and responsive browser
+  checks passed; production assets match the local build. See the
+  [monthly review](../research/2026-11-07/README.md) for sources and limits.
