@@ -1,5 +1,10 @@
 # Current answers and update dates — October 27, 2026
 
+> The question-only snapshot and October source report remain historical. The
+> answer catalogs below are the maintained source files and include the
+> November 7 refresh. See [the November review](../../2026-11-07/README.md) for
+> the current mixed-date policy, checked sources, and scoped database patch.
+
 The owner authorized current answers and nationwide coverage after the original
 question-only research. This follow-up resolves all **128 questions in the 2025
 bank** and **100 questions in the 2008 bank**, while preserving the original
@@ -59,9 +64,9 @@ of older geographic references are recorded separately from verification dates.
 The owner changed the policy to **once per calendar month**, superseding all
 previous weekly, next-day, thirty-day and per-class suggestions. Every response
 set records `verified_on`, `data_updated_on`, and a concrete `suggested_update_on`.
-The full 1,438-row [review schedule](review-schedule.csv) now has the same next
-monthly date: **November 27, 2026**, following verification on October 27, 2026.
-This includes vacancies and stable historical material.
+The 1,438-row [review schedule](review-schedule.csv) reflects the November 7
+review: time-dependent rows are due **December 7, 2026** and stable rows are due
+**November 27, 2026**.
 
 [maintenance-policy.json](maintenance-policy.json) is the current policy record.
 A calendar month is not a fixed thirty days; end-of-month dates clamp normally.

@@ -1,15 +1,17 @@
 {
   "source_catalog": "research/2026-10-27/answers/resolved-answers.csv",
   "change_guidance_catalog": "research/2026-10-27/answers/change-guidance.json",
-  "change_guidance_sha256": "04f0d2804aec73a161921ee38721a6526d33a7bbf62ec2aaef8fa1dce1f6c58c",
-  "source_sha256": "82f9ad6aa14796f78930cd3c21b0f5df7e362badd9f36aee5026f1fa6f309e38",
-  "seed_sha256": "0f0148c020bf5a96e68e7955a8847a4ca23ac5bafc0f614d042d55316bc17767",
+  "change_guidance_sha256": "910446946619bb5790bf0eaee4ab1c80bbac961446732ddd9465d4a08d38e4ec",
+  "source_sha256": "e30fc3e96c19c4d54a449edca25d5142cde464968e98c0ccc06daeacc758e607",
+  "seed_sha256": "b9116a1d72bf9df157ed8fb85c0f65d99447c4fa9096708b56d71aa54e648c7f",
   "answer_updated_on": [
-    "2026-10-27"
+    "2026-10-27",
+    "2026-11-07"
   ],
   "update_interval_calendar_months": 1,
   "next_update_on": [
-    "2026-11-27"
+    "2026-11-27",
+    "2026-12-07"
   ],
   "tables": {
     "civics_questions_2008": {

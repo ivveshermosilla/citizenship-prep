@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-27",
+  "as_of": "2026-11-07",
   "editions": {
     "2025": {
       "questions": 128,
@@ -36,5 +36,23 @@
   "reminders_created": false,
   "maintenance_policy": "monthly_calendar",
   "next_update_on": "2026-11-27",
-  "supabase_imported": true
+  "supabase_imported": true,
+  "next_update_on_by_scope": {
+    "time_dependent": "2026-12-07",
+    "stable": "2026-11-27"
+  },
+  "reviewed_rows_by_scope": {
+    "time_dependent": {
+      "2008": 566,
+      "2025": 565,
+      "total": 1131
+    },
+    "stable_retained_from_2026_10_27": {
+      "2008": 139,
+      "2025": 168,
+      "total": 307
+    }
+  },
+  "post_election_current_names_unchanged": true,
+  "supabase_refresh_applied_on": "2026-11-07"
 }

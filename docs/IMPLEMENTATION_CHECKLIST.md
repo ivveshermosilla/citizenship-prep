@@ -261,3 +261,18 @@ Una tarea implementada requiere revisión para pasar a Verificado.
 - 2026-10-27 20:07 MDT — Codex (/root): BR05 revisado y publicado. Commit fuente `cff4a5215c7b3f0bb9c2afbe93473132099b5988`; Vercel READY, URL NPA HTTP 200 anónimo, cabeceras y rutas privadas comprobadas. Chrome desde HTTPS público aprobó ambos cohorts, cuatro tamaños, recuperación, puntuación y aviso. Las dos sesiones sintéticas de esta ejecución se eliminaron por hashes exactos. Security CI 40618924116 aprobada.
 
 - 2026-10-28 00:23 MDT — Codex (/root): publicación Study Flash Cards verificada en https://naturalization-preparation-app.vercel.app/. Fuente `6307dd1d18d001d4c1fd7db433874d7d9e18738f`; Vercel READY y Security CI40643360541 aprobada. Flujo público real pasó ambas ediciones, touch, conteos/rangos/rolling, resultados conocidos, timeout15s, recuperación y cuatro tamaños. Dos sesiones sintéticas eliminadas por hashes exactos; sesiones reales conservadas.
+
+## Revisión de respuestas vigente — 2026-11-07
+
+- Implementación de catálogos y parche SQL: GPT-6 Luna (identificador exacto del
+  runtime no verificable). Se revisaron 1,131 filas dependientes del tiempo
+  (566 de 2008 y 565 de 2025); las otras 307 conservan las fechas de octubre.
+  No cambió ninguna respuesta, nombre de titular ni predecesor de vacante.
+- Codex (/root) verificó hashes, aplicó el parche en Supabase tras una prueba
+  transaccional y una prueba negativa del guard, comprobó la proyección pública
+  y confirmó fingerprints completos de respuestas/filas estáticas. El flujo
+  público de navegador pasó ambos cohorts, interacción táctil, ejercicios,
+  timeout, recuperación y tamaños adaptables; se limpiaron solo dos sesiones
+  sintéticas mediante sus hashes exactos.
+- No se ha publicado este cambio en Git ni Vercel. Evidencia, fechas, límites y
+  siguientes pasos: [revisión mensual](../research/2026-11-07/README.md).

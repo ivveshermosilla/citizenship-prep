@@ -23,7 +23,8 @@
       "source_type": "official_federal_current_test_answers",
       "page_last_reviewed_on": "2025-09-18",
       "note": "Page review date is distinct from this verification date; dynamic values were read directly today.",
-      "verified_on": "2026-10-27"
+      "verified_on": "2026-11-07",
+      "checked_sha256": "d59cbc4ca4fd5c3ed7bfa3927fb701a158d25e915e6c6b9f2d866d8112011d6d"
     },
     {
       "id": "senate_phone",
@@ -68,9 +69,9 @@
       "id": "house_members",
       "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
       "source_type": "official_house_member_and_vacancy_data",
-      "source_published_on": "2026-10-01",
-      "verified_on": "2026-10-27",
-      "sha256": "01833c6c646873b2247950e8ab9c7ecc2c57fd2bf019d1014bd64a58b496ed3d"
+      "source_published_on": "2026-11-03",
+      "verified_on": "2026-11-07",
+      "sha256": "84458803178118dd612e41ff119daf2976e59d9f96780d8c794eba52d717711d"
     },
     {
       "id": "house_vacancies",
@@ -91,7 +92,8 @@
       "source_type": "primary_governors_association_membership_roster",
       "retrieval_method": "Live primary-association page via browser; 55 governors parsed.",
       "note": "Association source, not a federal agency. Use the live roster for current names, not stale term columns in its linked PDF.",
-      "verified_on": "2026-10-27"
+      "verified_on": "2026-11-07",
+      "checked_sha256": "188566bf6a6433ffce144f0192fab5745caded63105f428c3f3a32f98fffd63b"
     },
     {
       "id": "nga_elections",
@@ -148,6 +150,20 @@
       "url": "https://www.archives.gov/founding-docs/amendments-11-27",
       "source_type": "official_federal_constitution_amendments",
       "verified_on": "2026-10-27"
+    },
+    {
+      "id": "senate_current_xml",
+      "url": "https://www.senate.gov/general/contact_information/senators_cfm.xml",
+      "source_type": "official_current_senate_directory_xml",
+      "source_published_on": "2026-11-06",
+      "verified_on": "2026-11-07",
+      "sha256": "c41ea0f442e7a4546a29279929029bb12386ebff73b4735ffe7e0bde3234f0d5"
+    },
+    {
+      "id": "scotus_current_justice",
+      "url": "https://www.supremecourt.gov/about/biographies.aspx",
+      "source_type": "official_current_supreme_court_membership",
+      "verified_on": "2026-11-07"
     }
   ],
   "limits": [

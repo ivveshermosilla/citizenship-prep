@@ -5,7 +5,7 @@ uscis-2008-003,3,The idea of self-government is in the first three words of the 
 uscis-2008-004,4,What is an amendment?,national,"[""a change (to the Constitution)"", ""an addition (to the Constitution)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-005,5,What do we call the first ten amendments to the Constitution?,national,"[""the Bill of Rights""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-006,6,What is one right or freedom from the First Amendment?,national,"[""speech"", ""religion"", ""assembly"", ""press"", ""petition the government""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-007,7,How many amendments does the Constitution have?,national,"[""twenty-seven (27)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
+uscis-2008-007,7,How many amendments does the Constitution have?,national,"[""twenty-seven (27)""]",,,2026-11-07,2026-11-07,2026-12-07,1,,False
 uscis-2008-008,8,What did the Declaration of Independence do?,national,"[""announced our independence (from Great Britain)"", ""declared our independence (from Great Britain)"", ""said that the United States is free (from Great Britain)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-009,9,What are two rights in the Declaration of Independence?,national,"[""life"", ""liberty"", ""pursuit of happiness""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-010,10,What is freedom of religion?,national,"[""You can practice any religion, or not practice a religion.""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
@@ -16,36 +16,36 @@ uscis-2008-014,14,What stops one branch of government from becoming too powerful
 uscis-2008-015,15,Who is in charge of the executive branch?,national,"[""the President""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-016,16,Who makes federal laws?,national,"[""Congress"", ""Senate and House (of Representatives)"", ""(U.S. or national) legislature""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-017,17,What are the two parts of the U.S. Congress?,national,"[""the Senate and House (of Representatives)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-018,18,How many U.S. Senators are there?,national,"[""one hundred (100)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
+uscis-2008-018,18,How many U.S. Senators are there?,national,"[""one hundred (100)""]",,,2026-11-07,2026-11-07,2026-12-07,1,,False
 uscis-2008-019,19,We elect a U.S. Senator for how many years?,national,"[""six (6)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-020,20,Who is one of your state’s U.S. Senators now?,jurisdiction_lookup,,jurisdictions.json,senator_answers,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-021,21,The House of Representatives has how many voting members?,national,"[""four hundred thirty-five (435)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
+uscis-2008-020,20,Who is one of your state’s U.S. Senators now?,jurisdiction_lookup,,jurisdictions.json,senator_answers,2026-11-07,2026-11-07,2026-12-07,1,,False
+uscis-2008-021,21,The House of Representatives has how many voting members?,national,"[""four hundred thirty-five (435)""]",,,2026-11-07,2026-11-07,2026-12-07,1,,False
 uscis-2008-022,22,We elect a U.S. Representative for how many years?,national,"[""two (2)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-023,23,Name your U.S. Representative.,district_lookup,,house-districts.json,answer_options,2026-10-27,2026-10-27,2026-11-27,1,,False
+uscis-2008-023,23,Name your U.S. Representative.,district_lookup,,house-districts.json,answer_options,2026-11-07,2026-11-07,2026-12-07,1,,False
 uscis-2008-024,24,Who does a U.S. Senator represent?,national,"[""all people of the state""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-025,25,Why do some states have more Representatives than other states?,national,"[""(because of) the state’s population"", ""(because) they have more people"", ""(because) some states have more people""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-026,26,We elect a President for how many years?,national,"[""four (4)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-027,27,In what month do we vote for President?,national,"[""November""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-028,28,What is the name of the President of the United States now?,national,"[""Donald J. Trump"", ""Donald Trump"", ""Trump""]",,,2026-10-27,2026-10-27,2026-11-27,1,2029-01-20,False
-uscis-2008-029,29,What is the name of the Vice President of the United States now?,national,"[""JD Vance"", ""Vance""]",,,2026-10-27,2026-10-27,2026-11-27,1,2029-01-20,False
+uscis-2008-028,28,What is the name of the President of the United States now?,national,"[""Donald J. Trump"", ""Donald Trump"", ""Trump""]",,,2026-11-07,2026-11-07,2026-12-07,1,2029-01-20,False
+uscis-2008-029,29,What is the name of the Vice President of the United States now?,national,"[""JD Vance"", ""Vance""]",,,2026-11-07,2026-11-07,2026-12-07,1,2029-01-20,False
 uscis-2008-030,30,"If the President can no longer serve, who becomes President?",national,"[""the Vice President""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-031,31,"If both the President and the Vice President can no longer serve, who becomes President?",national,"[""the Speaker of the House""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-032,32,Who is the Commander in Chief of the military?,national,"[""the President""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-033,33,Who signs bills to become laws?,national,"[""the President""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-034,34,Who vetoes bills?,national,"[""the President""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-035,35,What does the President’s Cabinet do?,national,"[""advises the President""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-036,36,What are two Cabinet-level positions?,national,"[""Secretary of Agriculture"", ""Secretary of Commerce"", ""Secretary of Defense"", ""Secretary of Education"", ""Secretary of Energy"", ""Secretary of Health and Human Services"", ""Secretary of Homeland Security"", ""Secretary of Housing and Urban Development"", ""Secretary of the Interior"", ""Secretary of Labor"", ""Secretary of State"", ""Secretary of Transportation"", ""Secretary of the Treasury"", ""Secretary of Veterans Affairs"", ""Attorney General"", ""Vice President""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
+uscis-2008-036,36,What are two Cabinet-level positions?,national,"[""Secretary of Agriculture"", ""Secretary of Commerce"", ""Secretary of Defense"", ""Secretary of Education"", ""Secretary of Energy"", ""Secretary of Health and Human Services"", ""Secretary of Homeland Security"", ""Secretary of Housing and Urban Development"", ""Secretary of the Interior"", ""Secretary of Labor"", ""Secretary of State"", ""Secretary of Transportation"", ""Secretary of the Treasury"", ""Secretary of Veterans Affairs"", ""Attorney General"", ""Vice President""]",,,2026-11-07,2026-11-07,2026-12-07,1,,False
 uscis-2008-037,37,What does the judicial branch do?,national,"[""reviews laws"", ""explains laws"", ""resolves disputes (disagreements)"", ""decides if a law goes against the Constitution""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-038,38,What is the highest court in the United States?,national,"[""the Supreme Court""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-039,39,How many justices are on the Supreme Court?,national,"[""nine (9)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-040,40,Who is the Chief Justice of the United States now?,national,"[""John Roberts"", ""John G. Roberts, Jr.""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
+uscis-2008-039,39,How many justices are on the Supreme Court?,national,"[""nine (9)""]",,,2026-11-07,2026-11-07,2026-12-07,1,,False
+uscis-2008-040,40,Who is the Chief Justice of the United States now?,national,"[""John Roberts"", ""John G. Roberts, Jr.""]",,,2026-11-07,2026-11-07,2026-12-07,1,,False
 uscis-2008-041,41,"Under our Constitution, some powers belong to the federal government. What is one power of the federal government?",national,"[""to print money"", ""to declare war"", ""to create an army"", ""to make treaties""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-042,42,"Under our Constitution, some powers belong to the states. What is one power of the states?",national,"[""provide schooling and education"", ""provide protection (police)"", ""provide safety (fire departments)"", ""give a driver’s license"", ""approve zoning and land use""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-043,43,Who is the Governor of your state now?,jurisdiction_lookup,,jurisdictions.json,governor_answers,2026-10-27,2026-10-27,2026-11-27,1,,False
+uscis-2008-043,43,Who is the Governor of your state now?,jurisdiction_lookup,,jurisdictions.json,governor_answers,2026-11-07,2026-11-07,2026-12-07,1,,False
 uscis-2008-044,44,What is the capital of your state?,jurisdiction_lookup,,jurisdictions.json,capital_answers,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-045,45,What are the two major political parties in the United States?,national,"[""Democratic and Republican""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-046,46,What is the political party of the President now?,national,"[""Republican (Party)""]",,,2026-10-27,2026-10-27,2026-11-27,1,2029-01-20,False
-uscis-2008-047,47,What is the name of the Speaker of the House of Representatives now?,national,"[""Mike Johnson"", ""Johnson"", ""James Michael Johnson""]",,,2026-10-27,2026-10-27,2026-11-27,1,2027-01-03,False
+uscis-2008-045,45,What are the two major political parties in the United States?,national,"[""Democratic and Republican""]",,,2026-11-07,2026-11-07,2026-12-07,1,,False
+uscis-2008-046,46,What is the political party of the President now?,national,"[""Republican (Party)""]",,,2026-11-07,2026-11-07,2026-12-07,1,2029-01-20,False
+uscis-2008-047,47,What is the name of the Speaker of the House of Representatives now?,national,"[""Mike Johnson"", ""Johnson"", ""James Michael Johnson""]",,,2026-11-07,2026-11-07,2026-12-07,1,2027-01-03,False
 uscis-2008-048,48,There are four amendments to the Constitution about who can vote. Describe one of them.,national,"[""Citizens eighteen (18) and older (can vote)."", ""You don’t have to pay (a poll tax) to vote."", ""Any citizen can vote. (Women and men can vote.)"", ""A male citizen of any race (can vote).""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-049,49,What is one responsibility that is only for United States citizens?,national,"[""serve on a jury"", ""vote in a federal election""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-050,50,Name one right only for United States citizens.,national,"[""vote in a federal election"", ""run for federal office""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
@@ -54,7 +54,7 @@ uscis-2008-052,52,What do we show loyalty to when we say the Pledge of Allegianc
 uscis-2008-053,53,What is one promise you make when you become a United States citizen?,national,"[""give up loyalty to other countries"", ""defend the Constitution and laws of the United States"", ""obey the laws of the United States"", ""serve in the U.S. military (if needed)"", ""serve (do important work for) the nation (if needed)"", ""be loyal to the United States""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-054,54,How old do citizens have to be to vote for President?,national,"[""eighteen (18) and older""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-055,55,What are two ways that Americans can participate in their democracy?,national,"[""vote"", ""join a political party"", ""help with a campaign"", ""join a civic group"", ""join a community group"", ""give an elected official your opinion on an issue"", ""call Senators and Representatives"", ""publicly support or oppose an issue or policy"", ""run for office"", ""write to a newspaper""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-056,56,When is the last day you can send in federal income tax forms?,national,"[""April 15""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
+uscis-2008-056,56,When is the last day you can send in federal income tax forms?,national,"[""April 15""]",,,2026-11-07,2026-11-07,2026-12-07,1,,False
 uscis-2008-057,57,When must all men register for the Selective Service?,national,"[""at age eighteen (18)"", ""between eighteen (18) and twenty-six (26)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-058,58,What is one reason colonists came to America?,national,"[""freedom"", ""political liberty"", ""religious freedom"", ""economic opportunity"", ""practice their religion"", ""escape persecution""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-059,59,Who lived in America before the Europeans arrived?,national,"[""American Indians"", ""Native Americans""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
@@ -85,7 +85,7 @@ uscis-2008-083,83,"During the Cold War, what was the main concern of the United 
 uscis-2008-084,84,What movement tried to end racial discrimination?,national,"[""civil rights (movement)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-085,85,"What did Martin Luther King, Jr. do?",national,"[""fought for civil rights"", ""worked for equality for all Americans""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-086,86,"What major event happened on September 11, 2001, in the United States?",national,"[""Terrorists attacked the United States.""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
-uscis-2008-087,87,Name one American Indian tribe in the United States.,national,"[""Cherokee"", ""Navajo"", ""Sioux"", ""Chippewa"", ""Choctaw"", ""Pueblo"", ""Apache"", ""Iroquois"", ""Creek"", ""Blackfeet"", ""Seminole"", ""Cheyenne"", ""Arawak"", ""Shawnee"", ""Mohegan"", ""Huron"", ""Oneida"", ""Lakota"", ""Crow"", ""Teton"", ""Hopi"", ""Inuit""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
+uscis-2008-087,87,Name one American Indian tribe in the United States.,national,"[""Cherokee"", ""Navajo"", ""Sioux"", ""Chippewa"", ""Choctaw"", ""Pueblo"", ""Apache"", ""Iroquois"", ""Creek"", ""Blackfeet"", ""Seminole"", ""Cheyenne"", ""Arawak"", ""Shawnee"", ""Mohegan"", ""Huron"", ""Oneida"", ""Lakota"", ""Crow"", ""Teton"", ""Hopi"", ""Inuit""]",,,2026-11-07,2026-11-07,2026-12-07,1,,False
 uscis-2008-088,88,Name one of the two longest rivers in the United States.,national,"[""Missouri (River)"", ""Mississippi (River)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-089,89,What ocean is on the West Coast of the United States?,national,"[""Pacific (Ocean)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False
 uscis-2008-090,90,What ocean is on the East Coast of the United States?,national,"[""Atlantic (Ocean)""]",,,2026-10-27,2026-10-27,2026-11-27,1,,False

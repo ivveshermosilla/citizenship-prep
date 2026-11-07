@@ -1,0 +1,127 @@
+{
+  "reviewed_on": "2026-11-07",
+  "review_timezone": "America/Denver",
+  "scope": "Monthly review of current officeholders and all rows marked time-dependent in the 2008 and 2025 question banks; 307 stable rows were retained.",
+  "factual_result": "No answer arrays, current-holder names, answer statuses, or vacancy predecessors changed. Added corroborating source provenance only.",
+  "counts": {
+    "resolved_rows": 1438,
+    "time_dependent": {
+      "2008": 566,
+      "2025": 565,
+      "total": 1131
+    },
+    "stable_unchanged": {
+      "2008": 139,
+      "2025": 168,
+      "total": 307
+    },
+    "jurisdictions": 56,
+    "senators": 100,
+    "governors": 55,
+    "house_records": 441
+  },
+  "freshness_dates": {
+    "time_dependent": {
+      "answer_updated_on": "2026-11-07",
+      "next_update_on": "2026-12-07"
+    },
+    "stable": {
+      "answer_updated_on": "2026-10-27",
+      "next_update_on": "2026-11-27"
+    }
+  },
+  "guidance_changes": [
+    {
+      "edition": "2008",
+      "question_number": 20,
+      "geography": "US-OK"
+    },
+    {
+      "edition": "2025",
+      "question_number": 23,
+      "geography": "US-OK"
+    }
+  ],
+  "baseline_database_fingerprints": {
+    "2008": "eaed309e35f7bf050eb10ce56540a166",
+    "2025": "52a07e322f87f205c32e7e8e7ba68b1d"
+  },
+  "verified_post_refresh_fingerprints": {
+    "answers_and_manual_flags": {
+      "2008": "d1ff47f576a7e3f08edd50eeec08d5b3",
+      "2025": "c10b13b3b19edfcdd214997ac5e088f2"
+    },
+    "stable_complete_rows": {
+      "2008": "a9809cc0f8eca67ff0c1c3ae7b370e79",
+      "2025": "e5c4f916e655555cb6872a08b688b779"
+    },
+    "canonical_core_content": {
+      "2008": "c0f30ac580ec739797eea1ef19c99905",
+      "2025": "4e15dfc5b1b373457610fc957ec137e7"
+    }
+  },
+  "application": {
+    "supabase": "Applied by Codex root after rollback-only SQL dry run; wrong-fingerprint guard rejected a deliberate mismatch; read-only verifier passed.",
+    "public_browser_flow": "Passed by Codex root for both cohorts, touch, practice flows, timeout, recovery and responsive layouts; two synthetic sessions removed by exact verifier hashes.",
+    "git_and_vercel": "Not published by this content refresh."
+  },
+  "artifacts": {
+    "official_source_checks": {
+      "path": "research/2026-11-07/official-source-checks.json",
+      "sha256": "4c6cc2e40d573928bd41cb93c3f244c5b5be87d8730a1a40b4c99740202021e4"
+    },
+    "review_schedule": {
+      "path": "research/2026-10-27/answers/review-schedule.csv",
+      "rows": 1438,
+      "sha256": "7f606bc0a8085c6f9f7b4a43fbdd9fe2518b16ff1764e577ca28e5c1d1280bb8"
+    },
+    "resolved_catalog_sha256": "e30fc3e96c19c4d54a449edca25d5142cde464968e98c0ccc06daeacc758e607",
+    "change_guidance_sha256": "910446946619bb5790bf0eaee4ab1c80bbac961446732ddd9465d4a08d38e4ec",
+    "generated_seed_sha256": "b9116a1d72bf9df157ed8fb85c0f65d99447c4fa9096708b56d71aa54e648c7f",
+    "seed_manifest_sha256": "221867bfa71484b338ebbdb2f0f1bc33cdd7b4b9f73a20a4230853e25c2388cc",
+    "scoped_sql_patch": {
+      "path": "supabase/content-updates/2026-11-07-time-dependent-refresh.sql",
+      "bytes": 9536,
+      "sha256": "501e7f256a0289f482fe659b38f8472a60cd3f4873186ae7debbeb42e2feb37d"
+    },
+    "read_only_sql_verifier_sha256": "371329bc59017fcb4383e3fdcea69174dd21b79339ca06a6252616ac336596f8",
+    "python_source_validation": "python3 scripts/test_scoped_content_refresh.py (4/4 passed)",
+    "seed_metadata": {
+      "source_catalog": "research/2026-10-27/answers/resolved-answers.csv",
+      "change_guidance_catalog": "research/2026-10-27/answers/change-guidance.json",
+      "change_guidance_sha256": "910446946619bb5790bf0eaee4ab1c80bbac961446732ddd9465d4a08d38e4ec",
+      "source_sha256": "e30fc3e96c19c4d54a449edca25d5142cde464968e98c0ccc06daeacc758e607",
+      "seed_sha256": "b9116a1d72bf9df157ed8fb85c0f65d99447c4fa9096708b56d71aa54e648c7f",
+      "answer_updated_on": [
+        "2026-10-27",
+        "2026-11-07"
+      ],
+      "update_interval_calendar_months": 1,
+      "next_update_on": [
+        "2026-11-27",
+        "2026-12-07"
+      ],
+      "tables": {
+        "civics_questions_2008": {
+          "rows": 705,
+          "distinct_questions": 100,
+          "geography_counts": {
+            "national": 96,
+            "state_or_territory": 168,
+            "congressional_district": 441
+          }
+        },
+        "civics_questions_2025": {
+          "rows": 733,
+          "distinct_questions": 128,
+          "geography_counts": {
+            "national": 124,
+            "state_or_territory": 168,
+            "congressional_district": 441
+          }
+        }
+      }
+    }
+  },
+  "implementation_model": "GPT-6 Luna assignment; exact runtime model identifier not independently available."
+}

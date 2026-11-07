@@ -190,7 +190,9 @@ retention behavior before publishing it.
   prior weekly, next-day, thirty-day and per-class cadence recommendations.
 - Record the actual dataset/source-review date and calculate the next date by
   adding one calendar month, with normal end-of-month clamping.
-- Current verified dataset: October 27, 2026. Next monthly date: November 27, 2026.
+- Current verified dataset: 1,131 time-dependent rows reviewed November 7, 2026
+  (next review December 7) and 307 stable rows retained from October 27, 2026
+  (next review November 27). See the [monthly review record](../research/2026-11-07/README.md).
 - Import time is not a new factual verification date. Do not change the recorded
   answer date unless the dataset has actually been reviewed against sources.
 - Term ends and elections remain informative metadata, not extra scheduled

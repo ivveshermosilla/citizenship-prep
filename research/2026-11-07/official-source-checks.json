@@ -1,0 +1,85 @@
+{
+  "reviewed_on": "2026-11-07",
+  "review_timezone": "America/Denver",
+  "scope": "Current officeholders and time-dependent study responses in both existing editions; election winners are not substituted before taking office.",
+  "reviewed_by": "Codex coordinator",
+  "checks": [
+    {
+      "id": "house_current",
+      "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+      "publisher_date": "2026-11-03",
+      "sha256": "84458803178118dd612e41ff119daf2976e59d9f96780d8c794eba52d717711d",
+      "districts": 441,
+      "finding": "All current members agree with the prior catalog. The source's AQ00 code maps to the app's AS00 jurisdiction; no district is added or removed."
+    },
+    {
+      "id": "house_vacancies",
+      "url": "https://clerk.house.gov/Members/ViewVacancies",
+      "finding": "FL20 and TX23 remain vacant. Preserve previous officeholders Sheila Cherfilus-McCormick and Tony Gonzales as display context only."
+    },
+    {
+      "id": "senate_current",
+      "url": "https://www.senate.gov/general/contact_information/senators_cfm.xml",
+      "publisher_timestamp": "2026-11-06T13:08-05:00",
+      "sha256": "c41ea0f442e7a4546a29279929029bb12386ebff73b4735ffe7e0bde3234f0d5",
+      "members": 100,
+      "finding": "All 100 senator identities, states, parties and Senate classes agree with the prior catalog. Differences in display-name formatting do not establish an officeholder change."
+    },
+    {
+      "id": "governors_current",
+      "url": "https://www.nga.org/governors/",
+      "source_kind": "Primary governors-association roster; not a government agency",
+      "sha256": "188566bf6a6433ffce144f0192fab5745caded63105f428c3f3a32f98fffd63b",
+      "governors": 55,
+      "finding": "All 55 governor names agree with the prior catalog. D.C. remains a no-governor jurisdiction."
+    },
+    {
+      "id": "uscis_current_answers",
+      "url": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/check-for-test-updates",
+      "publisher_review_date": "2025-09-18",
+      "sha256": "d59cbc4ca4fd5c3ed7bfa3927fb701a158d25e915e6c6b9f2d866d8112011d6d",
+      "finding": "Current national names remain Donald Trump, JD Vance, Mike Johnson and John Roberts; Republican Party and nine Supreme Court justices remain the listed 2008 study responses. The 2025 Chief Justice answer explicitly includes Roberts."
+    },
+    {
+      "id": "uscis_2008_bank",
+      "url": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/OoC_100_Questions_2008_Civics_Test_V1.pdf",
+      "sha256": "1f47f0e2237fd34ac9e82513bd7cae5d5f380ac5bf1e6ec58f7c956b5f41562d",
+      "finding": "Byte-identical to the previously reviewed official question-and-answer PDF; no edition replacement or changed institutional/calendar study response identified."
+    },
+    {
+      "id": "uscis_2025_bank",
+      "url": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sha256": "f280608c0fb6dc1eba344b4746a7ba52d02fe411fba30cedd4371819f0abe11c",
+      "finding": "Byte-identical to the previously reviewed official question-and-answer PDF; no edition replacement or changed institutional study response identified."
+    },
+    {
+      "id": "oklahoma_appointment_guidance",
+      "url": "https://oklahoma.gov/oag/news/newsroom/2026/october/drummond-nov-3-winner-will-fill-remainder-of-u-s-senate-term.html",
+      "publisher_date": "2026-10-29",
+      "finding": "The attorney general explains that Alan Armstrong's appointment ends when the elected successor takes the oath after certification. Update the internal expectation to allow a post-election transition before January 3; retain Armstrong until succession is confirmed. The November 3-January 3 interval is an editorial review window, not a guaranteed oath date."
+    },
+    {
+      "id": "south_carolina_appointment_guidance",
+      "urls": [
+        "https://www.scstatehouse.gov/code/t07c019.php",
+        "https://governor.sc.gov/news/2026-07/gov-mcmaster-appoints-darline-graham-us-senate"
+      ],
+      "finding": "Section 7-19-20 and the governor's appointment announcement support the existing January 3, 2027 checkpoint for Darline Graham."
+    }
+  ],
+  "corroborating_urls": [
+    "https://www.usa.gov/presidents",
+    "https://www.speaker.gov/",
+    "https://www.supremecourt.gov/about/biographies.aspx",
+    "https://www.senate.gov/about/officers-staff/vice-president/vice-presidents.htm",
+    "https://www.senate.gov/senators/NewSenators.htm",
+    "https://www.senate.gov/senators/AppointedSenators.htm",
+    "https://www.archives.gov/founding-docs/amendments-11-27"
+  ],
+  "limitations": [
+    "A source's publication date is distinct from the date it was checked.",
+    "Verification is a point-in-time review, not a continuous guarantee.",
+    "No election-night projection is treated as proof that a candidate has taken office.",
+    "This review does not refresh the 307 non-time-dependent geography-resolved rows or establish new state-capital facts."
+  ]
+}

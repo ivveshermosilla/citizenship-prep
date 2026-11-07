@@ -9,12 +9,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'research/2026-10-27/answers'
 CHECKED = '2026-10-27'
+OK_GUIDANCE_REVIEWED = '2026-11-07'
+SCOTUS_CORROBORATION = 'https://www.supremecourt.gov/about/biographies.aspx'
 CONSTITUTION = 'https://www.archives.gov/founding-docs/amendments-11-27'
 NGA = 'https://www.nga.org/governors/elections/'
 SENATE = 'https://www.senate.gov/senators/Class_II.htm'
 APPOINTMENTS = 'https://www.senate.gov/senators/AppointedSenators.htm'
 OHIO = 'https://www.ohiosos.gov/globalassets/elections/directives/2025/directive-2025-54---writ-of-special-election-for-united-states-senate-election.pdf'
 FLORIDA = 'https://files.floridados.gov/media/710256/2026_nge_des_english.pdf'
+OKLAHOMA = 'https://oklahoma.gov/oag/news/newsroom/2026/october/drummond-nov-3-winner-will-fill-remainder-of-u-s-senate-term.html'
 
 
 def guidance(start=None, end=None, kind='unscheduled', basis='', urls=(), candidates=()):
@@ -81,6 +84,9 @@ def build():
                     if state in {'OH', 'FL'} and senator['appointed_incumbent']:
                         start, end, kind = '2026-11-03', '2027-01-03', 'estimated_window'
                         urls += [OHIO if state == 'OH' else FLORIDA, APPOINTMENTS]
+                    if state == 'OK' and senator['name'] == 'Alan Armstrong':
+                        start, end, kind = '2026-11-03', '2027-01-03', 'estimated_window'
+                        urls.append(OKLAHOMA)
                     candidates.append({'answer': senator['name'], 'senate_class': senator['senate_class'],
                                        'regular_seat_term_end_on': senator['regular_seat_term_end_on'],
                                        'expected_change_on': start, 'expected_change_through': end,
@@ -91,6 +97,10 @@ def build():
                     g = guidance(earliest, end, 'estimated_window' if end != earliest else 'regular_cycle',
                                  'Earliest checkpoint among valid senator names; each name retains its own seat cycle below. OH/FL special-election windows are editorial: certification, oath or reelection determine actual succession; the window is not a legal deadline. Unscheduled succession can occur earlier.',
                                  sorted({u for x in candidates for u in x['source_urls']}), candidates)
+                    if state == 'OK':
+                        g['change_guidance']['assessed_on'] = OK_GUIDANCE_REVIEWED
+                        g['change_guidance']['basis'] = 'The Oklahoma Attorney General states that the appointed incumbent will serve until the elected successor takes the oath after results are certified. This editorial review window runs from Election Day through the regular seat-term boundary; certification and oath timing are uncertain, and the window is not a legal deadline. Earlier succession remains possible.'
+                        g['change_guidance']['source_urls'] = [CONSTITUTION, SENATE, OKLAHOMA]
                 else:
                     g = guidance(kind='not_applicable', basis='This jurisdiction has no U.S. senators; no officeholder term applies.', urls=[SENATE])
             elif number == (43 if edition == '2008' else 61):
@@ -108,7 +118,8 @@ def build():
                 g = guidance('2027-01-01', '2027-01-01', 'annual_checkpoint',
                              'New calendar/tax year is a review checkpoint only. April 15 remains the USCIS study response; actual IRS deadlines and exceptions are separate. This is not a predicted change to the accepted answer.', json.loads(row['source_urls']))
             elif q['volatility'] in {'medium', 'high'}:
-                g = guidance(basis='No scheduled replacement date established. Institutional/legal changes, judicial vacancies or appointments can occur without a regular renewal date; retain monthly source review.', urls=json.loads(row['source_urls']))
+                guidance_urls = [url for url in json.loads(row['source_urls']) if url != SCOTUS_CORROBORATION]
+                g = guidance(basis='No scheduled replacement date established. Institutional/legal changes, judicial vacancies or appointments can occur without a regular renewal date; retain monthly source review.', urls=guidance_urls)
             else:
                 g = guidance(kind='not_applicable', basis='No periodic answer-renewal date applies. Geographic dependence alone (for example, a capital) does not establish a service term. Exceptional legal or factual changes remain possible; retain monthly review.', urls=json.loads(row['source_urls']))
             result.append({'edition': edition, 'question_number': number, 'geography': geography, **g})

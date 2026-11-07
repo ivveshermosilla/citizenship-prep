@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-27",
+  "as_of": "2026-11-07",
   "senator_count": 100,
   "source_directory_published_on": "2026-08-03",
   "senators": [
@@ -15,16 +15,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -39,17 +40,18 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": true,
       "early_change_note": "Appointed incumbent; certification and swearing-in after a special election can replace this person before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_appointments",
         "senate_new_members"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -64,16 +66,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -88,16 +91,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -112,16 +116,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -136,15 +141,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -159,16 +165,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -183,15 +190,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -206,16 +214,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -230,15 +239,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -253,15 +263,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -276,15 +287,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -299,15 +311,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -322,16 +335,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -346,15 +360,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -369,15 +384,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -392,15 +408,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -415,15 +432,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -438,15 +456,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -461,15 +480,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -484,15 +504,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -507,16 +528,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -531,15 +553,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -554,16 +577,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -578,16 +602,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -602,15 +627,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -625,15 +651,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -648,15 +675,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -671,15 +699,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -694,15 +723,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -717,16 +747,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -741,16 +772,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -765,16 +797,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -789,18 +822,19 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": true,
       "early_change_note": "Appointed incumbent; certification and swearing-in after a special election can replace this person before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_appointments",
         "senate_new_members",
         "sc_senate_appointment"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -815,15 +849,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -838,15 +873,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -861,15 +897,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -884,16 +921,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -908,16 +946,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -932,15 +971,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -955,16 +995,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -979,15 +1020,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1002,17 +1044,18 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": true,
       "early_change_note": "Appointed incumbent; certification and swearing-in after a special election can replace this person before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii",
         "senate_appointments",
         "senate_new_members"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1027,15 +1070,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1050,15 +1094,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1073,16 +1118,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1097,16 +1143,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1121,15 +1168,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1144,15 +1192,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1167,16 +1216,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1191,16 +1241,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1215,16 +1266,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1239,15 +1291,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1262,15 +1315,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1285,15 +1339,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1308,15 +1363,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1331,15 +1387,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1354,15 +1411,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1377,15 +1435,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1400,16 +1459,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1424,15 +1484,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1447,17 +1508,18 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": true,
       "early_change_note": "Appointed incumbent; certification and swearing-in after a special election can replace this person before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii",
         "senate_appointments",
         "senate_new_members"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1472,15 +1534,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1495,16 +1558,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1519,15 +1583,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1542,16 +1607,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1566,15 +1632,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1589,15 +1656,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1612,15 +1680,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1635,15 +1704,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1658,15 +1728,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1681,15 +1752,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1704,15 +1776,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1727,15 +1800,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1750,16 +1824,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1774,15 +1849,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1797,16 +1873,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1821,15 +1898,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1844,16 +1922,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1868,15 +1947,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1891,15 +1971,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1914,16 +1995,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1938,15 +2020,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1961,15 +2044,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -1984,16 +2068,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2008,16 +2093,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2032,15 +2118,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2055,15 +2142,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2078,15 +2166,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2101,15 +2190,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2124,15 +2214,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2147,15 +2238,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2170,15 +2262,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2193,15 +2286,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2216,16 +2310,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2240,15 +2335,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2263,16 +2359,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2287,16 +2384,17 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_ii",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2311,15 +2409,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     },
     {
@@ -2334,15 +2433,16 @@
       "incumbent_guaranteed_until": null,
       "appointed_incumbent": false,
       "early_change_note": "Resignation, death, expulsion, appointment or special-election succession can change incumbency before the regular seat term ends.",
-      "verified_on": "2026-10-27",
-      "suggested_update_on": "2026-11-27",
+      "verified_on": "2026-11-07",
+      "suggested_update_on": "2026-12-07",
       "next_event_review_on": null,
       "review_is_expiration": false,
       "source_ids": [
+        "senate_current_xml",
         "senate_phone",
         "senate_class_iii"
       ],
-      "data_updated_on": "2026-10-27",
+      "data_updated_on": "2026-11-07",
       "update_interval_calendar_months": 1
     }
   ]

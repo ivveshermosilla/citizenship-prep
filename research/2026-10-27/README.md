@@ -1,5 +1,9 @@
 # Official civics question research — October 27, 2026
 
+> This is the original question/source research snapshot. The later
+> [November 7 review](../2026-11-07/README.md) records current officeholder
+> checks, mixed freshness dates, and the scoped Supabase refresh.
+
 This directory preserves the original local question-only research and metadata.
 The original question JSON/CSV snapshots contain no answers. The subsequently
 authorized [answer follow-up](answers/README.md) adds current responses for all

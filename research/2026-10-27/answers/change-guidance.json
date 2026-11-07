@@ -2083,27 +2083,29 @@
       "edition": "2025",
       "question_number": 23,
       "geography": "US-OK",
-      "expected_change_on": "2027-01-03",
+      "expected_change_on": "2026-11-03",
       "expected_change_through": "2027-01-03",
-      "change_expectation": "regular_cycle",
+      "change_expectation": "estimated_window",
       "change_guidance": {
-        "assessed_on": "2026-10-27",
-        "basis": "Earliest checkpoint among valid senator names; each name retains its own seat cycle below. OH/FL special-election windows are editorial: certification, oath or reelection determine actual succession; the window is not a legal deadline. Unscheduled succession can occur earlier.",
+        "assessed_on": "2026-11-07",
+        "basis": "The Oklahoma Attorney General states that the appointed incumbent will serve until the elected successor takes the oath after results are certified. This editorial review window runs from Election Day through the regular seat-term boundary; certification and oath timing are uncertain, and the window is not a legal deadline. Earlier succession remains possible.",
         "source_urls": [
           "https://www.archives.gov/founding-docs/amendments-11-27",
-          "https://www.senate.gov/senators/Class_II.htm"
+          "https://www.senate.gov/senators/Class_II.htm",
+          "https://oklahoma.gov/oag/news/newsroom/2026/october/drummond-nov-3-winner-will-fill-remainder-of-u-s-senate-term.html"
         ],
         "answer_candidates": [
           {
             "answer": "Alan Armstrong",
             "senate_class": "II",
             "regular_seat_term_end_on": "2027-01-03",
-            "expected_change_on": "2027-01-03",
+            "expected_change_on": "2026-11-03",
             "expected_change_through": "2027-01-03",
-            "expectation": "regular_cycle",
+            "expectation": "estimated_window",
             "source_urls": [
               "https://www.senate.gov/senators/Class_II.htm",
-              "https://www.archives.gov/founding-docs/amendments-11-27"
+              "https://www.archives.gov/founding-docs/amendments-11-27",
+              "https://oklahoma.gov/oag/news/newsroom/2026/october/drummond-nov-3-winner-will-fill-remainder-of-u-s-senate-term.html"
             ]
           },
           {
@@ -18206,27 +18208,29 @@
       "edition": "2008",
       "question_number": 20,
       "geography": "US-OK",
-      "expected_change_on": "2027-01-03",
+      "expected_change_on": "2026-11-03",
       "expected_change_through": "2027-01-03",
-      "change_expectation": "regular_cycle",
+      "change_expectation": "estimated_window",
       "change_guidance": {
-        "assessed_on": "2026-10-27",
-        "basis": "Earliest checkpoint among valid senator names; each name retains its own seat cycle below. OH/FL special-election windows are editorial: certification, oath or reelection determine actual succession; the window is not a legal deadline. Unscheduled succession can occur earlier.",
+        "assessed_on": "2026-11-07",
+        "basis": "The Oklahoma Attorney General states that the appointed incumbent will serve until the elected successor takes the oath after results are certified. This editorial review window runs from Election Day through the regular seat-term boundary; certification and oath timing are uncertain, and the window is not a legal deadline. Earlier succession remains possible.",
         "source_urls": [
           "https://www.archives.gov/founding-docs/amendments-11-27",
-          "https://www.senate.gov/senators/Class_II.htm"
+          "https://www.senate.gov/senators/Class_II.htm",
+          "https://oklahoma.gov/oag/news/newsroom/2026/october/drummond-nov-3-winner-will-fill-remainder-of-u-s-senate-term.html"
         ],
         "answer_candidates": [
           {
             "answer": "Alan Armstrong",
             "senate_class": "II",
             "regular_seat_term_end_on": "2027-01-03",
-            "expected_change_on": "2027-01-03",
+            "expected_change_on": "2026-11-03",
             "expected_change_through": "2027-01-03",
-            "expectation": "regular_cycle",
+            "expectation": "estimated_window",
             "source_urls": [
               "https://www.senate.gov/senators/Class_II.htm",
-              "https://www.archives.gov/founding-docs/amendments-11-27"
+              "https://www.archives.gov/founding-docs/amendments-11-27",
+              "https://oklahoma.gov/oag/news/newsroom/2026/october/drummond-nov-3-winner-will-fill-remainder-of-u-s-senate-term.html"
             ]
           },
           {

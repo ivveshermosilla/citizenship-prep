@@ -42,9 +42,11 @@ Licensing remains unselected.
 
 The [October 27, 2026 research draft](research/2026-10-27/README.md) records the
 128-question 2025 bank and the separately applicable 100-question 2008 bank.
-Its [current-answer follow-up](research/2026-10-27/answers/README.md) documents
-answers for all states and districts, sources, monthly review dates, and explicit
-vacancy/D.C./territory cases. [Supabase documentation](supabase/README.md) covers
+The [November 7 monthly review](research/2026-11-07/README.md) records the latest
+time-dependent content check: 1,131 rows reviewed (566/565 by edition) and 307
+stable rows retaining their October dates. The historical
+[October answer follow-up](research/2026-10-27/answers/README.md) contains the
+geographic catalogs and prior source snapshot. [Supabase documentation](supabase/README.md) covers
 the private import and app access boundary. See [product requirements](docs/PRODUCT_REQUIREMENTS.md).
 
 ## Working locally

@@ -17,13 +17,13 @@
           "Lisa Murkowski"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -32,15 +32,15 @@
           "Mike Dunleavy"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -60,7 +60,9 @@
       },
       "house_district_ids": [
         "AK00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "AL",
@@ -76,13 +78,13 @@
           "Tommy Tuberville"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -91,15 +93,15 @@
           "Kay Ivey"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -125,7 +127,9 @@
         "AL05",
         "AL06",
         "AL07"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "AR",
@@ -141,13 +145,13 @@
           "Tom Cotton"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -156,15 +160,15 @@
           "Sarah Huckabee Sanders"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -187,7 +191,9 @@
         "AR02",
         "AR03",
         "AR04"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "AS",
@@ -199,14 +205,13 @@
           "American Samoa has no U.S. senators."
         ],
         "status": "no_senate_representation",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "uscis_2025_pdf",
-          "uscis_2008_pdf"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -215,15 +220,15 @@
           "Pula’ali’i Nikolao Pula"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -243,7 +248,9 @@
       },
       "house_district_ids": [
         "AS00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "AZ",
@@ -259,13 +266,13 @@
           "Ruben M. Gallego"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -274,15 +281,15 @@
           "Katie Hobbs"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -310,7 +317,9 @@
         "AZ07",
         "AZ08",
         "AZ09"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "CA",
@@ -326,13 +335,13 @@
           "Alex Padilla"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -341,15 +350,15 @@
           "Gavin Newsom"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -420,7 +429,9 @@
         "CA50",
         "CA51",
         "CA52"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "CO",
@@ -436,13 +447,13 @@
           "Michael F. Bennet"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -451,15 +462,15 @@
           "Jared Polis"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -486,7 +497,9 @@
         "CO06",
         "CO07",
         "CO08"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "CT",
@@ -502,13 +515,13 @@
           "Richard Blumenthal"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -517,15 +530,15 @@
           "Ned Lamont"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -549,7 +562,9 @@
         "CT03",
         "CT04",
         "CT05"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "DC",
@@ -561,14 +576,13 @@
           "District of Columbia has no U.S. senators."
         ],
         "status": "no_senate_representation",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "uscis_2025_pdf",
-          "uscis_2008_pdf"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -577,8 +591,8 @@
           "D.C. does not have a governor."
         ],
         "status": "no_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "Do not substitute the D.C. mayor for the USCIS no-governor response.",
         "review_is_expiration": false,
@@ -586,7 +600,7 @@
           "uscis_2025_pdf",
           "uscis_2008_pdf"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -607,7 +621,9 @@
       },
       "house_district_ids": [
         "DC00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "DE",
@@ -623,13 +639,13 @@
           "Lisa Blunt Rochester"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -638,15 +654,15 @@
           "Matt Meyer"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -666,7 +682,9 @@
       },
       "house_district_ids": [
         "DE00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "FL",
@@ -682,13 +700,13 @@
           "Rick Scott"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -697,15 +715,15 @@
           "Ron DeSantis"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -752,7 +770,9 @@
         "FL26",
         "FL27",
         "FL28"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "GA",
@@ -768,13 +788,13 @@
           "Raphael G. Warnock"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -783,15 +803,15 @@
           "Brian Kemp"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -824,7 +844,9 @@
         "GA12",
         "GA13",
         "GA14"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "GU",
@@ -836,14 +858,13 @@
           "Guam has no U.S. senators."
         ],
         "status": "no_senate_representation",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "uscis_2025_pdf",
-          "uscis_2008_pdf"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -852,15 +873,15 @@
           "Lou Leon Guerrero"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -882,7 +903,9 @@
       },
       "house_district_ids": [
         "GU00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "HI",
@@ -898,13 +921,13 @@
           "Mazie K. Hirono"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -913,15 +936,15 @@
           "Josh Green"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -942,7 +965,9 @@
       "house_district_ids": [
         "HI01",
         "HI02"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "IA",
@@ -958,13 +983,13 @@
           "Joni Ernst"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -973,15 +998,15 @@
           "Kim Reynolds"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1004,7 +1029,9 @@
         "IA02",
         "IA03",
         "IA04"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "ID",
@@ -1020,13 +1047,13 @@
           "Mike Crapo"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1035,15 +1062,15 @@
           "Brad Little"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1064,7 +1091,9 @@
       "house_district_ids": [
         "ID01",
         "ID02"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "IL",
@@ -1080,13 +1109,13 @@
           "Tammy Duckworth"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1095,15 +1124,15 @@
           "JB Pritzker"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1139,7 +1168,9 @@
         "IL15",
         "IL16",
         "IL17"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "IN",
@@ -1155,13 +1186,13 @@
           "Todd Young"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1170,15 +1201,15 @@
           "Mike Braun"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1206,7 +1237,9 @@
         "IN07",
         "IN08",
         "IN09"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "KS",
@@ -1222,13 +1255,13 @@
           "Roger Marshall"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1237,15 +1270,15 @@
           "Laura Kelly"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1268,7 +1301,9 @@
         "KS02",
         "KS03",
         "KS04"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "KY",
@@ -1284,13 +1319,13 @@
           "Rand Paul"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1299,15 +1334,15 @@
           "Andy Beshear"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1332,7 +1367,9 @@
         "KY04",
         "KY05",
         "KY06"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "LA",
@@ -1348,13 +1385,13 @@
           "John Kennedy"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1363,15 +1400,15 @@
           "Jeff Landry"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1396,7 +1433,9 @@
         "LA04",
         "LA05",
         "LA06"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "MA",
@@ -1412,13 +1451,13 @@
           "Elizabeth Warren"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1427,15 +1466,15 @@
           "Maura Healey"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1463,7 +1502,9 @@
         "MA07",
         "MA08",
         "MA09"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "MD",
@@ -1479,13 +1520,13 @@
           "Chris Van Hollen"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1494,15 +1535,15 @@
           "Wes Moore"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1529,7 +1570,9 @@
         "MD06",
         "MD07",
         "MD08"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "ME",
@@ -1545,13 +1588,13 @@
           "Susan M. Collins"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1560,15 +1603,15 @@
           "Janet Mills"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1589,7 +1632,9 @@
       "house_district_ids": [
         "ME01",
         "ME02"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "MI",
@@ -1605,13 +1650,13 @@
           "Gary C. Peters"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1620,15 +1665,15 @@
           "Gretchen Whitmer"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1660,7 +1705,9 @@
         "MI11",
         "MI12",
         "MI13"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "MN",
@@ -1676,13 +1723,13 @@
           "Tina Smith"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1691,15 +1738,15 @@
           "Tim Walz"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1727,7 +1774,9 @@
         "MN06",
         "MN07",
         "MN08"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "MO",
@@ -1743,13 +1792,13 @@
           "Josh Hawley"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1758,15 +1807,15 @@
           "Mike Kehoe"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1793,7 +1842,9 @@
         "MO06",
         "MO07",
         "MO08"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "MP",
@@ -1805,14 +1856,13 @@
           "Northern Mariana Islands has no U.S. senators."
         ],
         "status": "no_senate_representation",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "uscis_2025_pdf",
-          "uscis_2008_pdf"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1821,15 +1871,15 @@
           "David M. Apatang"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1851,7 +1901,9 @@
       },
       "house_district_ids": [
         "MP00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "MS",
@@ -1867,13 +1919,13 @@
           "Roger F. Wicker"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1882,15 +1934,15 @@
           "Tate Reeves"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1913,7 +1965,9 @@
         "MS02",
         "MS03",
         "MS04"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "MT",
@@ -1929,13 +1983,13 @@
           "Tim Sheehy"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -1944,15 +1998,15 @@
           "Greg Gianforte"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -1973,7 +2027,9 @@
       "house_district_ids": [
         "MT01",
         "MT02"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "NC",
@@ -1989,13 +2045,13 @@
           "Thom Tillis"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2004,15 +2060,15 @@
           "Josh Stein"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2045,7 +2101,9 @@
         "NC12",
         "NC13",
         "NC14"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "ND",
@@ -2061,13 +2119,13 @@
           "Kevin Cramer"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2076,15 +2134,15 @@
           "Kelly Armstrong"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2104,7 +2162,9 @@
       },
       "house_district_ids": [
         "ND00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "NE",
@@ -2120,13 +2180,13 @@
           "Pete Ricketts"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2135,15 +2195,15 @@
           "Jim Pillen"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2165,7 +2225,9 @@
         "NE01",
         "NE02",
         "NE03"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "NH",
@@ -2181,13 +2243,13 @@
           "Margaret Wood Hassan"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2196,15 +2258,15 @@
           "Kelly Ayotte"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2225,7 +2287,9 @@
       "house_district_ids": [
         "NH01",
         "NH02"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "NJ",
@@ -2241,13 +2305,13 @@
           "Cory A. Booker"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2256,15 +2320,15 @@
           "Mikie Sherrill"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2295,7 +2359,9 @@
         "NJ10",
         "NJ11",
         "NJ12"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "NM",
@@ -2311,13 +2377,13 @@
           "Martin Heinrich"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2326,15 +2392,15 @@
           "Michelle Lujan Grisham"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2356,7 +2422,9 @@
         "NM01",
         "NM02",
         "NM03"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "NV",
@@ -2372,13 +2440,13 @@
           "Jacky Rosen"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2387,15 +2455,15 @@
           "Joe Lombardo"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2418,7 +2486,9 @@
         "NV02",
         "NV03",
         "NV04"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "NY",
@@ -2434,13 +2504,13 @@
           "Kirsten E. Gillibrand"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2449,15 +2519,15 @@
           "Kathy Hochul"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2502,7 +2572,9 @@
         "NY24",
         "NY25",
         "NY26"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "OH",
@@ -2518,13 +2590,13 @@
           "Jon Husted"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2533,15 +2605,15 @@
           "Mike DeWine"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2575,7 +2647,9 @@
         "OH13",
         "OH14",
         "OH15"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "OK",
@@ -2591,13 +2665,13 @@
           "James Lankford"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2606,15 +2680,15 @@
           "Kevin Stitt"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2638,7 +2712,9 @@
         "OK03",
         "OK04",
         "OK05"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "OR",
@@ -2654,13 +2730,13 @@
           "Ron Wyden"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2669,15 +2745,15 @@
           "Tina Kotek"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2702,7 +2778,9 @@
         "OR04",
         "OR05",
         "OR06"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "PA",
@@ -2718,13 +2796,13 @@
           "John Fetterman"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2733,15 +2811,15 @@
           "Josh Shapiro"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2777,7 +2855,9 @@
         "PA15",
         "PA16",
         "PA17"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "PR",
@@ -2789,14 +2869,13 @@
           "Puerto Rico has no U.S. senators."
         ],
         "status": "no_senate_representation",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "uscis_2025_pdf",
-          "uscis_2008_pdf"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2805,15 +2884,15 @@
           "Jenniffer González-Colón"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2833,7 +2912,9 @@
       },
       "house_district_ids": [
         "PR00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "RI",
@@ -2849,13 +2930,13 @@
           "Sheldon Whitehouse"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2864,15 +2945,15 @@
           "Dan McKee"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2893,7 +2974,9 @@
       "house_district_ids": [
         "RI01",
         "RI02"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "SC",
@@ -2909,13 +2992,13 @@
           "Tim Scott"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2924,15 +3007,15 @@
           "Henry McMaster"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -2958,7 +3041,9 @@
         "SC05",
         "SC06",
         "SC07"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "SD",
@@ -2974,13 +3059,13 @@
           "Mike Rounds"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -2989,15 +3074,15 @@
           "Larry Rhoden"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -3017,7 +3102,9 @@
       },
       "house_district_ids": [
         "SD00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "TN",
@@ -3033,13 +3120,13 @@
           "Marsha Blackburn"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -3048,15 +3135,15 @@
           "Bill Lee"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -3084,7 +3171,9 @@
         "TN07",
         "TN08",
         "TN09"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "TX",
@@ -3100,13 +3189,13 @@
           "Ted Cruz"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -3115,15 +3204,15 @@
           "Greg Abbott"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -3180,7 +3269,9 @@
         "TX36",
         "TX37",
         "TX38"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "UT",
@@ -3196,13 +3287,13 @@
           "Mike Lee"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -3211,15 +3302,15 @@
           "Spencer Cox"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -3242,7 +3333,9 @@
         "UT02",
         "UT03",
         "UT04"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "VA",
@@ -3258,13 +3351,13 @@
           "Tim Kaine"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -3273,15 +3366,15 @@
           "Abigail Spanberger"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -3311,7 +3404,9 @@
         "VA09",
         "VA10",
         "VA11"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "VI",
@@ -3323,14 +3418,13 @@
           "Virgin Islands has no U.S. senators."
         ],
         "status": "no_senate_representation",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "uscis_2025_pdf",
-          "uscis_2008_pdf"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -3339,15 +3433,15 @@
           "Albert Bryan"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -3367,7 +3461,9 @@
       },
       "house_district_ids": [
         "VI00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "VT",
@@ -3383,13 +3479,13 @@
           "Peter Welch"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -3398,15 +3494,15 @@
           "Phil Scott"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -3426,7 +3522,9 @@
       },
       "house_district_ids": [
         "VT00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "WA",
@@ -3442,13 +3540,13 @@
           "Patty Murray"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -3457,15 +3555,15 @@
           "Bob Ferguson"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -3494,7 +3592,9 @@
         "WA08",
         "WA09",
         "WA10"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "WI",
@@ -3510,13 +3610,13 @@
           "Tammy Baldwin"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -3525,15 +3625,15 @@
           "Tony Evers"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -3560,7 +3660,9 @@
         "WI06",
         "WI07",
         "WI08"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "WV",
@@ -3576,13 +3678,13 @@
           "Shelley Moore Capito"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -3591,15 +3693,15 @@
           "Patrick Morrisey"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -3620,7 +3722,9 @@
       "house_district_ids": [
         "WV01",
         "WV02"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     },
     {
       "id": "WY",
@@ -3636,13 +3740,13 @@
           "John Barrasso"
         ],
         "status": "serving_senators",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "review_is_expiration": false,
         "source_ids": [
-          "senate_phone"
+          "senate_current_xml"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "governor_answers": {
@@ -3651,15 +3755,15 @@
           "Mark Gordon"
         ],
         "status": "serving_governor",
-        "verified_on": "2026-10-27",
-        "suggested_update_on": "2026-11-27",
+        "verified_on": "2026-11-07",
+        "suggested_update_on": "2026-12-07",
         "regular_term_end_on": null,
         "term_end_note": "No unverified statewide inauguration/term-end day has been invented; recheck current roster on the suggested date and succession events.",
         "review_is_expiration": false,
         "source_ids": [
           "nga_governors"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1
       },
       "capital_answers": {
@@ -3679,7 +3783,9 @@
       },
       "house_district_ids": [
         "WY00"
-      ]
+      ],
+      "senators_suggested_update_on": "2026-12-07",
+      "governor_suggested_update_on": "2026-12-07"
     }
   ]
 }

@@ -382,7 +382,7 @@
       "source_page": 1,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -399,10 +399,10 @@
           "uscis_2008_pdf"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": null,
         "options_are_exhaustive": false,
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -1016,7 +1016,7 @@
       "source_page": 2,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -1033,10 +1033,10 @@
           "uscis_2008_pdf"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": null,
         "options_are_exhaustive": false,
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -1132,7 +1132,7 @@
       "source_page": 3,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -1149,12 +1149,12 @@
         "source_guidance": [
           "Answers will vary. [District of Columbia residents and residents of U.S. territories should answer that D.C. (or the territory where the applicant lives) has no U.S. Senators.]"
         ],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "options": null,
         "source_ids": [
           "uscis_2008_pdf"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -1192,7 +1192,7 @@
       "source_page": 3,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -1209,10 +1209,10 @@
           "uscis_2008_pdf"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": null,
         "options_are_exhaustive": false,
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -1309,7 +1309,7 @@
       "source_page": 3,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -1326,12 +1326,12 @@
         "source_guidance": [
           "Answers will vary. [Residents of territories with nonvoting Delegates or Resident Commissioners may provide the name of that Delegate or Commissioner. Also acceptable is any statement that the territory has no (voting) Representatives in Congress.]"
         ],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "options": null,
         "source_ids": [
           "uscis_2008_pdf"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -1595,7 +1595,7 @@
       "source_page": 3,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -1615,13 +1615,13 @@
           "uscis_updates"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": "2029-01-20",
         "options_are_exhaustive": false,
         "source_guidance": [
           "Visit uscis.gov/citizenship/testupdates for the name of the President of the United States."
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -1659,7 +1659,7 @@
       "source_page": 3,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -1678,13 +1678,13 @@
           "uscis_updates"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": "2029-01-20",
         "options_are_exhaustive": false,
         "source_guidance": [
           "Visit uscis.gov/citizenship/testupdates for the name of the Vice President of the United States."
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -2058,7 +2058,7 @@
       "source_page": 4,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -2090,10 +2090,10 @@
           "uscis_2008_pdf"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": null,
         "options_are_exhaustive": false,
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -2246,7 +2246,7 @@
       "source_page": 4,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -2264,13 +2264,13 @@
           "uscis_updates"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": null,
         "options_are_exhaustive": false,
         "source_guidance": [
           "Visit uscis.gov/citizenship/testupdates for the number of justices on the Supreme Court."
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -2308,7 +2308,7 @@
       "source_page": 4,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -2327,13 +2327,13 @@
           "uscis_updates"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": null,
         "options_are_exhaustive": false,
         "source_guidance": [
           "Visit uscis.gov/citizenship/testupdates for the name of the Chief Justice of the United States."
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -2492,7 +2492,7 @@
       "source_page": 5,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -2509,12 +2509,12 @@
         "source_guidance": [
           "Answers will vary. [District of Columbia residents should answer that D.C. does not have a Governor.]"
         ],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "options": null,
         "source_ids": [
           "uscis_2008_pdf"
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -2611,7 +2611,7 @@
       "source_page": 5,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -2627,10 +2627,10 @@
           "uscis_2008_pdf"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": null,
         "options_are_exhaustive": false,
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -2668,7 +2668,7 @@
       "source_page": 5,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -2686,13 +2686,13 @@
           "uscis_updates"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": "2029-01-20",
         "options_are_exhaustive": false,
         "source_guidance": [
           "Visit uscis.gov/citizenship/testupdates for the political party of the President."
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -2730,7 +2730,7 @@
       "source_page": 5,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -2750,13 +2750,13 @@
           "uscis_updates"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": "2027-01-03",
         "options_are_exhaustive": false,
         "source_guidance": [
           "Visit uscis.gov/citizenship/testupdates for the name of the Speaker of the House of Representatives."
         ],
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -3267,7 +3267,7 @@
       "source_page": 6,
       "checked_as_of": "2026-10-27",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -3287,10 +3287,10 @@
         "source_notes": [
           "April 15 is the USCIS civics-study response. Actual IRS deadlines may differ with the tax year, weekends/holidays, extensions, combat-zone rules or disaster relief. Do not substitute a guessed future deadline."
         ],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": null,
         "options_are_exhaustive": false,
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },
@@ -5056,7 +5056,7 @@
       "checked_as_of": "2026-10-27",
       "official_prompt_note": "USCIS Officers will be supplied with a list of federally recognized American Indian tribes.",
       "current_answer": {
-        "verified_on": "2026-10-27",
+        "verified_on": "2026-11-07",
         "valid_until": null,
         "suggested_update_is_expiration": false,
         "review_triggers": [
@@ -5093,10 +5093,10 @@
           "uscis_2008_pdf"
         ],
         "source_notes": [],
-        "suggested_update_on": "2026-11-27",
+        "suggested_update_on": "2026-12-07",
         "regular_transition_review_on": null,
         "options_are_exhaustive": false,
-        "data_updated_on": "2026-10-27",
+        "data_updated_on": "2026-11-07",
         "update_interval_calendar_months": 1,
         "maintenance_policy": "owner_confirmed_monthly_calendar"
       },

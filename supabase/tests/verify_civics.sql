@@ -33,9 +33,11 @@ begin
   if (select count(*) from public.civics_questions_2025 where answer_status = 'vacant' and answers = array['Vacant'] and previous_officeholder is not null) <> 2 then
     raise exception 'Vacancy policy is not represented';
   end if;
-  if exists (select 1 from public.civics_questions_2025 where answer_updated_on <> date '2026-10-27' or next_update_on <> date '2026-11-27')
-     or exists (select 1 from public.civics_questions_2008 where answer_updated_on <> date '2026-10-27' or next_update_on <> date '2026-11-27') then
-    raise exception 'Initial monthly date mismatch';
+  if (select count(*) from public.civics_questions_2008 where is_time_dependent and answer_updated_on = date '2026-11-07' and next_update_on = date '2026-12-07') <> 566
+     or (select count(*) from public.civics_questions_2025 where is_time_dependent and answer_updated_on = date '2026-11-07' and next_update_on = date '2026-12-07') <> 565
+     or (select count(*) from public.civics_questions_2008 where not is_time_dependent and answer_updated_on = date '2026-10-27' and next_update_on = date '2026-11-27') <> 139
+     or (select count(*) from public.civics_questions_2025 where not is_time_dependent and answer_updated_on = date '2026-10-27' and next_update_on = date '2026-11-27') <> 168 then
+    raise exception 'Monthly dates do not match the scoped November refresh';
   end if;
   if (date '2026-01-31' + interval '1 month')::date <> date '2026-02-28'
      or (date '2028-01-31' + interval '1 month')::date <> date '2028-02-29' then
